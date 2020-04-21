@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72ca0e08-10fa-444d-8092-0d20e699432c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Portfolio_Construction.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Portfolio_Construction.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,17 +21,47 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JupyterTrust" id="89f19b11-11ce-47eb-97e3-5bf1623423e5" />
   <component name="ProjectId" id="1a84HSC0LH8iKknReJ5YoqxUC5o" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Dont_delete/MSBuild/MSBuild/Current/Bin/MSBuild.exe" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Portfolio_Construction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Tiago\AppData\Local\Programs\Python\Python38-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -45,24 +77,100 @@
       <workItem from="1586104354400" duration="645000" />
       <workItem from="1586106005946" duration="104000" />
       <workItem from="1586106271618" duration="30000" />
+      <workItem from="1586107117272" duration="300000" />
+      <workItem from="1586107455877" duration="1210000" />
+      <workItem from="1587080525237" duration="3000" />
+      <workItem from="1587462948541" duration="226000" />
+      <workItem from="1587463276118" duration="1432000" />
+      <workItem from="1587464755689" duration="3756000" />
+      <workItem from="1587462573361" duration="317000" />
+      <workItem from="1587462925862" duration="3597000" />
+      <workItem from="1587487301043" duration="2730000" />
+      <workItem from="1587490067994" duration="490000" />
+      <workItem from="1587490577792" duration="3831000" />
+      <workItem from="1587494460363" duration="600000" />
+      <workItem from="1587500861516" duration="20000" />
     </task>
+    <task id="LOCAL-00001" summary="testing commit on pycharm">
+      <created>1586107211472</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586107211472</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="testing commit on pycharm" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing commit on pycharm" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="363" y="104" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1586104271427">
+    <state x="170" y="9" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587494357253">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="363" y="104" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1586104271427" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1586106105155">
+    <state x="-1490" y="-110" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738/-1888.-304.1888.1080@-1888.-304.1888.1080" timestamp="1587462607988" />
+    <state x="170" y="9" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587494357253" />
+    <state x="363" y="104" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1587463071883">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1586106105155" />
-    <state x="184" y="11" key="SettingsEditor" timestamp="1586104378300">
+    <state x="363" y="104" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587463071883" />
+    <state x="-1430" y="-232" width="1157" height="825" key="CommitChangelistDialog2" timestamp="1586107209911">
+      <screen x="-1888" y="-304" width="1888" height="1080" />
+    </state>
+    <state x="-1430" y="-232" width="1157" height="825" key="CommitChangelistDialog2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1586107209911" />
+    <state x="238" y="61" key="FileChooserDialogImpl" timestamp="1587493641048">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="184" y="11" key="SettingsEditor/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1586104378300" />
+    <state x="238" y="61" key="FileChooserDialogImpl/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587493641048" />
+    <state width="1323" height="182" key="GridCell.Tab.0.bottom" timestamp="1587494425915">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587494425915" />
+    <state width="1323" height="182" key="GridCell.Tab.0.center" timestamp="1587494425914">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587494425914" />
+    <state width="1323" height="182" key="GridCell.Tab.0.left" timestamp="1587494425914">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587494425914" />
+    <state width="1323" height="182" key="GridCell.Tab.0.right" timestamp="1587494425914">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587494425914" />
+    <state x="466" y="90" key="RollbackChangesDialog" timestamp="1586107388427">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="466" y="90" key="RollbackChangesDialog/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1586107388427" />
+    <state x="178" y="0" key="SettingsEditor" timestamp="1587493659835">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="-1609" y="-211" key="SettingsEditor/0.0.1366.738/-1888.-304.1888.1080@-1888.-304.1888.1080" timestamp="1587462975503" />
+    <state x="178" y="0" key="SettingsEditor/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587493659835" />
+    <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586107137361">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1586107137361" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1587466997779">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587466997779" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Portfolio_Construction$main.coverage" NAME="main Coverage Results" MODIFIED="1587494361951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
