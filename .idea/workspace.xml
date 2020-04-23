@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="72ca0e08-10fa-444d-8092-0d20e699432c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Portfolio_Construction.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Portfolio_Construction.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -30,11 +50,43 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Dont_delete/MSBuild/MSBuild/Current/Bin/MSBuild.exe" />
+    <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager">
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="Portfolio_Construction" sdk-home="C:\Users\Tiago\AppData\Local\Programs\Python\Python38\python.exe">
+        <option name="mySdkHome" value="C:\Users\Tiago\AppData\Local\Programs\Python\Python38\python.exe" />
+        <option name="myModuleName" value="Portfolio_Construction" />
+      </console-settings>
+    </option>
+    <option name="myUseExistingConsole" value="true" />
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="Portfolio_Construction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -42,9 +94,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\Tiago\AppData\Local\Programs\Python\Python38-32\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -57,9 +109,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Portfolio_Construction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -89,7 +161,12 @@
       <workItem from="1587490067994" duration="490000" />
       <workItem from="1587490577792" duration="3831000" />
       <workItem from="1587494460363" duration="600000" />
-      <workItem from="1587500861516" duration="20000" />
+      <workItem from="1587500861516" duration="127000" />
+      <workItem from="1587640977039" duration="82000" />
+      <workItem from="1587641077218" duration="707000" />
+      <workItem from="1587641811310" duration="844000" />
+      <workItem from="1587642720663" duration="1354000" />
+      <workItem from="1587644325139" duration="4518000" />
     </task>
     <task id="LOCAL-00001" summary="testing commit on pycharm">
       <created>1586107211472</created>
@@ -98,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586107211472</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="testing commit on pycharm">
+      <created>1587500943326</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1587500943326</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,63 +198,83 @@
       </list>
     </option>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="testing commit on pycharm" />
     <option name="LAST_COMMIT_MESSAGE" value="testing commit on pycharm" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="170" y="9" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587494357253">
+    <state x="170" y="9" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587642965444">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="-1490" y="-110" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738/-1888.-304.1888.1080@-1888.-304.1888.1080" timestamp="1587462607988" />
-    <state x="170" y="9" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587494357253" />
+    <state x="170" y="9" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587642965444" />
+    <state x="358" y="170" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587644506360">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="358" y="170" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587644506360" />
     <state x="363" y="104" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1587463071883">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="363" y="104" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587463071883" />
-    <state x="-1430" y="-232" width="1157" height="825" key="CommitChangelistDialog2" timestamp="1586107209911">
+    <state x="-1497" y="-189" width="1157" height="825" key="CommitChangelistDialog2" timestamp="1587500940133">
       <screen x="-1888" y="-304" width="1888" height="1080" />
     </state>
-    <state x="-1430" y="-232" width="1157" height="825" key="CommitChangelistDialog2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1586107209911" />
-    <state x="238" y="61" key="FileChooserDialogImpl" timestamp="1587493641048">
+    <state x="-1497" y="-189" width="1157" height="825" key="CommitChangelistDialog2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587500940133" />
+    <state x="510" y="107" key="EnvironmentVariablesDialog" timestamp="1587643259068">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="238" y="61" key="FileChooserDialogImpl/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587493641048" />
-    <state width="1323" height="182" key="GridCell.Tab.0.bottom" timestamp="1587494425915">
+    <state x="510" y="107" key="EnvironmentVariablesDialog/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587643259068" />
+    <state x="365" y="227" key="FileChooserDialogImpl" timestamp="1587643538719">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587494425915" />
-    <state width="1323" height="182" key="GridCell.Tab.0.center" timestamp="1587494425914">
+    <state x="365" y="227" key="FileChooserDialogImpl/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587643538719" />
+    <state width="1323" height="182" key="GridCell.Tab.0.bottom" timestamp="1587647912158">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587494425914" />
-    <state width="1323" height="182" key="GridCell.Tab.0.left" timestamp="1587494425914">
+    <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587647912158" />
+    <state width="1323" height="182" key="GridCell.Tab.0.center" timestamp="1587647912156">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587494425914" />
-    <state width="1323" height="182" key="GridCell.Tab.0.right" timestamp="1587494425914">
+    <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587647912156" />
+    <state width="1323" height="182" key="GridCell.Tab.0.left" timestamp="1587647912155">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587494425914" />
+    <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587647912155" />
+    <state width="1323" height="182" key="GridCell.Tab.0.right" timestamp="1587647912157">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587647912157" />
     <state x="466" y="90" key="RollbackChangesDialog" timestamp="1586107388427">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="466" y="90" key="RollbackChangesDialog/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1586107388427" />
-    <state x="178" y="0" key="SettingsEditor" timestamp="1587493659835">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="-1210" y="-175" key="SettingsEditor" timestamp="1587644624214">
+      <screen x="-1888" y="-304" width="1888" height="1080" />
     </state>
     <state x="-1609" y="-211" key="SettingsEditor/0.0.1366.738/-1888.-304.1888.1080@-1888.-304.1888.1080" timestamp="1587462975503" />
-    <state x="178" y="0" key="SettingsEditor/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587493659835" />
-    <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586107137361">
+    <state x="-1210" y="-175" key="SettingsEditor/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587644624214" />
+    <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587500903282">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1586107137361" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1587466997779">
+    <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587500903282" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1587647542557">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587466997779" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587647542557" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Portfolio_Construction$main.coverage" NAME="main Coverage Results" MODIFIED="1587494361951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Portfolio_Construction$main.coverage" NAME="main Coverage Results" MODIFIED="1587647907869" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
