@@ -20,10 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72ca0e08-10fa-444d-8092-0d20e699432c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Data/test_aapl.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backtester.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/factor_risk_parity.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/risk_parity.py" beforeDir="false" afterPath="$PROJECT_DIR$/risk_parity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock_data.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +52,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -65,7 +68,7 @@
     </option>
     <option name="myUseExistingConsole" value="true" />
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.test">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -131,8 +134,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -167,7 +170,11 @@
       <workItem from="1587641077218" duration="707000" />
       <workItem from="1587641811310" duration="844000" />
       <workItem from="1587642720663" duration="1354000" />
-      <workItem from="1587644325139" duration="6429000" />
+      <workItem from="1587644325139" duration="6908000" />
+      <workItem from="1587651287079" duration="1527000" />
+      <workItem from="1587653536813" duration="334000" />
+      <workItem from="1587822156418" duration="5000" />
+      <workItem from="1588007173251" duration="12536000" />
     </task>
     <task id="LOCAL-00001" summary="testing commit on pycharm">
       <created>1586107211472</created>
@@ -197,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587649926273</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="stock_data file created">
+      <created>1587650919972</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1587650919972</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,10 +240,12 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="testing commit on pycharm" />
     <MESSAGE value="First run of simple RP (long only)" />
     <MESSAGE value="RP file before splitting into data file" />
-    <option name="LAST_COMMIT_MESSAGE" value="RP file before splitting into data file" />
+    <MESSAGE value="stock_data file created" />
+    <option name="LAST_COMMIT_MESSAGE" value="stock_data file created" />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="47" key="#Inspections" timestamp="1587650734857">
@@ -249,10 +265,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="363" y="104" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587463071883" />
-    <state x="-1497" y="-189" width="1157" height="825" key="CommitChangelistDialog2" timestamp="1587649925232">
+    <state x="-1497" y="-189" width="1157" height="825" key="CommitChangelistDialog2" timestamp="1587650919003">
       <screen x="-1888" y="-304" width="1888" height="1080" />
     </state>
-    <state x="-1497" y="-189" width="1157" height="825" key="CommitChangelistDialog2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587649925232" />
+    <state x="-1497" y="-189" width="1157" height="825" key="CommitChangelistDialog2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587650919003" />
     <state x="510" y="107" key="EnvironmentVariablesDialog" timestamp="1587643259068">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -261,41 +277,58 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="365" y="227" key="FileChooserDialogImpl/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587643538719" />
-    <state width="1323" height="182" key="GridCell.Tab.0.bottom" timestamp="1587650614615">
+    <state width="1323" height="227" key="GridCell.Tab.0.bottom" timestamp="1588009275276">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587650614615" />
-    <state width="1323" height="182" key="GridCell.Tab.0.center" timestamp="1587650614615">
+    <state width="1323" height="227" key="GridCell.Tab.0.bottom/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588009275276" />
+    <state width="1323" height="227" key="GridCell.Tab.0.center" timestamp="1588009275276">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587650614615" />
-    <state width="1323" height="182" key="GridCell.Tab.0.left" timestamp="1587650614614">
+    <state width="1323" height="227" key="GridCell.Tab.0.center/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588009275276" />
+    <state width="1323" height="227" key="GridCell.Tab.0.left" timestamp="1588009275275">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587650614614" />
-    <state width="1323" height="182" key="GridCell.Tab.0.right" timestamp="1587650614615">
+    <state width="1323" height="227" key="GridCell.Tab.0.left/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588009275275" />
+    <state width="1323" height="227" key="GridCell.Tab.0.right" timestamp="1588009275276">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587650614615" />
+    <state width="1323" height="227" key="GridCell.Tab.0.right/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588009275276" />
+    <state width="1323" height="227" key="GridCell.Tab.1.bottom" timestamp="1588009275277">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="227" key="GridCell.Tab.1.bottom/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588009275277" />
+    <state width="1323" height="227" key="GridCell.Tab.1.center" timestamp="1588009275276">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="227" key="GridCell.Tab.1.center/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588009275276" />
+    <state width="1323" height="227" key="GridCell.Tab.1.left" timestamp="1588009275276">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="227" key="GridCell.Tab.1.left/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588009275276" />
+    <state width="1323" height="227" key="GridCell.Tab.1.right" timestamp="1588009275276">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="227" key="GridCell.Tab.1.right/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588009275276" />
     <state x="466" y="90" key="RollbackChangesDialog" timestamp="1586107388427">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="466" y="90" key="RollbackChangesDialog/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1586107388427" />
-    <state x="-1210" y="-175" key="SettingsEditor" timestamp="1587644624214">
+    <state x="-1660" y="-161" key="SettingsEditor" timestamp="1587651595940">
       <screen x="-1888" y="-304" width="1888" height="1080" />
     </state>
     <state x="-1609" y="-211" key="SettingsEditor/0.0.1366.738/-1888.-304.1888.1080@-1888.-304.1888.1080" timestamp="1587462975503" />
-    <state x="-1210" y="-175" key="SettingsEditor/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587644624214" />
+    <state x="-1660" y="-161" key="SettingsEditor/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587651595940" />
     <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587500903282">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587500903282" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1587647542557">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1588011672680">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587647542557" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588011672680" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Portfolio_Construction$main.coverage" NAME="main Coverage Results" MODIFIED="1587650614601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Portfolio_Construction$test.coverage" NAME="test Coverage Results" MODIFIED="1588009262398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Portfolio_Construction$main.coverage" NAME="main Coverage Results" MODIFIED="1587653750365" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
