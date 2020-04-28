@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import statsmodels.api as sm
 
+plt.close('all')
+
 aapl = pdr.get_data_yahoo('AAPL',
                           start=datetime.datetime(2006, 10, 1),
                           end=datetime.datetime(2012, 1, 1))
@@ -146,26 +148,97 @@ model = sm.OLS(return_data['MSFT'],X).fit()
 #return_data.info()
 
 #plot returns
-plt.plot(return_data['AAPL'], return_data['MSFT'], 'r.')
-#add axix
-ax = plt.axis()
-
-x = np.linspace(ax[0], ax[1] + 0.01)
-
-# Plot the regression line
-plt.plot(x, model.params[0] + model.params[1] * x, 'b', lw=2)
-
-# Customize the plot
-plt.grid(True)
-plt.axis('tight')
-plt.xlabel('Apple Returns')
-plt.ylabel('Microsoft returns')
+# plt.plot(return_data['AAPL'], return_data['MSFT'], 'r.')
+# #add axix
+# ax = plt.axis()
+#
+# x = np.linspace(ax[0], ax[1] + 0.01)
+#
+# # Plot the regression line
+# plt.plot(x, model.params[0] + model.params[1] * x, 'b', lw=2)
+#
+# # Customize the plot
+# plt.grid(True)
+# plt.axis('tight')
+# plt.xlabel('Apple Returns')
+# plt.ylabel('Microsoft returns')
+#
+# # Show the plot
+# #plt.show()
+#
+# # Plot the rolling correlation
+# return_data['MSFT'].rolling(window=252).corr(return_data['AAPL']).plot()
 
 # Show the plot
 #plt.show()
 
-# Plot the rolling correlation
-return_data['MSFT'].rolling(window=252).corr(return_data['AAPL']).plot()
+##SIMPLE EXAMPLE TRADING STRAT##
+short_window = 40
+long_window = 100
+#signals dataframe
+signals = pd.DataFrame(index=aapl.index)
+signals['signal']= 0.0
 
-# Show the plot
-#plt.show()
+signals['short_mavg'] = aapl['Close'].rolling(window=short_window, min_periods=1, center=False).mean()
+signals['long_mavg'] = aapl['Close'].rolling(window=long_window, min_periods=1, center=False).mean()
+
+signals['signal'][short_window:] = np.where(signals['short_mavg'][short_window:] > signals['long_mavg'][short_window:], 1.0, 0.0)
+
+signals['positions'] = signals['signal'].diff()
+
+# initialize fig
+fig = plt.figure()
+ax1 = fig.add_subplot(111, ylabel='Price in $')
+aapl['Close'].plot(ax=ax1, color='r', lw=2.)
+signals[['short_mavg', 'long_mavg']].plot(ax=ax1, lw=2.)
+# Plot the buy signals
+ax1.plot(signals.loc[signals.positions == 1.0].index,
+         signals.short_mavg[signals.positions == 1.0],
+         '^', markersize=10, color='m')
+
+# Plot the sell signals
+ax1.plot(signals.loc[signals.positions == -1.0].index,
+         signals.short_mavg[signals.positions == -1.0],
+         'v', markersize=10, color='k')
+
+####Backtesting####
+initial_capital = float(100_000.0)
+positions = pd.DataFrame(index=signals.index).fillna(0.0)
+#buy 100 shares
+positions['AAPL'] = 100*signals['signal']
+portfolio = positions.multiply(aapl['Adj Close'], axis=0)
+pos_diff = positions.diff()
+portfolio['holdings'] = (positions.multiply(aapl['Adj Close'], axis=0)).sum(axis=1)
+portfolio['cash'] = initial_capital - (pos_diff.multiply(aapl['Adj Close'], axis=0)).sum(axis=1).cumsum()
+portfolio['total'] = portfolio['cash'] + portfolio['holdings']
+portfolio['returns'] = portfolio['total'].pct_change()
+
+fig = plt.figure()
+ax1 = fig.add_subplot(111, ylabel='Portfolio value in $')
+# Plot the equity curve in dollars
+portfolio['total'].plot(ax=ax1, lw=2.)
+ax1.plot(portfolio.loc[signals.positions == 1.0].index,
+         portfolio.total[signals.positions == 1.0],
+         '^', markersize=10, color='m')
+ax1.plot(portfolio.loc[signals.positions == -1.0].index,
+         portfolio.total[signals.positions == -1.0],
+         'v', markersize=10, color='k')
+
+###Evaluating performance###
+returns = portfolio['returns']
+# annualized sharp ratio
+sharpe_ratio = np.sqrt(252)*(returns.mean() / returns.std())
+
+# maximum drawdown (on the last year)
+window = 252
+rolling_max = aapl['Adj Close'].rolling(window, min_periods=1).max()
+daily_drawdown = aapl['Adj Close']/rolling_max - 1.0
+max_daily_drawdown = daily_drawdown.rolling(window, min_periods=1).min()
+daily_drawdown.plot()
+max_daily_drawdown.plot()
+
+# Compound Annual Growth Rate (CAGR)
+# Get the number of days in `aapl`
+days = (aapl.index[-1] - aapl.index[0]).days
+# Calculate the CAGR
+cagr = ((((aapl['Adj Close'][-1]) / aapl['Adj Close'][1])) ** (365.0/days)) - 1
