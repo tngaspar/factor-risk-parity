@@ -1,10 +1,11 @@
 import numpy as np
 import pandas as pd
-import pandas_datareader.data as web
 import riskparityportfolio as rp
-import datetime
+from dateutil.relativedelta import relativedelta
 import stock_data
-
+from alive_progress import alive_bar
+from alive_progress import config_handler
+config_handler.set_global(force_tty=True)
 
 def weights_risk_parity(tickers, start_date, end_date):
     prices = stock_data.get_prices(tickers, start_date, end_date)
@@ -16,8 +17,12 @@ def weights_risk_parity(tickers, start_date, end_date):
 
 
 def portfolio_weights_risk_parity(tickers, start_date, end_date, portfolio_update_period):
+    business_days_end_months = pd.date_range(start_date, end_date, freq='BM')
+    portfolio_weights = pd.DataFrame(index=business_days_end_months, columns=tickers)
 
-    #bussiness_days_rng = pd.date_range(start, end, freq='BM')
-    w=1
+    with alive_bar(len(business_days_end_months)) as bar:
+        for t in business_days_end_months:
+            portfolio_weights.loc[t] = weights_risk_parity(tickers, t + relativedelta(months=-3), t)
+            bar()
 
-    return w
+    return portfolio_weights

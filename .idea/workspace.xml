@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="72ca0e08-10fa-444d-8092-0d20e699432c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backtester.py" beforeDir="false" afterPath="$PROJECT_DIR$/backtester.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/risk_parity.py" beforeDir="false" afterPath="$PROJECT_DIR$/risk_parity.py" afterDir="false" />
     </list>
@@ -177,7 +178,7 @@
       <workItem from="1588007173251" duration="12644000" />
       <workItem from="1588069964338" duration="8059000" />
       <workItem from="1588151680916" duration="15729000" />
-      <workItem from="1588349260396" duration="7959000" />
+      <workItem from="1588349260396" duration="9575000" />
     </task>
     <task id="LOCAL-00001" summary="testing commit on pycharm">
       <created>1586107211472</created>
@@ -235,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588186629662</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="portfolio rp applied in main">
+      <created>1588361639991</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1588361639991</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,7 +280,8 @@
     <MESSAGE value="testing pandas finance related functions" />
     <MESSAGE value="expanding test file" />
     <MESSAGE value="daily update (reevaluate)" />
-    <option name="LAST_COMMIT_MESSAGE" value="daily update (reevaluate)" />
+    <MESSAGE value="portfolio rp applied in main" />
+    <option name="LAST_COMMIT_MESSAGE" value="portfolio rp applied in main" />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="47" key="#Inspections" timestamp="1587650734857">
@@ -292,9 +301,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="363" y="104" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587463071883" />
-    <state x="-1497" y="-189" width="1157" height="825" key="CommitChangelistDialog2" timestamp="1588186627527">
-      <screen x="-1888" y="-304" width="1888" height="1080" />
+    <state x="283" y="79" width="1157" height="825" key="CommitChangelistDialog2" timestamp="1588361638019">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
+    <state x="283" y="79" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588361638019" />
     <state x="-1497" y="-189" width="1157" height="825" key="CommitChangelistDialog2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186627527" />
     <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1588108803725" />
     <state x="510" y="107" key="EnvironmentVariablesDialog" timestamp="1587643259068">
@@ -374,7 +384,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>35</line>
+          <line>27</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
