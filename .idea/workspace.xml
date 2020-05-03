@@ -20,10 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72ca0e08-10fa-444d-8092-0d20e699432c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/portfolio_daily_returns.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_aprt.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_returns.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backtester.py" beforeDir="false" afterPath="$PROJECT_DIR$/backtester.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/risk_parity.py" beforeDir="false" afterPath="$PROJECT_DIR$/risk_parity.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +56,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="settings.editor.selected.configurable" value="PyConsoleConfigurable.Python Console" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -178,7 +180,9 @@
       <workItem from="1588007173251" duration="12644000" />
       <workItem from="1588069964338" duration="8059000" />
       <workItem from="1588151680916" duration="15729000" />
-      <workItem from="1588349260396" duration="9575000" />
+      <workItem from="1588349260396" duration="10194000" />
+      <workItem from="1588411647164" duration="13521000" />
+      <workItem from="1588512233010" duration="6321000" />
     </task>
     <task id="LOCAL-00001" summary="testing commit on pycharm">
       <created>1586107211472</created>
@@ -243,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588361639991</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="portfolio rp moved to risk_parity.py">
+      <created>1588363784094</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1588363784094</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,7 +292,8 @@
     <MESSAGE value="expanding test file" />
     <MESSAGE value="daily update (reevaluate)" />
     <MESSAGE value="portfolio rp applied in main" />
-    <option name="LAST_COMMIT_MESSAGE" value="portfolio rp applied in main" />
+    <MESSAGE value="portfolio rp moved to risk_parity.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="portfolio rp moved to risk_parity.py" />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="47" key="#Inspections" timestamp="1587650734857">
@@ -301,44 +313,50 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="363" y="104" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587463071883" />
-    <state x="283" y="79" width="1157" height="825" key="CommitChangelistDialog2" timestamp="1588361638019">
+    <state x="0" y="121" key="#xdebugger.XInspectDialog" timestamp="1588419644103">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="283" y="79" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588361638019" />
+    <state x="0" y="121" key="#xdebugger.XInspectDialog/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588419644103" />
+    <state x="283" y="0" width="1157" height="825" key="CommitChangelistDialog2" timestamp="1588363783212">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588363783212" />
     <state x="-1497" y="-189" width="1157" height="825" key="CommitChangelistDialog2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186627527" />
     <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1588108803725" />
     <state x="510" y="107" key="EnvironmentVariablesDialog" timestamp="1587643259068">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="510" y="107" key="EnvironmentVariablesDialog/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587643259068" />
-    <state x="365" y="227" key="FileChooserDialogImpl" timestamp="1587643538719">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="2285" y="520" key="FileChooserDialogImpl" timestamp="1588420608200">
+      <screen x="1920" y="303" width="1366" height="738" />
     </state>
+    <state x="365" y="217" key="FileChooserDialogImpl/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588420461825" />
     <state x="365" y="227" key="FileChooserDialogImpl/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587643538719" />
-    <state width="1323" height="182" key="GridCell.Tab.0.bottom" timestamp="1588359587255">
+    <state x="2285" y="520" key="FileChooserDialogImpl/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588420608200" />
+    <state width="1323" height="182" key="GridCell.Tab.0.bottom" timestamp="1588457762020">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588359587255" />
+    <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588418016031" />
     <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186638167" />
-    <state width="1323" height="227" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1588023297499" />
-    <state width="1323" height="182" key="GridCell.Tab.0.center" timestamp="1588359587255">
+    <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1588457762020" />
+    <state width="1323" height="182" key="GridCell.Tab.0.center" timestamp="1588457762019">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588359587255" />
+    <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588418016030" />
     <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186638165" />
-    <state width="1323" height="227" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1588023297499" />
-    <state width="1323" height="182" key="GridCell.Tab.0.left" timestamp="1588359587254">
+    <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1588457762019" />
+    <state width="1323" height="182" key="GridCell.Tab.0.left" timestamp="1588457762018">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588359587254" />
+    <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588418016028" />
     <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186638165" />
-    <state width="1323" height="227" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1588023297499" />
-    <state width="1323" height="182" key="GridCell.Tab.0.right" timestamp="1588359587255">
+    <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1588457762018" />
+    <state width="1323" height="182" key="GridCell.Tab.0.right" timestamp="1588457762019">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588359587255" />
+    <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588418016030" />
     <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186638165" />
-    <state width="1323" height="227" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1588023297499" />
+    <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1588457762019" />
     <state width="1323" height="227" key="GridCell.Tab.1.bottom" timestamp="1588023297501">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -379,19 +397,8 @@
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588359654448" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588076302709" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>27</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Portfolio_Construction$test.coverage" NAME="test Coverage Results" MODIFIED="1588009262398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Portfolio_Construction$main.coverage" NAME="main Coverage Results" MODIFIED="1588359107655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Portfolio_Construction$main.coverage" NAME="main Coverage Results" MODIFIED="1588417762541" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
