@@ -30,3 +30,9 @@ def get_prices(tickers, start_date, end_date):
     prices = get_prices_file(tickers, start_date, end_date)
 
     return prices
+
+
+def get_daily_returns(tickers, start_date, end_date):
+    returns = get_prices(tickers, start_date, end_date).asfreq('B').pct_change()
+
+    return returns

@@ -55,9 +55,9 @@ sp500 = ['MMM', 'ABT', 'ABBV', 'ABMD', 'ACN', 'ATVI', 'ADBE', 'AMD', 'AAP', 'AES
           'WM', 'WAT', 'WEC', 'WFC', 'WELL', 'WDC', 'WU', 'WRK', 'WY', 'WHR', 'WMB', 'WLTW', 'WYNN', 'XEL', 'XRX',
           'XLNX', 'XYL', 'YUM', 'ZBRA', 'ZBH', 'ZION', 'ZTS']
 tickers = sp500
-start_date = dt.date(2015, 12, 31)
+start_date = dt.date(2006, 12, 25)
 end_date = dt.date(2019, 12, 31)
-p_tickers = stock_data.get_prices(tickers,start_date,start_date)
+p_tickers = stock_data.get_prices(tickers, start_date, start_date + dt.timedelta(days=+5))
 nan_cols = [i for i in p_tickers.columns if p_tickers[i].isnull().any()]
 tickers = [eq for eq in tickers if eq not in nan_cols]
 
@@ -66,10 +66,8 @@ tickers = [eq for eq in tickers if eq not in nan_cols]
 w_pt_rp = rp.portfolio_weights_risk_parity(tickers, start_date, end_date, 'BM')
 
 # testing area:
-stock_returns = stock_data.get_prices(tickers, w_pt_rp.index[0], end_date).asfreq('B').pct_change()
-daily_returns_rp = pd.Series((stock_returns * w_pt_rp.asfreq('B').ffill().shift(1)).sum(1), index=pd.to_datetime(stock_returns.index), name='Returns_RP')
+#stock_returns = stock_data.get_prices(tickers, w_pt_rp.index[0], end_date).asfreq('B').pct_change()
+stock_returns = stock_data.get_daily_returns(tickers, w_pt_rp.index[0], end_date)[1:]
+daily_returns_rp = pd.Series((stock_returns * (w_pt_rp.asfreq('B').ffill().shift(1))).sum(1), index=pd.to_datetime(stock_returns.index), name='Returns_RP')
 daily_returns_rp.to_csv('portfolio_daily_returns.csv')
 
-#plt.close('all')
-#fig = pf.create_returns_tear_sheet(daily_returns_rp, return_fig=True)
-#fig.savefig('test.png')

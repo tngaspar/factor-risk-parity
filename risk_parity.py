@@ -17,12 +17,12 @@ def weights_risk_parity(tickers, start_date, end_date):
 
 
 def portfolio_weights_risk_parity(tickers, start_date, end_date, portfolio_update_period):
-    business_days_end_months = pd.date_range(start_date, end_date, freq='BM')
+    business_days_end_months = pd.date_range(start_date, end_date, freq=portfolio_update_period)
     portfolio_weights = pd.DataFrame(index=business_days_end_months, columns=tickers)
 
     with alive_bar(len(business_days_end_months)) as bar:
         for t in business_days_end_months:
-            portfolio_weights.loc[t] = weights_risk_parity(tickers, t + relativedelta(months=-6), t)
+            portfolio_weights.loc[t] = weights_risk_parity(tickers, t + relativedelta(months=-48), t)
             bar()
 
     return portfolio_weights
