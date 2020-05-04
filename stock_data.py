@@ -12,12 +12,6 @@ def get_prices_yf(tickers, start_date, end_date):
     return prices
 
 
-def get_covariance_matrix(prices):
-    covariance_matrix = prices.shape[0] * prices.asfreq('B').pct_change().iloc[1:, :].cov().values
-
-    return covariance_matrix
-
-
 def get_prices_file(tickers, start_date, end_date):
     data = pd.read_csv('Data\Equities\SP500.csv', parse_dates=True, index_col=0)
     prices = pd.DataFrame([data.loc[start_date:end_date, t] for t in tickers]
@@ -36,3 +30,10 @@ def get_daily_returns(tickers, start_date, end_date):
     returns = get_prices(tickers, start_date, end_date).asfreq('B').pct_change()
 
     return returns
+
+
+def get_covariance_matrix(prices):
+    covariance_matrix = prices.shape[0] * prices.asfreq('B').pct_change().iloc[1:, :].cov().values
+
+    return covariance_matrix
+

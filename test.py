@@ -15,8 +15,8 @@ aapl = pdr.get_data_yahoo('AAPL',
 #aapl.tail()
 #aapl.describe()
 
-aapl.to_csv('Data/test_aapl.csv')
-df=pd.read_csv('Data/test_aapl.csv', header=0, index_col= 'Date', parse_dates=True)
+#aapl.to_csv('Data/test_aapl.csv')
+#df=pd.read_csv('Data/test_aapl.csv', header=0, index_col= 'Date', parse_dates=True)
 
 #aapl.index
 #aapl.columns

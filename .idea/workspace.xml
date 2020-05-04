@@ -19,14 +19,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72ca0e08-10fa-444d-8092-0d20e699432c" name="Default Changelist" comment="">
+    <list default="true" id="72ca0e08-10fa-444d-8092-0d20e699432c" name="Default Changelist" comment="returns working and input to pyfolio. &#10;Clean-up needed">
+      <change afterPath="$PROJECT_DIR$/Output/risk_parity_daily_returns.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/test_aapl.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Jupynotebook.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Jupynotebook.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backtester.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_daily_returns.csv" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio_daily_returns.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio_daily_returns.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/risk_parity.py" beforeDir="false" afterPath="$PROJECT_DIR$/risk_parity.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stock_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_aprt.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_returns.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +188,8 @@
       <workItem from="1588151680916" duration="15729000" />
       <workItem from="1588349260396" duration="10194000" />
       <workItem from="1588411647164" duration="13521000" />
-      <workItem from="1588512233010" duration="20006000" />
+      <workItem from="1588512233010" duration="20808000" />
+      <workItem from="1588586655196" duration="3319000" />
     </task>
     <task id="LOCAL-00001" summary="testing commit on pycharm">
       <created>1586107211472</created>
@@ -269,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588528751608</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="returns working and input to pyfolio. &#10;Clean-up needed">
+      <created>1588534417910</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1588534417910</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,7 +323,8 @@
     <MESSAGE value="portfolio rp moved to risk_parity.py" />
     <MESSAGE value="pyfolio now working,&#10;problem with getting too many stock prices at once" />
     <MESSAGE value="working 100% for rp" />
-    <option name="LAST_COMMIT_MESSAGE" value="working 100% for rp" />
+    <MESSAGE value="returns working and input to pyfolio. &#10;Clean-up needed" />
+    <option name="LAST_COMMIT_MESSAGE" value="returns working and input to pyfolio. &#10;Clean-up needed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="47" key="#Inspections" timestamp="1587650734857">
@@ -338,13 +352,13 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="0" y="121" key="#xdebugger.XInspectDialog/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588419644103" />
-    <state x="2129" y="303" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1588528748712">
+    <state x="2129" y="303" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1588535501544">
       <screen x="1920" y="303" width="1366" height="738" />
     </state>
     <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588363783212" />
     <state x="-1497" y="-189" width="1157" height="825" key="CommitChangelistDialog2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186627527" />
     <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1588108803725" />
-    <state x="2129" y="303" width="1157" height="738" key="CommitChangelistDialog2/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588528748712" />
+    <state x="2129" y="303" width="1157" height="738" key="CommitChangelistDialog2/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588535501544" />
     <state x="510" y="107" key="EnvironmentVariablesDialog" timestamp="1587643259068">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -355,30 +369,34 @@
     <state x="365" y="217" key="FileChooserDialogImpl/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588420461825" />
     <state x="365" y="227" key="FileChooserDialogImpl/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587643538719" />
     <state x="2285" y="520" key="FileChooserDialogImpl/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588420608200" />
-    <state width="1323" height="182" key="GridCell.Tab.0.bottom" timestamp="1588457762020">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1323" height="182" key="GridCell.Tab.0.bottom" timestamp="1588588800963">
+      <screen x="1920" y="303" width="1366" height="738" />
     </state>
     <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588418016031" />
     <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186638167" />
     <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1588457762020" />
-    <state width="1323" height="182" key="GridCell.Tab.0.center" timestamp="1588457762019">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1323" height="182" key="GridCell.Tab.0.bottom/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588588800963" />
+    <state width="1323" height="182" key="GridCell.Tab.0.center" timestamp="1588588800962">
+      <screen x="1920" y="303" width="1366" height="738" />
     </state>
     <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588418016030" />
     <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186638165" />
     <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1588457762019" />
-    <state width="1323" height="182" key="GridCell.Tab.0.left" timestamp="1588457762018">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1323" height="182" key="GridCell.Tab.0.center/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588588800962" />
+    <state width="1323" height="182" key="GridCell.Tab.0.left" timestamp="1588588800961">
+      <screen x="1920" y="303" width="1366" height="738" />
     </state>
     <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588418016028" />
     <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186638165" />
     <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1588457762018" />
-    <state width="1323" height="182" key="GridCell.Tab.0.right" timestamp="1588457762019">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1323" height="182" key="GridCell.Tab.0.left/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588588800961" />
+    <state width="1323" height="182" key="GridCell.Tab.0.right" timestamp="1588588800963">
+      <screen x="1920" y="303" width="1366" height="738" />
     </state>
     <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588418016030" />
     <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186638165" />
     <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1588457762019" />
+    <state width="1323" height="182" key="GridCell.Tab.0.right/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588588800963" />
     <state width="1323" height="227" key="GridCell.Tab.1.bottom" timestamp="1588023297501">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
