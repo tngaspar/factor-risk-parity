@@ -20,22 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72ca0e08-10fa-444d-8092-0d20e699432c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Data/Factors/Raw_data/BaB_all_countries.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Factors/Raw_data/Betting Against Beta Equity Factors Daily.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Factors/Raw_data/F-F_Momentum_Factor_daily.CSV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Factors/Raw_data/F-F_Research_Data_5_Factors_2x3_daily.CSV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Factors/Raw_data/HML_Devil_all_countries.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Factors/Raw_data/HML_all_countries.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Factors/Raw_data/QMJ_all_countries.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Factors/Raw_data/Quality Minus Junk Factors Daily.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Factors/Raw_data/SMB_all_countries.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Factors/Raw_data/UMD_all_countries.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Factors/all_factors.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Factors/factor_raw_to_set.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/factor_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_reference.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Factors/Raw_data/BaB_all_countries.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Factors/Raw_data/BaB_all_countries.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Factors/Raw_data/HML_Devil_all_countries.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Factors/Raw_data/HML_Devil_all_countries.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Factors/Raw_data/HML_all_countries.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Factors/Raw_data/HML_all_countries.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Factors/Raw_data/QMJ_all_countries.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Factors/Raw_data/QMJ_all_countries.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Factors/Raw_data/SMB_all_countries.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Factors/Raw_data/SMB_all_countries.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Factors/Raw_data/UMD_all_countries.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Factors/Raw_data/UMD_all_countries.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Factors/all_factors.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Factors/all_factors.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Factors/factor_raw_to_set.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Factors/factor_raw_to_set.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/factor_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/factor_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/factor_risk_parity.py" beforeDir="false" afterPath="$PROJECT_DIR$/factor_risk_parity.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -212,7 +207,7 @@
       <workItem from="1588411647164" duration="13521000" />
       <workItem from="1588512233010" duration="20808000" />
       <workItem from="1588586655196" duration="6597000" />
-      <workItem from="1588596206673" duration="8987000" />
+      <workItem from="1588596206673" duration="14662000" />
     </task>
     <task id="LOCAL-00001" summary="testing commit on pycharm">
       <created>1586107211472</created>
@@ -312,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588590021258</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="added factor_data.py that gets factor data">
+      <created>1588605365568</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1588605365568</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,7 +357,8 @@
     <MESSAGE value="working 100% for rp" />
     <MESSAGE value="returns working and input to pyfolio. &#10;Clean-up needed" />
     <MESSAGE value="Clean code&#10;Risk Parity Implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clean code&#10;Risk Parity Implemented" />
+    <MESSAGE value="added factor_data.py that gets factor data" />
+    <option name="LAST_COMMIT_MESSAGE" value="added factor_data.py that gets factor data" />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="47" key="#Inspections" timestamp="1587650734857">
@@ -384,13 +387,13 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="0" y="121" key="#xdebugger.XInspectDialog/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588419644103" />
-    <state x="2129" y="303" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1588590018540">
+    <state x="2129" y="303" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1588605363218">
       <screen x="1920" y="303" width="1366" height="738" />
     </state>
     <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588363783212" />
     <state x="-1497" y="-189" width="1157" height="825" key="CommitChangelistDialog2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186627527" />
     <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1588108803725" />
-    <state x="2129" y="303" width="1157" height="738" key="CommitChangelistDialog2/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588590018540" />
+    <state x="2129" y="303" width="1157" height="738" key="CommitChangelistDialog2/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588605363218" />
     <state x="510" y="107" key="EnvironmentVariablesDialog" timestamp="1587643259068">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -459,10 +462,10 @@
     <state x="165" y="27" key="SettingsEditor/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588360192997" />
     <state x="-1609" y="-211" key="SettingsEditor/0.0.1366.738/-1888.-304.1888.1080@-1888.-304.1888.1080" timestamp="1587462975503" />
     <state x="-1660" y="-161" key="SettingsEditor/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587651595940" />
-    <state x="2195" y="404" key="Vcs.Push.Dialog.v2" timestamp="1588590283107">
+    <state x="2195" y="404" key="Vcs.Push.Dialog.v2" timestamp="1588605393061">
       <screen x="1920" y="303" width="1366" height="738" />
     </state>
-    <state x="2195" y="404" key="Vcs.Push.Dialog.v2/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588590283107" />
+    <state x="2195" y="404" key="Vcs.Push.Dialog.v2/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588605393061" />
     <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587500903282">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -471,11 +474,12 @@
       <screen x="1920" y="303" width="1366" height="738" />
     </state>
     <state x="2012" y="395" width="1182" height="554" key="dock-window-1/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588522183357" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1588359654448">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="2266" y="362" width="672" height="678" key="search.everywhere.popup" timestamp="1588614058837">
+      <screen x="1920" y="303" width="1366" height="738" />
     </state>
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588359654448" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588076302709" />
+    <state x="2266" y="362" width="672" height="678" key="search.everywhere.popup/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588614058837" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Portfolio_Construction$test.coverage" NAME="test Coverage Results" MODIFIED="1588009262398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

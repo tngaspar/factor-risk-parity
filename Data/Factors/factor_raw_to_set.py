@@ -30,9 +30,6 @@ QMJ.index = pd.to_datetime(QMJ.index)
 CMA = pd.read_csv(r'Raw_data\F-F_Research_Data_5_Factors_2x3_daily.CSV', index_col=0, usecols=['DATE', 'CMA'])
 CMA.index = pd.to_datetime(CMA.index, format='%Y%m%d')
 
-CMA = pd.read_csv(r'Raw_data\F-F_Research_Data_5_Factors_2x3_daily.CSV', index_col=0, usecols=['DATE', 'CMA'])
-CMA.index = pd.to_datetime(CMA.index, format='%Y%m%d')
-
 RMW = pd.read_csv(r'Raw_data\F-F_Research_Data_5_Factors_2x3_daily.CSV', index_col=0, usecols=['DATE', 'RMW'])
 RMW.index = pd.to_datetime(RMW.index, format='%Y%m%d')
 

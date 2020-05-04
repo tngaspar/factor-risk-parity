@@ -1,5 +1,7 @@
 import pandas as pd
 
+# BaB,SMB,HML,HML_Devil,UMD,QMJ,CMA,RMW,MOM
+
 
 def get_factors(factor_list, start_date=None, end_date=None,):
     all_factors = pd.read_csv(r'Data\Factors\all_factors.csv', index_col=0).ffill()

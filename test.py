@@ -4,7 +4,8 @@ import datetime as dt
 import importlib
 import numpy as np
 import matplotlib.pyplot as plt
-
+import seaborn as sns
+from factor_analyzer import FactorAnalyzer
 
 # ############### Import my scripts ###############
 import stock_data
@@ -54,7 +55,7 @@ sp500 = ['MMM', 'ABT', 'ABBV', 'ABMD', 'ACN', 'ATVI', 'ADBE', 'AMD', 'AAP', 'AES
 tickers = sp500
 
 # portfolio investment period
-start_date = dt.date(2006, 12, 25)
+start_date = dt.date(2006, 12, 31)
 end_date = dt.date(2019, 12, 31)
 
 # remove NaN columns from investment universe (prevents errors)
@@ -67,5 +68,5 @@ tickers = [eq for eq in tickers if eq not in nan_cols]
 
 
 # ############### testing area ###############
-
-factors = factor_data.get_factors(['all'], start_date, end_date)
+t_factors = factor_data.get_factors(['BaB', 'SMB', 'HML', 'UMD', 'QMJ', 'RMW'], start_date, end_date)
+t_stocks = stock_data.get_daily_returns(tickers, start_date, end_date).fillna(0)
