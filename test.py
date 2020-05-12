@@ -70,3 +70,5 @@ tickers = [eq for eq in tickers if eq not in nan_cols]
 # ############### testing area ###############
 t_factors = factor_data.get_factors(['BaB', 'SMB', 'HML', 'UMD', 'QMJ', 'RMW'], start_date, end_date)
 t_stocks = stock_data.get_daily_returns(tickers, start_date, end_date).fillna(0)
+
+sp500_daily_returns = pd.Series(pd.read_csv(r'Data\SP500_index_daily_returns.csv'))

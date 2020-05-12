@@ -53,7 +53,7 @@ sp500 = ['MMM', 'ABT', 'ABBV', 'ABMD', 'ACN', 'ATVI', 'ADBE', 'AMD', 'AAP', 'AES
 tickers = sp500
 
 # portfolio investment period
-start_date = dt.date(2006, 12, 25)
+start_date = dt.date(2009, 12, 25)
 end_date = dt.date(2019, 12, 31)
 
 # remove NaN columns from investment universe (prevents errors)
