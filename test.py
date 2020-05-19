@@ -11,10 +11,12 @@ from factor_analyzer import FactorAnalyzer
 import stock_data
 import risk_parity as rp
 import factor_data
+import factor_risk_parity as frp
 
 # Reload frequently changed scripts
 importlib.reload(rp)
 importlib.reload(factor_data)
+importlib.reload(frp)
 
 # ############### Data gathering ###############
 test_tickers = ['GOOGL', 'AAPL', 'AMZN']
@@ -55,7 +57,7 @@ sp500 = ['MMM', 'ABT', 'ABBV', 'ABMD', 'ACN', 'ATVI', 'ADBE', 'AMD', 'AAP', 'AES
 tickers = sp500
 
 # portfolio investment period
-start_date = dt.date(2006, 12, 31)
+start_date = dt.date(2014, 12, 31)
 end_date = dt.date(2019, 12, 31)
 
 # remove NaN columns from investment universe (prevents errors)
@@ -68,7 +70,23 @@ tickers = [eq for eq in tickers if eq not in nan_cols]
 
 
 # ############### testing area ###############
-t_factors = factor_data.get_factors(['BaB', 'SMB', 'HML', 'UMD', 'QMJ', 'RMW'], start_date, end_date)
-t_stocks = stock_data.get_daily_returns(tickers, start_date, end_date).fillna(0)
+t_factors = factor_data.get_factors(['BaB', 'SMB', 'HML_Devil', 'UMD', 'QMJ', 'RMW'], start_date, end_date)[1:]*0.01
+t_stocks = stock_data.get_daily_returns(tickers, start_date, end_date)[1:]
 
-sp500_daily_returns = pd.Series(pd.read_csv(r'Data\SP500_index_daily_returns.csv'))
+
+loadings_matrix = frp.get_loading_matrix(t_stocks, t_factors)
+
+# risk contributions
+
+# Sigma = t_stocks.cov().values
+# vol_x = np.sqrt(np.matmul(np.matmul(x, Sigma), x))
+#
+# Aplus = np.linalg.pinv(loadings_matrix)
+#
+# AT_x = np.matmul(loadings_matrix.values.T, x)
+# Aplus_Sigma_x = np.matmul(np.matmul(Aplus, Sigma), x)
+#
+# risk_contributions = (AT_x * Aplus_Sigma_x)/vol_x
+
+x = np.ones(loadings_matrix.shape[0])*1/6
+risk_contributions = frp.get_risk_contributions(x, t_stocks, t_factors)

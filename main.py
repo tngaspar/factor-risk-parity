@@ -8,10 +8,13 @@ import matplotlib.pyplot as plt
 
 # ############### Import my scripts ###############
 import stock_data
+import factor_data
 import risk_parity as rp
+import factor_risk_parity as frp
 
 # Reload frequently changed scripts
 importlib.reload(rp)
+importlib.reload(frp)
 
 
 # ############### Data gathering ###############
@@ -53,7 +56,7 @@ sp500 = ['MMM', 'ABT', 'ABBV', 'ABMD', 'ACN', 'ATVI', 'ADBE', 'AMD', 'AAP', 'AES
 tickers = sp500
 
 # portfolio investment period
-start_date = dt.date(2009, 12, 25)
+start_date = dt.date(2006, 12, 25)
 end_date = dt.date(2019, 12, 31)
 
 # remove NaN columns from investment universe (prevents errors)
@@ -61,7 +64,9 @@ p_tickers = stock_data.get_prices(tickers, start_date, start_date + dt.timedelta
 nan_cols = [i for i in p_tickers.columns if p_tickers[i].isnull().any()]
 tickers = [eq for eq in tickers if eq not in nan_cols]
 
-
+# factors
+factor_names = ['BaB', 'SMB', 'HML_Devil', 'UMD', 'QMJ', 'RMW']
+factors = factor_data.get_factors(factor_names, start_date, end_date)[1:]*0.01
 # ############### Running methods ###############
 
 # single period weights:
@@ -81,6 +86,6 @@ daily_returns_risk_parity.to_csv(r'Output\risk_parity_daily_returns.csv')
 
 
 # ############### testing area ###############
-
-
+stocks_ret = stock_data.get_daily_returns(tickers, start_date, end_date)[1:]
+loading_matrix = frp.get_loading_matrix(stocks_ret, factors)
 

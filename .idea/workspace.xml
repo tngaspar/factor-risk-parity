@@ -21,12 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="72ca0e08-10fa-444d-8092-0d20e699432c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/SP500_index_daily_returns.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/SP500_index_daily_returns.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/SP500_index_returns.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data/SP500_index_returns.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jupynotebook.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Jupynotebook.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/risk_parity_daily_returns.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Output/risk_parity_daily_returns.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/factor_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/factor_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/factor_risk_parity.py" beforeDir="false" afterPath="$PROJECT_DIR$/factor_risk_parity.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/risk_parity.py" beforeDir="false" afterPath="$PROJECT_DIR$/risk_parity.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,11 +67,14 @@
     </option>
     <option name="myUseExistingConsole" value="true" />
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.test">
     <configuration name="SP500_index_returns" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Data" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -177,9 +177,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.SP500_index_returns" />
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.factor_raw_to_set" />
       </list>
     </recent_temporary>
@@ -228,7 +228,10 @@
       <workItem from="1588586655196" duration="6597000" />
       <workItem from="1588596206673" duration="14684000" />
       <workItem from="1588708484022" duration="847000" />
-      <workItem from="1589258349597" duration="7308000" />
+      <workItem from="1589258349597" duration="7379000" />
+      <workItem from="1589645031802" duration="4000" />
+      <workItem from="1589890842857" duration="327000" />
+      <workItem from="1589891229895" duration="9676000" />
     </task>
     <task id="LOCAL-00001" summary="testing commit on pycharm">
       <created>1586107211472</created>
@@ -349,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589259735482</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="benchmark working on pyfolio&#10;need to fix sp500 index (currently hard coded)">
+      <created>1589274008414</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1589274008414</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -395,13 +405,18 @@
     <MESSAGE value="added factor_data.py that gets factor data" />
     <MESSAGE value="last commit of the day" />
     <MESSAGE value="added SP500 index returns to Data" />
-    <option name="LAST_COMMIT_MESSAGE" value="added SP500 index returns to Data" />
+    <MESSAGE value="benchmark working on pyfolio&#10;need to fix sp500 index (currently hard coded)" />
+    <option name="LAST_COMMIT_MESSAGE" value="benchmark working on pyfolio&#10;need to fix sp500 index (currently hard coded)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="47" key="#Inspections" timestamp="1587650734857">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="309" y="47" key="#Inspections/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587650734857" />
+    <state x="568" y="231" key="#Notifications" timestamp="1589891116143">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="568" y="231" key="#Notifications/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1589891116143" />
     <state x="170" y="9" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587642965444">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -412,9 +427,10 @@
     </state>
     <state x="358" y="170" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587644506360" />
     <state x="2278" y="473" key="#com.intellij.fileTypes.FileTypeChooser/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588600020999" />
-    <state x="363" y="104" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1587463071883">
+    <state x="363" y="104" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1589891149987">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
+    <state x="363" y="104" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1589891149987" />
     <state x="363" y="104" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587463071883" />
     <state x="2333" y="418" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588531422593">
       <screen x="1920" y="303" width="1366" height="738" />
@@ -424,10 +440,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="0" y="121" key="#xdebugger.XInspectDialog/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588419644103" />
-    <state x="283" y="0" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1589259733904">
+    <state x="283" y="0" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1589274007009">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1589259733904" />
+    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1589274007009" />
     <state x="-1497" y="-189" width="1157" height="825" key="CommitChangelistDialog2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186627527" />
     <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1588618676938" />
     <state x="2129" y="303" width="1157" height="738" key="CommitChangelistDialog2/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588605363218" />
@@ -441,31 +457,31 @@
     <state x="365" y="217" key="FileChooserDialogImpl/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588420461825" />
     <state x="365" y="227" key="FileChooserDialogImpl/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587643538719" />
     <state x="2285" y="520" key="FileChooserDialogImpl/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588420608200" />
-    <state width="1323" height="182" key="GridCell.Tab.0.bottom" timestamp="1589265015307">
+    <state width="1323" height="182" key="GridCell.Tab.0.bottom" timestamp="1589274032115">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1589265015307" />
+    <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1589274032115" />
     <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186638167" />
     <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1588457762020" />
     <state width="1323" height="182" key="GridCell.Tab.0.bottom/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588596039888" />
-    <state width="1323" height="182" key="GridCell.Tab.0.center" timestamp="1589265015306">
+    <state width="1323" height="182" key="GridCell.Tab.0.center" timestamp="1589274032115">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1589265015306" />
+    <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1589274032115" />
     <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186638165" />
     <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1588457762019" />
     <state width="1323" height="182" key="GridCell.Tab.0.center/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588596039888" />
-    <state width="1323" height="182" key="GridCell.Tab.0.left" timestamp="1589265015306">
+    <state width="1323" height="182" key="GridCell.Tab.0.left" timestamp="1589274032114">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1589265015306" />
+    <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1589274032114" />
     <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186638165" />
     <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1588457762018" />
     <state width="1323" height="182" key="GridCell.Tab.0.left/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588596039888" />
-    <state width="1323" height="182" key="GridCell.Tab.0.right" timestamp="1589265015307">
+    <state width="1323" height="182" key="GridCell.Tab.0.right" timestamp="1589274032115">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1589265015307" />
+    <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1589274032115" />
     <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186638165" />
     <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1588457762019" />
     <state width="1323" height="182" key="GridCell.Tab.0.right/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588596039888" />
