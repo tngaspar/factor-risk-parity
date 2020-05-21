@@ -8,6 +8,7 @@ from dateutil.relativedelta import relativedelta
 from alive_progress import alive_bar
 from alive_progress import config_handler
 config_handler.set_global(force_tty=True)
+from numba import njit, prange, jit
 
 def get_loading_matrix(stocks, factors):
     # add case where dates dont match
@@ -35,7 +36,7 @@ def get_risk_contributions(asset_weights, stocks, factors):
 
     risk_contributions = (AT_x * Aplus_Sigma_x) / vol_x
     #print(risk_contributions/vol_x)
-    print(sum(x))
+    #print(sum(x))
     return risk_contributions
 
 
@@ -74,10 +75,30 @@ def portfolio_weights_factor_risk_parity(tickers, factor_tickers, start_date, en
         for t in business_days_end_months:
             stocks = stock_data.get_daily_returns(tickers, t + relativedelta(months=-48), t)[1:]
             factors = factor_data.get_factors(factor_tickers, stocks.index[0], stocks.index[-1]) * 0.01
-            print(stocks)
-            print(factors)
+            #print(stocks)
+            #print(factors)
             portfolio_weights.loc[t] = weights_factor_risk_parity(stocks, factors, x0)
             x0 = portfolio_weights.loc[t]
             bar()
 
     return portfolio_weights
+
+# @jit(parallel=True)
+# def portfolio_weights_factor_risk_parity(tickers, factor_tickers, start_date, end_date, portfolio_rebalance_period):
+#     business_days_end_months = pd.date_range(start_date, end_date, freq=portfolio_rebalance_period)
+#     portfolio_weights = pd.DataFrame(index=business_days_end_months, columns=tickers)
+#     x0 = None
+#     #with alive_bar(len(business_days_end_months)) as bar:
+#     for i in prange(len(business_days_end_months)):
+#         t = business_days_end_months[i]
+#         stocks = stock_data.get_daily_returns(tickers, t + relativedelta(months=-48), t)[1:]
+#         factors = factor_data.get_factors(factor_tickers, stocks.index[0], stocks.index[-1]) * 0.01
+#         #print(stocks)
+#         #print(factors)
+#         print()
+#         portfolio_weights.loc[t] = weights_factor_risk_parity(stocks, factors, x0)
+#         #x0 = portfolio_weights.loc[t]
+#         print(i)
+#             #bar()
+#
+#     return portfolio_weights
