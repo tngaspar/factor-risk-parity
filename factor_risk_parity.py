@@ -8,7 +8,7 @@ from dateutil.relativedelta import relativedelta
 from alive_progress import alive_bar
 from alive_progress import config_handler
 config_handler.set_global(force_tty=True)
-from numba import njit, prange, jit
+
 
 def get_loading_matrix(stocks, factors):
     # add case where dates dont match

@@ -12,11 +12,13 @@ import stock_data
 import risk_parity as rp
 import factor_data
 import factor_risk_parity as frp
+import backtest_functions
 
 # Reload frequently changed scripts
 importlib.reload(rp)
 importlib.reload(factor_data)
 importlib.reload(frp)
+importlib.reload(backtest_functions)
 
 # ############### Data gathering ###############
 test_tickers = ['MMM', 'ABT', 'ABBV', 'ABMD', 'ACN', 'ATVI', 'ADBE', 'AMD', 'AAP', 'AES']
@@ -81,40 +83,11 @@ t_stocks = stock_data.get_daily_returns(tickers, start_date, end_date)[1:]
 
 pt_w = frp.portfolio_weights_factor_risk_parity(tickers, factor_tickers, start_date, end_date, 'BM')
 
+importlib.reload(backtest_functions)
+d_rt = backtest_functions.daily_returns_of_portfolio(pt_w)
 
-# risk contributions
+d_rt.to_csv(r'Output\test_frp_daily_returns.csv')
 
-# Sigma = t_stocks.cov().values
-# vol_x = np.sqrt(np.matmul(np.matmul(x, Sigma), x))
-#
-# Aplus = np.linalg.pinv(loadings_matrix)
-#
-# AT_x = np.matmul(loadings_matrix.values.T, x)
-# Aplus_Sigma_x = np.matmul(np.matmul(Aplus, Sigma), x)
-#
-# risk_contributions = (AT_x * Aplus_Sigma_x)/vol_x
-
-#x1 = np.ones(loadings_matrix.shape[0])*1/6
-#isk_contributions = frp.get_risk_contributions(x1, t_stocks, t_factors)
-
-#from scipy.optimize import minimize, LinearConstraint
-#n_stocks = t_stocks.shape[1]
-
-#x0 = np.ones(n_stocks)*1/n_stocks
-#x0 = np.zeros(n_stocks)
-
-#(frp.get_risk_contributions(x, t_stocks, t_factors)/frp.sigma_x(x, stock_returns=t_stocks) - 1/t_factors.shape[1])**2
-#fun = lambda x: sum((frp.get_risk_contributions(x, t_stocks, t_factors)/frp.sigma_x(x, stock_returns=t_stocks) - 1/t_factors.shape[1])**2)
-
-#cons
-#cons = [{'type': 'ineq', 'fun': lambda x:  sum(x) + 1},
-#        {'type': 'ineq', 'fun': lambda x: -sum(x) + 1}]
-
-#bnds
-#bounds = [(-1/n_stocks, 1/n_stocks) for n in range(n_stocks)]
-
-#res = minimize(fun, x0, method='SLSQP', bounds=bounds, constraints=cons, tol=0.00001, options={'disp':True})
-
-#frp.get_risk_contributions(res.x, t_stocks, t_factors)
-
-#w = frp.weights_factor_risk_parity(t_stocks, t_factors)
+ptrp_2 = rp.portfolio_weights_risk_parity(tickers, start_date, end_date, portfolio_rebalance_period= 'BM')
+d_rt_rp = backtest_functions.daily_returns_of_portfolio(ptrp_2)
+d_rt_rp.to_csv(r'Output\test_rp_daily_returns.csv')
