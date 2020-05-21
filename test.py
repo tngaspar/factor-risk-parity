@@ -19,7 +19,7 @@ importlib.reload(factor_data)
 importlib.reload(frp)
 
 # ############### Data gathering ###############
-test_tickers = ['GOOGL', 'AAPL', 'AMZN']
+test_tickers = ['MMM', 'ABT', 'ABBV', 'ABMD', 'ACN', 'ATVI', 'ADBE', 'AMD', 'AAP', 'AES']
 sp500 = ['MMM', 'ABT', 'ABBV', 'ABMD', 'ACN', 'ATVI', 'ADBE', 'AMD', 'AAP', 'AES', 'AFL', 'A', 'APD', 'AKAM', 'ALK',
          'ALB', 'ARE', 'ALXN', 'ALGN', 'ALLE', 'AGN', 'ADS', 'LNT', 'ALL', 'GOOGL', 'GOOG', 'MO', 'AMZN', 'AMCR',
          'AEE', 'AAL', 'AEP', 'AXP', 'AIG', 'AMT', 'AWK', 'AMP', 'ABC', 'AME', 'AMGN', 'APH', 'ADI', 'ANSS', 'ANTM',
@@ -55,13 +55,14 @@ sp500 = ['MMM', 'ABT', 'ABBV', 'ABMD', 'ACN', 'ATVI', 'ADBE', 'AMD', 'AAP', 'AES
          'WM', 'WAT', 'WEC', 'WFC', 'WELL', 'WDC', 'WU', 'WRK', 'WY', 'WHR', 'WMB', 'WLTW', 'WYNN', 'XEL', 'XRX',
          'XLNX', 'XYL', 'YUM', 'ZBRA', 'ZBH', 'ZION', 'ZTS']
 tickers = sp500
+#tickers = test_tickers
 
 # portfolio investment period
-start_date = dt.date(2014, 12, 31)
+start_date = dt.date(2015, 12, 31)
 end_date = dt.date(2019, 12, 31)
 
 # remove NaN columns from investment universe (prevents errors)
-p_tickers = stock_data.get_prices(tickers, start_date, start_date + dt.timedelta(days=+5))
+p_tickers = stock_data.get_prices(tickers, start_date - dt.timedelta(days=365*4), start_date - dt.timedelta(days=365*4) + dt.timedelta(days=+5))
 nan_cols = [i for i in p_tickers.columns if p_tickers[i].isnull().any()]
 tickers = [eq for eq in tickers if eq not in nan_cols]
 
@@ -70,11 +71,16 @@ tickers = [eq for eq in tickers if eq not in nan_cols]
 
 
 # ############### testing area ###############
-t_factors = factor_data.get_factors(['BaB', 'SMB', 'HML_Devil', 'UMD', 'QMJ', 'RMW'], start_date, end_date)[1:]*0.01
+# ['BaB', 'SMB', 'HML_Devil', 'UMD', 'QMJ', 'RMW']
+factor_tickers = ['BaB', 'SMB', 'HML_Devil', 'UMD', 'QMJ', 'RMW']
+t_factors = factor_data.get_factors(factor_tickers, start_date, end_date)[1:]*0.01
 t_stocks = stock_data.get_daily_returns(tickers, start_date, end_date)[1:]
 
 
-loadings_matrix = frp.get_loading_matrix(t_stocks, t_factors)
+#loadings_matrix = frp.get_loading_matrix(t_stocks, t_factors)
+
+pt_w = frp.portfolio_weights_factor_risk_parity(tickers, factor_tickers, start_date, end_date, 'BM')
+
 
 # risk contributions
 
@@ -88,5 +94,27 @@ loadings_matrix = frp.get_loading_matrix(t_stocks, t_factors)
 #
 # risk_contributions = (AT_x * Aplus_Sigma_x)/vol_x
 
-x = np.ones(loadings_matrix.shape[0])*1/6
-risk_contributions = frp.get_risk_contributions(x, t_stocks, t_factors)
+#x1 = np.ones(loadings_matrix.shape[0])*1/6
+#isk_contributions = frp.get_risk_contributions(x1, t_stocks, t_factors)
+
+#from scipy.optimize import minimize, LinearConstraint
+#n_stocks = t_stocks.shape[1]
+
+#x0 = np.ones(n_stocks)*1/n_stocks
+#x0 = np.zeros(n_stocks)
+
+#(frp.get_risk_contributions(x, t_stocks, t_factors)/frp.sigma_x(x, stock_returns=t_stocks) - 1/t_factors.shape[1])**2
+#fun = lambda x: sum((frp.get_risk_contributions(x, t_stocks, t_factors)/frp.sigma_x(x, stock_returns=t_stocks) - 1/t_factors.shape[1])**2)
+
+#cons
+#cons = [{'type': 'ineq', 'fun': lambda x:  sum(x) + 1},
+#        {'type': 'ineq', 'fun': lambda x: -sum(x) + 1}]
+
+#bnds
+#bounds = [(-1/n_stocks, 1/n_stocks) for n in range(n_stocks)]
+
+#res = minimize(fun, x0, method='SLSQP', bounds=bounds, constraints=cons, tol=0.00001, options={'disp':True})
+
+#frp.get_risk_contributions(res.x, t_stocks, t_factors)
+
+#w = frp.weights_factor_risk_parity(t_stocks, t_factors)
