@@ -5,6 +5,7 @@ import statsmodels.api as sm
 import numpy as np
 from scipy.optimize import minimize
 from dateutil.relativedelta import relativedelta
+from factor_analyzer.factor_analyzer import FactorAnalyzer
 from alive_progress import alive_bar
 from alive_progress import config_handler
 config_handler.set_global(force_tty=True)
@@ -18,11 +19,20 @@ def get_loading_matrix(stocks, factors):
 
     return loading_matrix
 
+def get_loading_matrix_stat(stocks):
+    # add case where dates dont match
+    fa = FactorAnalyzer(n_factors=5, rotation='varimax')
+    fa.fit(stocks)
+    loading_mat = pd.DataFrame(fa.loadings_)
+
+    return loading_mat
+
 
 def get_risk_contributions(asset_weights, stocks, factors):
     # add size debug
     x = asset_weights
     loadings_matrix = get_loading_matrix(stocks, factors)
+    #loadings_matrix = get_loading_matrix_stat(stocks)
 
     Sigma = stocks.cov().values
     # change Sigma based of results from OLS

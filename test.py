@@ -100,3 +100,15 @@ d_rt.to_csv(r'Output\test_frp_daily_returns.csv')
 ptrp_2 = rp.portfolio_weights_risk_parity(tickers, start_date, end_date, portfolio_rebalance_period= 'BM')
 d_rt_rp = backtest_functions.daily_returns_of_portfolio(ptrp_2)
 d_rt_rp.to_csv(r'Output\test_rp_daily_returns.csv')
+
+# rc testing cuz not equal
+n_stocks = t_stocks.shape[1]
+x0 = np.ones(n_stocks) * 1 / n_stocks
+rc = frp.get_risk_contributions(x0, t_stocks, t_factors)
+sigma_x = frp.sigma_x(x0, t_stocks)
+
+from factor_analyzer.factor_analyzer import FactorAnalyzer
+fa = FactorAnalyzer(n_factors=5, rotation='varimax')
+fa.fit(t_stocks)
+fa.get_factor_variance()
+a=fa.loadings_
