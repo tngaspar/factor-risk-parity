@@ -36,5 +36,8 @@ RMW.index = pd.to_datetime(RMW.index, format='%Y%m%d')
 MOM = pd.read_csv(r'Raw_data\F-F_Momentum_Factor_daily.CSV', index_col=0, usecols=['DATE', 'MOM'])
 MOM.index = pd.to_datetime(MOM.index, format='%Y%m%d')
 
-all_factors = pd.concat([BaB, SMB, HML, HML_Devil, UMD, QMJ, CMA, RMW, MOM], axis=1)
+Mkt_RF = pd.read_csv(r'Raw_data\F-F_Research_Data_5_Factors_2x3_daily.CSV', index_col=0, usecols=['DATE', 'Mkt-RF'])
+Mkt_RF.index = pd.to_datetime(Mkt_RF.index, format='%Y%m%d')
+
+all_factors = pd.concat([BaB, SMB, HML, HML_Devil, UMD, QMJ, CMA, RMW, MOM, Mkt_RF], axis=1)
 all_factors.to_csv('all_factors.csv')

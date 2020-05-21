@@ -1,6 +1,6 @@
 import pandas as pd
 
-# BaB,SMB,HML,HML_Devil,UMD,QMJ,CMA,RMW,MOM
+# BaB,SMB,HML,HML_Devil,UMD,QMJ,CMA,RMW,MOM,Mkt-RF
 # currently data is in percentages
 
 def get_factors(factor_list, start_date=None, end_date=None,):
