@@ -66,10 +66,10 @@ sp500 = ['MMM', 'ABT', 'ABBV', 'ABMD', 'ACN', 'ATVI', 'ADBE', 'AMD', 'AAP', 'AES
          'WM', 'WAT', 'WEC', 'WFC', 'WELL', 'WDC', 'WU', 'WRK', 'WY', 'WHR', 'WMB', 'WLTW', 'WYNN', 'XEL', 'XRX',
          'XLNX', 'XYL', 'YUM', 'ZBRA', 'ZBH', 'ZION', 'ZTS']
 tickers = sp500
-tickers = test_tickers
+#tickers = test_tickers
 
 # portfolio investment period
-start_date = dt.date(2015, 12, 31)
+start_date = dt.date(2005, 12, 31)
 end_date = dt.date(2019, 12, 31)
 
 # remove NaN columns from investment universe (prevents errors)
@@ -83,7 +83,7 @@ tickers = [eq for eq in tickers if eq not in nan_cols]
 
 # ############### testing area ###############
 # ['BaB', 'SMB', 'HML_Devil', 'UMD', 'QMJ', 'RMW', 'Mkt-RF']
-factor_tickers = ['SMB', 'MOM', 'Mkt-RF']
+factor_tickers = ['BaB', 'SMB', 'HML_Devil', 'UMD', 'QMJ', 'RMW', 'Mkt-RF']
 t_factors = factor_data.get_factors(factor_tickers, start_date, end_date)[1:]*0.01
 t_stocks = stock_data.get_daily_returns(tickers, start_date, end_date)[1:]
 
@@ -102,13 +102,13 @@ d_rt_rp = backtest_functions.daily_returns_of_portfolio(ptrp_2)
 d_rt_rp.to_csv(r'Output\test_rp_daily_returns.csv')
 
 # rc testing cuz not equal
-n_stocks = t_stocks.shape[1]
-x0 = np.ones(n_stocks) * 1 / n_stocks
-rc = frp.get_risk_contributions(x0, t_stocks, t_factors)
-sigma_x = frp.sigma_x(x0, t_stocks)
+# n_stocks = t_stocks.shape[1]
+# x0 = np.ones(n_stocks) * 1 / n_stocks
+# rc = frp.get_risk_contributions(x0, t_stocks, t_factors)
+# sigma_x = frp.sigma_x(x0, t_stocks)
 
-from factor_analyzer.factor_analyzer import FactorAnalyzer
-fa = FactorAnalyzer(n_factors=5, rotation='varimax')
-fa.fit(t_stocks)
-fa.get_factor_variance()
-a=fa.loadings_
+# from factor_analyzer.factor_analyzer import FactorAnalyzer
+# fa = FactorAnalyzer(n_factors=5, rotation='varimax')
+# fa.fit(t_stocks)
+# fa.get_factor_variance()
+# a=fa.loadings_
