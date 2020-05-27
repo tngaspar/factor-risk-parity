@@ -13,3 +13,11 @@ def daily_returns_of_portfolio(weights_portfolio):
         index=pd.to_datetime(stock_returns.index), name='Returns')
 
     return daily_returns
+
+
+def cumulative_returns(returns):
+    cum_ret = (returns + 1).cumprod()
+
+    return cum_ret
+
+

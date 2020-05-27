@@ -22,7 +22,7 @@ def portfolio_weights_risk_parity(tickers, start_date, end_date, portfolio_rebal
 
     with alive_bar(len(business_days_end_months)) as bar:
         for t in business_days_end_months:
-            portfolio_weights.loc[t] = weights_risk_parity(tickers, t + relativedelta(months=-120), t)
+            portfolio_weights.loc[t] = weights_risk_parity(tickers, t + relativedelta(months=-48), t)
             bar()
 
     return portfolio_weights

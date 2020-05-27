@@ -71,12 +71,16 @@ def weights_factor_risk_parity(stocks, loadings_matrix, Sigma, x0):
 
     # constrains
     cons = [{'type': 'ineq', 'fun': lambda x: -sum(x) + 1},
-            {'type': 'ineq', 'fun': lambda x: sum(x) - 1}]
+            {'type': 'ineq', 'fun': lambda x: sum(x) - 1},
+            {'type': 'ineq', 'fun': lambda x: np.matmul(loadings_matrix.values.T, x) - 0},
+            {'type': 'ineq', 'fun': lambda x: -np.matmul(loadings_matrix.values.T, x) + 1}
+            ]
 
+    
     # bounds
-    bounds = [(-1 / n_stocks, 1) for n in range(n_stocks)]
+    bounds = [(-1 / n_stocks, 1 / 5) for n in range(n_stocks)]
 
-    res = minimize(fun, x0, method='SLSQP', bounds=bounds, constraints=cons, tol=0.00001, options={'disp': True})
+    res = minimize(fun, x0, method='SLSQP', bounds=bounds, constraints=cons, tol=0.00001, options={'disp': False})
     return res.x
 
 
@@ -86,13 +90,16 @@ def portfolio_weights_factor_risk_parity(tickers, factor_tickers, start_date, en
     x0 = None
     with alive_bar(len(business_days_end_months)) as bar:
         for t in business_days_end_months:
-            stocks = stock_data.get_daily_returns(tickers, t + relativedelta(months=-36), t)[1:]
+            stocks = stock_data.get_daily_returns(tickers, t + relativedelta(months=-48), t)[1:]
             factors = factor_data.get_factors(factor_tickers, stocks.index[0], stocks.index[-1]) * 0.01
             loadings_matrix = get_loading_matrix(stocks, factors)
             #loadings_matrix = get_loading_matrix_stat(stocks)
             sigma = big_sigma(stocks)
             portfolio_weights.loc[t] = weights_factor_risk_parity(stocks, loadings_matrix, sigma, x0)
             x0 = portfolio_weights.loc[t]
+            #print(get_risk_contributions(x0, loadings_matrix, sigma))
+            print(np.matmul(loadings_matrix.T, x0))
+            #print(loadings_matrix.values)
             bar()
 
     return portfolio_weights

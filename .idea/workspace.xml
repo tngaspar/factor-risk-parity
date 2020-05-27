@@ -21,9 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="72ca0e08-10fa-444d-8092-0d20e699432c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/SP500_index_daily_returns.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/SP500_index_daily_returns.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/SP500_index_returns.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data/SP500_index_returns.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Output/test_frp_daily_returns.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Output/test_frp_daily_returns.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Output/test_rp_daily_returns.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Output/test_rp_daily_returns.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backtest_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/backtest_functions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/factor_risk_parity.py" beforeDir="false" afterPath="$PROJECT_DIR$/factor_risk_parity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/risk_parity.py" beforeDir="false" afterPath="$PROJECT_DIR$/risk_parity.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_Jupynotebook.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test_Jupynotebook.ipynb" afterDir="false" />
     </list>
@@ -78,9 +82,6 @@
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Data" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -122,6 +123,9 @@
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Data/Factors" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -141,6 +145,9 @@
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -200,10 +207,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.SP500_index_returns" />
         <item itemvalue="Python.factor_raw_to_set" />
         <item itemvalue="Python.factor_risk_parity" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.SP500_index_returns" />
       </list>
     </recent_temporary>
   </component>
@@ -255,7 +262,10 @@
       <workItem from="1589645031802" duration="4000" />
       <workItem from="1589890842857" duration="327000" />
       <workItem from="1589891229895" duration="10781000" />
-      <workItem from="1590057018971" duration="30003000" />
+      <workItem from="1590057018971" duration="34828000" />
+      <workItem from="1590438153607" duration="1552000" />
+      <workItem from="1590489207089" duration="1461000" />
+      <workItem from="1590582644832" duration="11973000" />
     </task>
     <task id="LOCAL-00001" summary="testing commit on pycharm">
       <created>1586107211472</created>
@@ -425,7 +435,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590086479153</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="frp working well and faster">
+      <created>1590091125968</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1590091125968</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -478,7 +495,8 @@
     <MESSAGE value="daily returns function ready for backtest implemented" />
     <MESSAGE value="stable" />
     <MESSAGE value="before changing loadings matrix and sigma get" />
-    <option name="LAST_COMMIT_MESSAGE" value="before changing loadings matrix and sigma get" />
+    <MESSAGE value="frp working well and faster" />
+    <option name="LAST_COMMIT_MESSAGE" value="frp working well and faster" />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="47" key="#Inspections" timestamp="1587650734857">
@@ -512,10 +530,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="0" y="121" key="#xdebugger.XInspectDialog/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588419644103" />
-    <state x="283" y="0" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1590086477269">
+    <state x="283" y="0" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1590091124208">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1590086477269" />
+    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1590091124208" />
     <state x="-1497" y="-189" width="1157" height="825" key="CommitChangelistDialog2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186627527" />
     <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1588618676938" />
     <state x="2129" y="303" width="1157" height="738" key="CommitChangelistDialog2/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588605363218" />
@@ -581,16 +599,16 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="466" y="90" key="RollbackChangesDialog/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1586107388427" />
-    <state x="165" y="27" key="SettingsEditor" timestamp="1590084427062">
+    <state x="165" y="27" key="SettingsEditor" timestamp="1590443879319">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="165" y="27" key="SettingsEditor/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1590084427062" />
+    <state x="165" y="27" key="SettingsEditor/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1590443879319" />
     <state x="-1609" y="-211" key="SettingsEditor/0.0.1366.738/-1888.-304.1888.1080@-1888.-304.1888.1080" timestamp="1587462975503" />
     <state x="-1660" y="-161" key="SettingsEditor/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587651595940" />
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1590078720721">
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1590091263169">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1590078720721" />
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1590091263169" />
     <state x="2195" y="404" key="Vcs.Push.Dialog.v2/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588605393061" />
     <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587500903282">
       <screen x="0" y="0" width="1366" height="738" />
