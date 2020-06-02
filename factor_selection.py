@@ -4,6 +4,9 @@ import stock_data
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
+import importlib
+importlib.reload(fdata)
+
 
 sp500 = ['MMM', 'ABT', 'ABBV', 'ABMD', 'ACN', 'ATVI', 'ADBE', 'AMD', 'AAP', 'AES', 'AFL', 'A', 'APD', 'AKAM', 'ALK',
          'ALB', 'ARE', 'ALXN', 'ALGN', 'ALLE', 'AGN', 'ADS', 'LNT', 'ALL', 'GOOGL', 'GOOG', 'MO', 'AMZN', 'AMCR',
@@ -42,7 +45,7 @@ sp500 = ['MMM', 'ABT', 'ABBV', 'ABMD', 'ACN', 'ATVI', 'ADBE', 'AMD', 'AAP', 'AES
 
 start_date = dt.date(1990, 1, 1)
 end_date = dt.date(2004, 12, 31)
-all_factors_ret = fdata.get_factors(['all'], start_date, end_date)
+all_factors_ret = fdata.get_factors(['BaB', 'SMB', 'HML_Devil', 'UMD', 'QMJ', 'CMA', 'RMW', 'MOM', 'Mkt-RF'], start_date, end_date)
 stock_ret = stock_data.get_daily_returns(sp500, start_date, end_date)[1:]
 
 corr = all_factors_ret.corr()
@@ -53,18 +56,22 @@ plt.xticks(range(len(corr.columns)), corr.columns)
 plt.yticks(range(len(corr.columns)), corr.columns)
 plt.colorbar()
 plt.show()
-plt.close()
+plt.close('all')
 
 all_factors_cum_ret = (all_factors_ret + 1).cumprod()
 plt.plot(all_factors_cum_ret)
 plt.show()
-plt.close()
+plt.close('all')
+
 
 
 sns.set()
 
 sns.lineplot(data=all_factors_cum_ret, dashes=False)
 plt.show()
+plt.close('all')
 
 
-sns.clustermap(corr.drop(columns=['HML']))
+sns.clustermap(corr)
+plt.show()
+plt.close('all')
