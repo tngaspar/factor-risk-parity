@@ -20,14 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72ca0e08-10fa-444d-8092-0d20e699432c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/factor_selection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/SP500_index_daily_returns.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/SP500_index_daily_returns.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/SP500_index_returns.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data/SP500_index_returns.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Output/test_frp_daily_returns.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Output/test_frp_daily_returns.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/test_rp_daily_returns.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Output/test_rp_daily_returns.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backtest_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/backtest_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/factor_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/factor_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/factor_risk_parity.py" beforeDir="false" afterPath="$PROJECT_DIR$/factor_risk_parity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/risk_parity.py" beforeDir="false" afterPath="$PROJECT_DIR$/risk_parity.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_Jupynotebook.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test_Jupynotebook.ipynb" afterDir="false" />
     </list>
@@ -61,7 +58,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="PyScientificConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -77,11 +74,14 @@
       <recent name="C:\Users\Tiago\Desktop\Portfolio_Construction" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.factor_selection">
     <configuration name="SP500_index_returns" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Data" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -163,22 +163,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="factor_selection" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/factor_selection.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -189,6 +186,9 @@
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -206,11 +206,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.factor_selection" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.SP500_index_returns" />
         <item itemvalue="Python.factor_raw_to_set" />
         <item itemvalue="Python.factor_risk_parity" />
-        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -265,7 +265,10 @@
       <workItem from="1590057018971" duration="34828000" />
       <workItem from="1590438153607" duration="1552000" />
       <workItem from="1590489207089" duration="1461000" />
-      <workItem from="1590582644832" duration="11973000" />
+      <workItem from="1590582644832" duration="11994000" />
+      <workItem from="1591096539217" duration="2075000" />
+      <workItem from="1591098675753" duration="703000" />
+      <workItem from="1591099419639" duration="7750000" />
     </task>
     <task id="LOCAL-00001" summary="testing commit on pycharm">
       <created>1586107211472</created>
@@ -442,7 +445,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590091125968</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="corrected frp">
+      <created>1590608326018</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1590608326018</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -496,7 +506,8 @@
     <MESSAGE value="stable" />
     <MESSAGE value="before changing loadings matrix and sigma get" />
     <MESSAGE value="frp working well and faster" />
-    <option name="LAST_COMMIT_MESSAGE" value="frp working well and faster" />
+    <MESSAGE value="corrected frp" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrected frp" />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="47" key="#Inspections" timestamp="1587650734857">
@@ -530,10 +541,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="0" y="121" key="#xdebugger.XInspectDialog/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588419644103" />
-    <state x="283" y="0" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1590091124208">
+    <state x="283" y="0" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1590608323110">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1590091124208" />
+    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1590608323110" />
     <state x="-1497" y="-189" width="1157" height="825" key="CommitChangelistDialog2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186627527" />
     <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1588618676938" />
     <state x="2129" y="303" width="1157" height="738" key="CommitChangelistDialog2/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588605363218" />
@@ -599,10 +610,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="466" y="90" key="RollbackChangesDialog/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1586107388427" />
-    <state x="165" y="27" key="SettingsEditor" timestamp="1590443879319">
+    <state x="165" y="27" key="SettingsEditor" timestamp="1591099381988">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="165" y="27" key="SettingsEditor/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1590443879319" />
+    <state x="165" y="27" key="SettingsEditor/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1591099381988" />
     <state x="-1609" y="-211" key="SettingsEditor/0.0.1366.738/-1888.-304.1888.1080@-1888.-304.1888.1080" timestamp="1587462975503" />
     <state x="-1660" y="-161" key="SettingsEditor/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587651595940" />
     <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1590091263169">

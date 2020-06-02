@@ -1,31 +1,10 @@
-# ############### Import packages ###############
-import pandas as pd
+import factor_data as fdata
 import datetime as dt
-import importlib
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-from factor_analyzer import FactorAnalyzer
-
-# ############### Import my scripts ###############
 import stock_data
-import risk_parity as rp
-import factor_data
-import factor_risk_parity as frp
-import backtest_functions
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
 
-# Reload frequently changed scripts
-importlib.reload(rp)
-importlib.reload(factor_data)
-importlib.reload(frp)
-importlib.reload(backtest_functions)
-
-# ############### Data gathering ###############
-test_tickers = ['MMM', 'ABT', 'ABBV', 'ABMD', 'ACN', 'ATVI', 'ADBE', 'AMD', 'AAP', 'AES', 'AFL', 'A', 'APD', 'AKAM', 'ALK',
-         'ALB', 'ARE', 'ALXN', 'ALGN', 'ALLE', 'AGN', 'ADS', 'LNT', 'ALL', 'GOOGL', 'GOOG', 'MO', 'AMZN', 'AMCR',
-         'AEE', 'AAL', 'AEP', 'AXP', 'AIG', 'AMT', 'AWK', 'AMP', 'ABC', 'AME', 'AMGN', 'APH', 'ADI', 'ANSS', 'ANTM',
-         'AON', 'AOS', 'APA', 'AIV', 'AAPL', 'AMAT', 'APTV', 'ADM', 'ARNC', 'ANET', 'AJG', 'AIZ', 'ATO', 'T', 'ADSK',
-         'ADP', 'AZO', 'AVB', 'AVY', 'BKR', 'BLL', 'BAC', 'BK', 'BAX', 'BDX', 'BRK-B', 'BBY', 'BIIB', 'BLK', 'BA']
 sp500 = ['MMM', 'ABT', 'ABBV', 'ABMD', 'ACN', 'ATVI', 'ADBE', 'AMD', 'AAP', 'AES', 'AFL', 'A', 'APD', 'AKAM', 'ALK',
          'ALB', 'ARE', 'ALXN', 'ALGN', 'ALLE', 'AGN', 'ADS', 'LNT', 'ALL', 'GOOGL', 'GOOG', 'MO', 'AMZN', 'AMCR',
          'AEE', 'AAL', 'AEP', 'AXP', 'AIG', 'AMT', 'AWK', 'AMP', 'ABC', 'AME', 'AMGN', 'APH', 'ADI', 'ANSS', 'ANTM',
@@ -60,57 +39,32 @@ sp500 = ['MMM', 'ABT', 'ABBV', 'ABMD', 'ACN', 'ATVI', 'ADBE', 'AMD', 'AAP', 'AES
          'VAR', 'VTR', 'VRSN', 'VRSK', 'VZ', 'VRTX', 'VIAC', 'V', 'VNO', 'VMC', 'WRB', 'WAB', 'WMT', 'WBA', 'DIS',
          'WM', 'WAT', 'WEC', 'WFC', 'WELL', 'WDC', 'WU', 'WRK', 'WY', 'WHR', 'WMB', 'WLTW', 'WYNN', 'XEL', 'XRX',
          'XLNX', 'XYL', 'YUM', 'ZBRA', 'ZBH', 'ZION', 'ZTS']
-tickers = sp500
-#tickers = test_tickers
 
-# portfolio investment period
-start_date = dt.date(2005, 12, 31)
-end_date = dt.date(2019, 12, 31)
+start_date = dt.date(1990, 1, 1)
+end_date = dt.date(2004, 12, 31)
+all_factors_ret = fdata.get_factors(['all'], start_date, end_date)
+stock_ret = stock_data.get_daily_returns(sp500, start_date, end_date)[1:]
 
-# remove NaN columns from investment universe (prevents errors)
-p_tickers = stock_data.get_prices(tickers, start_date - dt.timedelta(days=365*4), start_date - dt.timedelta(days=365*4) + dt.timedelta(days=+5))
-nan_cols = [i for i in p_tickers.columns if p_tickers[i].isnull().any()]
-tickers = [eq for eq in tickers if eq not in nan_cols]
+corr = all_factors_ret.corr()
 
 
-# ############### Running methods (test) ###############
+plt.matshow(corr)
+plt.xticks(range(len(corr.columns)), corr.columns)
+plt.yticks(range(len(corr.columns)), corr.columns)
+plt.colorbar()
+plt.show()
+plt.close()
+
+all_factors_cum_ret = (all_factors_ret + 1).cumprod()
+plt.plot(all_factors_cum_ret)
+plt.show()
+plt.close()
 
 
-# ############### testing area ###############
-# ['BaB', 'SMB', 'HML_Devil', 'UMD', 'QMJ', 'CMA', 'RMW', 'Mkt-RF']
-factor_tickers = ['BaB', 'UMD', 'QMJ', 'RMW', 'Mkt-RF']
-t_factors = factor_data.get_factors(factor_tickers, start_date, end_date)[1:]
-t_stocks = stock_data.get_daily_returns(tickers, start_date, end_date)[1:]
-factor_tickers2 = ['BaB', 'SMB', 'HML_Devil', 'UMD', 'MOM', 'QMJ', 'CMA', 'RMW', 'Mkt-RF']
-t_factors2 = factor_data.get_factors(factor_tickers2, start_date, end_date)[1:]
-#loadings_matrix = frp.get_loading_matrix(t_stocks, t_factors)
-f1 = t_factors2['CMA']*0.25 + t_factors2['BaB']*0.25 + t_factors2['HML_Devil']*0.5
-f2 = t_factors2['RMW']*0.5 + t_factors2['QMJ']*0.5
-f3 = t_factors2['UMD']*0.5 + t_factors2['MOM']*0.5
-f4 = t_factors2['SMB']
-f5 = t_factors2['Mkt-RF']
-t_factors = pd.DataFrame([f1, f2, f3, f4, f5]).T
-factor_tickers = factor_tickers2
+sns.set()
 
-pt_w = frp.portfolio_weights_factor_risk_parity(tickers, factor_tickers, start_date, end_date, 'BM')
+sns.lineplot(data=all_factors_cum_ret, dashes=False)
+plt.show()
 
-#importlib.reload(backtest_functions)
-d_rt = backtest_functions.daily_returns_of_portfolio(pt_w)
 
-d_rt.to_csv(r'Output\test_frp_daily_returns.csv')
-
-ptrp_2 = rp.portfolio_weights_risk_parity(tickers, start_date, end_date, portfolio_rebalance_period= 'BM')
-d_rt_rp = backtest_functions.daily_returns_of_portfolio(ptrp_2)
-d_rt_rp.to_csv(r'Output\test_rp_daily_returns.csv')
-
-# rc testing cuz not equal
-# n_stocks = t_stocks.shape[1]
-# x0 = np.ones(n_stocks) * 1 / n_stocks
-# rc = frp.get_risk_contributions(x0, t_stocks, t_factors)
-# sigma_x = frp.sigma_x(x0, t_stocks)
-
-# from factor_analyzer.factor_analyzer import FactorAnalyzer
-# fa = FactorAnalyzer(n_factors=5, rotation='varimax')
-# fa.fit(t_stocks)
-# fa.get_factor_variance()
-# a=fa.loadings_
+sns.clustermap(corr.drop(columns=['HML']))

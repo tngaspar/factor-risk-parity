@@ -21,4 +21,4 @@ def get_factors(factor_list, start_date=None, end_date=None,):
         else:
             r = all_factors.loc[start_date:end_date, factor_list]
 
-    return r
+    return r*0.01

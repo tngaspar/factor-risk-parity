@@ -80,7 +80,7 @@ def weights_factor_risk_parity(stocks, loadings_matrix, Sigma, x0):
     # bounds
     bounds = [(-1 / n_stocks, 1 / 5) for n in range(n_stocks)]
 
-    res = minimize(fun, x0, method='SLSQP', bounds=bounds, constraints=cons, tol=0.00001, options={'disp': False})
+    res = minimize(fun, x0, method='SLSQP', bounds=bounds, constraints=cons, tol=1e-10, options={'disp': False})
     return res.x
 
 
@@ -91,7 +91,14 @@ def portfolio_weights_factor_risk_parity(tickers, factor_tickers, start_date, en
     with alive_bar(len(business_days_end_months)) as bar:
         for t in business_days_end_months:
             stocks = stock_data.get_daily_returns(tickers, t + relativedelta(months=-48), t)[1:]
-            factors = factor_data.get_factors(factor_tickers, stocks.index[0], stocks.index[-1]) * 0.01
+            factors = factor_data.get_factors(factor_tickers, stocks.index[0], stocks.index[-1])
+            t_factors2 = factors
+            f1 = t_factors2['CMA'] * 0.25 + t_factors2['BaB'] * 0.25 + t_factors2['HML_Devil'] * 0.5
+            f2 = t_factors2['RMW'] * 0.5 + t_factors2['QMJ'] * 0.5
+            f3 = t_factors2['UMD'] * 0.5 + t_factors2['MOM'] * 0.5
+            f4 = t_factors2['SMB']
+            f5 = t_factors2['Mkt-RF']
+            factors = pd.DataFrame([f1, f2, f3, f4, f5]).T
             loadings_matrix = get_loading_matrix(stocks, factors)
             #loadings_matrix = get_loading_matrix_stat(stocks)
             sigma = big_sigma(stocks)
@@ -113,7 +120,7 @@ def portfolio_weights_factor_risk_parity(tickers, factor_tickers, start_date, en
 #     for i in prange(len(business_days_end_months)):
 #         t = business_days_end_months[i]
 #         stocks = stock_data.get_daily_returns(tickers, t + relativedelta(months=-48), t)[1:]
-#         factors = factor_data.get_factors(factor_tickers, stocks.index[0], stocks.index[-1]) * 0.01
+#         factors = factor_data.get_factors(factor_tickers, stocks.index[0], stocks.index[-1])
 #         #print(stocks)
 #         #print(factors)
 #         print()
