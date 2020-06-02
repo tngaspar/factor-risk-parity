@@ -20,13 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72ca0e08-10fa-444d-8092-0d20e699432c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Data/Factors/Raw_data/US_msci_tickers.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Factors/all_factors.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Factors/all_factors.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Factors/factor_raw_to_set.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Factors/factor_raw_to_set.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Output/test_frp_daily_returns.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Output/test_frp_daily_returns.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/factor_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/factor_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/factor_selection.py" beforeDir="false" afterPath="$PROJECT_DIR$/factor_selection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/factor_risk_parity.py" beforeDir="false" afterPath="$PROJECT_DIR$/factor_risk_parity.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_Jupynotebook.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test_Jupynotebook.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +71,7 @@
       <recent name="C:\Users\Tiago\Desktop\Portfolio_Construction" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.factor_selection">
+  <component name="RunManager" selected="Python.test">
     <configuration name="SP500_index_returns" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -184,9 +180,6 @@
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -204,9 +197,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.factor_selection" />
         <item itemvalue="Python.factor_raw_to_set" />
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.SP500_index_returns" />
         <item itemvalue="Python.factor_risk_parity" />
       </list>
@@ -266,7 +259,7 @@
       <workItem from="1590582644832" duration="11994000" />
       <workItem from="1591096539217" duration="2075000" />
       <workItem from="1591098675753" duration="703000" />
-      <workItem from="1591099419639" duration="14679000" />
+      <workItem from="1591099419639" duration="19824000" />
     </task>
     <task id="LOCAL-00001" summary="testing commit on pycharm">
       <created>1586107211472</created>
@@ -457,7 +450,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591108369463</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="added msci factors but. Insignificant after testing. Too much correlation">
+      <created>1591120448419</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1591120448419</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -487,7 +487,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="First run of simple RP (long only)" />
     <MESSAGE value="RP file before splitting into data file" />
     <MESSAGE value="stock_data file created" />
     <MESSAGE value="testing pandas finance related functions" />
@@ -512,7 +511,8 @@
     <MESSAGE value="frp working well and faster" />
     <MESSAGE value="corrected frp" />
     <MESSAGE value="begining of factor selecting &#10;frp with factors chosen based on clustering corr" />
-    <option name="LAST_COMMIT_MESSAGE" value="begining of factor selecting &#10;frp with factors chosen based on clustering corr" />
+    <MESSAGE value="added msci factors but. Insignificant after testing. Too much correlation" />
+    <option name="LAST_COMMIT_MESSAGE" value="added msci factors but. Insignificant after testing. Too much correlation" />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="47" key="#Inspections" timestamp="1587650734857">
@@ -546,10 +546,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="0" y="121" key="#xdebugger.XInspectDialog/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588419644103" />
-    <state x="283" y="0" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1591108366372">
+    <state x="283" y="0" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1591120446267">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1591108366372" />
+    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1591120446267" />
     <state x="-1497" y="-189" width="1157" height="825" key="CommitChangelistDialog2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186627527" />
     <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1588618676938" />
     <state x="2129" y="303" width="1157" height="738" key="CommitChangelistDialog2/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588605363218" />

@@ -80,7 +80,7 @@ def weights_factor_risk_parity(stocks, loadings_matrix, Sigma, x0):
     # bounds
     bounds = [(-1 / n_stocks, 1 / 5) for n in range(n_stocks)]
 
-    res = minimize(fun, x0, method='SLSQP', bounds=bounds, constraints=cons, tol=1e-10, options={'disp': False})
+    res = minimize(fun, x0, method='SLSQP', bounds=bounds, constraints=cons, tol=1e-5, options={'disp': False})
     return res.x
 
 
