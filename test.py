@@ -64,7 +64,7 @@ tickers = sp500
 #tickers = test_tickers
 
 # portfolio investment period
-start_date = dt.date(2005, 12, 31)
+start_date = dt.date(2004, 12, 31)
 end_date = dt.date(2019, 12, 31)
 
 # remove NaN columns from investment universe (prevents errors)

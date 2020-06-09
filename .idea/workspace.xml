@@ -20,9 +20,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72ca0e08-10fa-444d-8092-0d20e699432c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Output/test_frp_daily_returns1.2long.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Output/test_frp_daily_returns_0.2long.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ploting/SP500_annual_ret.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ploting/SP500_cum_ret.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ploting/SP500_underwater.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ploting/SP500_vol.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ploting/SP500plots.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/SP500_index_daily_returns.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/SP500_index_daily_returns.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/SP500_index_returns.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data/SP500_index_returns.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Output/test_frp_daily_returns.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Output/test_frp_daily_returns.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/test_rp_daily_returns.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Output/test_rp_daily_returns.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/factor_risk_parity.py" beforeDir="false" afterPath="$PROJECT_DIR$/factor_risk_parity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_Jupynotebook.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test_Jupynotebook.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,11 +79,15 @@
     <option name="myUseExistingConsole" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Tiago\Desktop\Portfolio_Construction\Ploting" />
+      <recent name="C:\Users\Tiago\Desktop\Portfolio_Construction" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Tiago\Desktop\Portfolio_Construction" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.SP500plots (1)">
     <configuration name="SP500_index_returns" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -86,6 +102,63 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Data/SP500_index_returns.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SP500plots (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Portfolio_Construction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ploting" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ploting/SP500plots.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SP500plots" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Portfolio_Construction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ploting" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Tiago\Desktop\Portfolio_Construction\Ploting\SP500plots.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SP500plots" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Portfolio_Construction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Tiago\Desktop\Portfolio_Construction\Ploting\SP500plots.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -116,51 +189,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="factor_raw_to_set" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Portfolio_Construction" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Data/Factors" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Data/Factors/factor_raw_to_set.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="factor_risk_parity" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="factor_selection" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/factor_risk_parity.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="factor_selection" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Portfolio_Construction" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -180,6 +215,9 @@
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -197,11 +235,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.SP500plots (1)" />
+        <item itemvalue="Python.SP500plots (1)" />
+        <item itemvalue="Python.SP500plots" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.factor_selection" />
-        <item itemvalue="Python.factor_raw_to_set" />
         <item itemvalue="Python.SP500_index_returns" />
-        <item itemvalue="Python.factor_risk_parity" />
       </list>
     </recent_temporary>
   </component>
@@ -259,7 +297,10 @@
       <workItem from="1590582644832" duration="11994000" />
       <workItem from="1591096539217" duration="2075000" />
       <workItem from="1591098675753" duration="703000" />
-      <workItem from="1591099419639" duration="19824000" />
+      <workItem from="1591099419639" duration="19872000" />
+      <workItem from="1591180260729" duration="20581000" />
+      <workItem from="1591261453121" duration="8499000" />
+      <workItem from="1591605372378" duration="30965000" />
     </task>
     <task id="LOCAL-00001" summary="testing commit on pycharm">
       <created>1586107211472</created>
@@ -457,7 +498,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591120448419</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="model needs fixing: see factor allocations">
+      <created>1591129657033</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1591129657033</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -487,7 +535,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="RP file before splitting into data file" />
     <MESSAGE value="stock_data file created" />
     <MESSAGE value="testing pandas finance related functions" />
     <MESSAGE value="expanding test file" />
@@ -512,7 +559,8 @@
     <MESSAGE value="corrected frp" />
     <MESSAGE value="begining of factor selecting &#10;frp with factors chosen based on clustering corr" />
     <MESSAGE value="added msci factors but. Insignificant after testing. Too much correlation" />
-    <option name="LAST_COMMIT_MESSAGE" value="added msci factors but. Insignificant after testing. Too much correlation" />
+    <MESSAGE value="model needs fixing: see factor allocations" />
+    <option name="LAST_COMMIT_MESSAGE" value="model needs fixing: see factor allocations" />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="47" key="#Inspections" timestamp="1587650734857">
@@ -542,14 +590,14 @@
       <screen x="1920" y="303" width="1366" height="738" />
     </state>
     <state x="2333" y="418" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588531422593" />
-    <state x="0" y="121" key="#xdebugger.XInspectDialog" timestamp="1588419644103">
+    <state x="0" y="121" key="#xdebugger.XInspectDialog" timestamp="1591608928407">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="0" y="121" key="#xdebugger.XInspectDialog/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588419644103" />
-    <state x="283" y="0" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1591120446267">
+    <state x="0" y="121" key="#xdebugger.XInspectDialog/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1591608928407" />
+    <state x="283" y="0" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1591129652893">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1591120446267" />
+    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1591129652893" />
     <state x="-1497" y="-189" width="1157" height="825" key="CommitChangelistDialog2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186627527" />
     <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1588618676938" />
     <state x="2129" y="303" width="1157" height="738" key="CommitChangelistDialog2/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588605363218" />
@@ -626,6 +674,10 @@
     </state>
     <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1590091263169" />
     <state x="2195" y="404" key="Vcs.Push.Dialog.v2/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588605393061" />
+    <state x="92" y="92" width="1182" height="554" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1591608561709">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="92" y="92" width="1182" height="554" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1591608561709" />
     <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587500903282">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
