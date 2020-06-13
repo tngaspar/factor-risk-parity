@@ -16,7 +16,6 @@ def get_loading_matrix(stocks, factors):
     model = sm.OLS(stocks, factors).fit()
     parameters = model.params
     loading_matrix = pd.DataFrame(data=parameters.values, index=parameters.index, columns=stocks.columns).T
-
     return loading_matrix
 
 def get_loading_matrix_stat(stocks):
@@ -109,6 +108,11 @@ def portfolio_weights_factor_risk_parity(tickers, factor_tickers, start_date, en
             f3 = t_factors2['UMD'] * 0.5 + t_factors2['MOM'] * 0.5
             f4 = t_factors2['SMB']
             f5 = t_factors2['Mkt-RF']
+            f1 = t_factors2['CMA'] * 0.5 + t_factors2['HML_Devil'] * 0.5
+            f2 = t_factors2['RMW'] * 0.5 + t_factors2['QMJ'] * 0.5
+            f3 = t_factors2['UMD'] * 0.5 + t_factors2['MOM'] * 0.5
+            f4 = t_factors2['SMB']
+            f5 = t_factors2['BaB']
             factors = pd.DataFrame([f1, f2, f3, f4, f5]).T
             loadings_matrix = get_loading_matrix(stocks, factors)
             #loadings_matrix = get_loading_matrix_stat(stocks)

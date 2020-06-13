@@ -1,9 +1,10 @@
 import pandas as pd
 
-# BaB,SMB,HML,HML_Devil,UMD,QMJ,CMA,RMW,MOM,Mkt-RF
+
+# BaB,SMB,HML,HML_Devil,UMD,QMJ,CMA,RMW,MOM,Mkt-RF, other MSCI
 # currently data is in percentages
 
-def get_factors(factor_list, start_date=None, end_date=None,):
+def get_factors(factor_list, start_date=None, end_date=None, ):
     all_factors = pd.read_csv(r'Data\Factors\all_factors.csv', index_col=0).ffill()
     all_factors.index = pd.to_datetime(all_factors.index)
 
@@ -22,4 +23,4 @@ def get_factors(factor_list, start_date=None, end_date=None,):
         else:
             r = all_factors.loc[start_date:end_date, factor_list]
 
-    return r*0.01
+    return r * 0.01
