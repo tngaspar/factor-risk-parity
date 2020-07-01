@@ -109,11 +109,11 @@ def portfolio_weights_factor_risk_parity(tickers, factor_tickers, start_date, en
             f4 = t_factors2['SMB']
             f5 = t_factors2['Mkt-RF']
             f1 = t_factors2['CMA'] * 0.5 + t_factors2['HML_Devil'] * 0.5
-            f2 = t_factors2['RMW'] * 0.5 + t_factors2['QMJ'] * 0.5
-            f3 = t_factors2['UMD'] * 0.5 + t_factors2['MOM'] * 0.5
+            f2 = t_factors2['RMW'] * 0.25 + t_factors2['QMJ'] * 0.25 + t_factors2['BaB']*0.5
+            f3 = t_factors2['MOM']
             f4 = t_factors2['SMB']
             f5 = t_factors2['BaB']
-            factors = pd.DataFrame([f1, f2, f3, f4, f5]).T
+            factors = pd.DataFrame([f1, f2, f3, f4]).T
             loadings_matrix = get_loading_matrix(stocks, factors)
             #loadings_matrix = get_loading_matrix_stat(stocks)
             sigma = big_sigma(stocks)

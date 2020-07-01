@@ -4,7 +4,12 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 import empyrical as ep
+import matplotlib.pylab as pylab
 sns.set(style="white", context='paper')
+params = {'axes.titlesize':'large'}
+pylab.rcParams.update(params)
+
+
 
 daily_sp500_ret = pd.DataFrame(pd.read_csv(r'../Data/SP500_index_daily_returns.csv')['SP_500'])
 daily_sp500_ret.index = pd.to_datetime(pd.read_csv(r'../Data/SP500_index_daily_returns.csv')['Date'])
@@ -52,7 +57,7 @@ g = underwater.plot(kind='area', color='tomato', alpha=0.7)
 plt.gca().set_yticklabels(['{:.0f}%'.format(x) for x in plt.gca().get_yticks()])
 plt.grid(True)
 plt.ylabel('Drawdown')
-plt.title('Underwater Plot')
+plt.title('Underwater Plot of the S&P500 index')
 plt.xlabel('')
 plt.savefig('SP500_underwater.pdf')
 plt.show()
@@ -74,7 +79,7 @@ ax.axhline(0.0, color='black', linestyle='-', lw=3)
 plt.gca().set_yticklabels(['{:.0f}%'.format(x) for x in plt.gca().get_yticks()])
 ax.set_xlabel('')
 ax.set_ylabel('Returns')
-ax.set_title("Annual returns")
+ax.set_title("Annual returns of the S&P 500 index")
 ax.legend(['Mean'], frameon=True, framealpha=1)
 ax.grid(b=True, axis='y')
 plt.savefig('SP500_annual_ret.pdf')
