@@ -66,17 +66,21 @@ def sigma_x_rc(x, loadings_matrix, sigma):
     return vol_x
 
 
-def weights_factor_risk_parity(stocks, loadings_matrix, Sigma, x0):
-    
+def weights_factor_risk_parity(stocks, factor_structure, loadings_matrix, Sigma, x0):
+
     n_stocks = stocks.shape[1]
     if x0 is None:
         x0 = np.ones(n_stocks) * 1 / n_stocks
     sigma = big_sigma(stocks)
-    fun = lambda x: sum((get_risk_contributions(x, loadings_matrix, Sigma) / sigma_x(x, sigma) - 1 /
-                         loadings_matrix.shape[1]) ** 2)
-    #print((get_risk_contributions(x0, loadings_matrix, Sigma) / sigma_x_rc(x0, loadings_matrix, sigma) - 1 /
-    #                     loadings_matrix.shape[1]) ** 2)
-    #print((get_risk_contributions(x0, loadings_matrix, Sigma)))
+
+    def fun(x):
+        risk_contributions = get_risk_contributions(x, loadings_matrix, Sigma)
+        clusters_rcs = [part.sum() for part in np.split(risk_contributions, np.cumsum(factor_structure))[:-1]]
+        f = sum((clusters_rcs / sigma_x(x, sigma) - 1 / len(factor_structure)) ** 2)
+        return f
+
+    #fun = lambda x: sum((get_risk_contributions(x, loadings_matrix, Sigma) / sigma_x(x, sigma) - 1 /
+    #                                          loadings_matrix.shape[1]) ** 2)
 
     # constrains
     cons = [{'type': 'ineq', 'fun': lambda x: -sum(x) + 1},
@@ -95,29 +99,40 @@ def weights_factor_risk_parity(stocks, loadings_matrix, Sigma, x0):
 
 
 def portfolio_weights_factor_risk_parity(tickers, factor_tickers, start_date, end_date, portfolio_rebalance_period):
+    factor_structure = []
+    factor_tickers_flat = []
+    for group in factor_tickers:
+        if type(group) is list:
+            factor_structure.append(len(group))
+            for factor in group:
+                factor_tickers_flat.append(factor)
+        else:
+            factor_structure.append(1)
+            factor_tickers_flat.append(group)
+
     business_days_end_months = pd.date_range(start_date, end_date, freq=portfolio_rebalance_period)
     portfolio_weights = pd.DataFrame(index=business_days_end_months, columns=tickers)
     x0 = None
     with alive_bar(len(business_days_end_months)) as bar:
         for t in business_days_end_months:
             stocks = stock_data.get_daily_returns(tickers, t + relativedelta(months=-12), t)[1:]
-            factors = factor_data.get_factors(factor_tickers, stocks.index[0], stocks.index[-1])
-            t_factors2 = factors
-            f1 = t_factors2['CMA'] * 0.25 + t_factors2['BaB'] * 0.25 + t_factors2['HML_Devil'] * 0.5
-            f2 = t_factors2['RMW'] * 0.5 + t_factors2['QMJ'] * 0.5
-            f3 = t_factors2['UMD'] * 0.5 + t_factors2['MOM'] * 0.5
-            f4 = t_factors2['SMB']
-            f5 = t_factors2['Mkt-RF']
-            f1 = t_factors2['CMA'] * 0.5 + t_factors2['HML_Devil'] * 0.5
-            f2 = t_factors2['RMW'] * 0.25 + t_factors2['QMJ'] * 0.25 + t_factors2['BaB']*0.5
-            f3 = t_factors2['MOM']
-            f4 = t_factors2['SMB']
-            f5 = t_factors2['BaB']
-            factors = pd.DataFrame([f1, f2, f3, f4]).T
+            factors = factor_data.get_factors(factor_tickers_flat, stocks.index[0], stocks.index[-1])
+            # t_factors2 = factors
+            # f1 = t_factors2['CMA'] * 0.25 + t_factors2['BaB'] * 0.25 + t_factors2['HML_Devil'] * 0.5
+            # f2 = t_factors2['RMW'] * 0.5 + t_factors2['QMJ'] * 0.5
+            # f3 = t_factors2['UMD'] * 0.5 + t_factors2['MOM'] * 0.5
+            # f4 = t_factors2['SMB']
+            # f5 = t_factors2['Mkt-RF']
+            # f1 = t_factors2['CMA'] * 0.5 + t_factors2['HML_Devil'] * 0.5
+            # f2 = t_factors2['RMW'] * 0.25 + t_factors2['QMJ'] * 0.25 + t_factors2['BaB']*0.5
+            # f3 = t_factors2['MOM']
+            # f4 = t_factors2['SMB']
+            # f5 = t_factors2['BaB']
+            #factors = pd.DataFrame([f1, f2, f3, f4]).T
             loadings_matrix = get_loading_matrix(stocks, factors)
             #loadings_matrix = get_loading_matrix_stat(stocks)
             sigma = big_sigma(stocks)
-            portfolio_weights.loc[t] = weights_factor_risk_parity(stocks, loadings_matrix, sigma, x0)
+            portfolio_weights.loc[t] = weights_factor_risk_parity(stocks, factor_structure, loadings_matrix, sigma, x0)
             x0 = portfolio_weights.loc[t]
             print(get_risk_contributions(x0, loadings_matrix, sigma)/sigma_x(x0, sigma))
             #print(sigma_x_rc(x0, loadings_matrix, sigma))

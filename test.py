@@ -82,15 +82,15 @@ factor_tickers = ['BaB', 'UMD', 'QMJ', 'RMW', 'Mkt-RF']
 t_factors = factor_data.get_factors(factor_tickers, start_date, end_date)[1:]
 t_stocks = stock_data.get_daily_returns(tickers, start_date, end_date)[1:]
 factor_tickers2 = ['BaB', 'SMB', 'HML_Devil', 'UMD', 'MOM', 'QMJ', 'CMA', 'RMW', 'Mkt-RF']
-t_factors2 = factor_data.get_factors(factor_tickers2, start_date, end_date)[1:]
+# t_factors2 = factor_data.get_factors(factor_tickers2, start_date, end_date)[1:]
 #loadings_matrix = frp.get_loading_matrix(t_stocks, t_factors)
-f1 = t_factors2['CMA']*0.25 + t_factors2['BaB']*0.25 + t_factors2['HML_Devil']*0.5
-f2 = t_factors2['RMW']*0.5 + t_factors2['QMJ']*0.5
-f3 = t_factors2['UMD']*0.5 + t_factors2['MOM']*0.5
-f4 = t_factors2['SMB']
-f5 = t_factors2['Mkt-RF']
-t_factors = pd.DataFrame([f1, f2, f3, f4, f5]).T
-factor_tickers = factor_tickers2
+# f1 = t_factors2['CMA']*0.25 + t_factors2['BaB']*0.25 + t_factors2['HML_Devil']*0.5
+# f2 = t_factors2['RMW']*0.5 + t_factors2['QMJ']*0.5
+# f3 = t_factors2['UMD']*0.5 + t_factors2['MOM']*0.5
+# f4 = t_factors2['SMB']
+# f5 = t_factors2['Mkt-RF']
+# t_factors = pd.DataFrame([f1, f2, f3, f4, f5]).T
+factor_tickers = ['SMB', 'MOM', ['CMA', 'HML_Devil'], ['BaB', 'RMW', 'QMJ']]
 
 pt_w = frp.portfolio_weights_factor_risk_parity(tickers, factor_tickers, start_date, end_date, 'BM')
 
