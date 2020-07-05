@@ -1,3 +1,5 @@
+# Simple analysis of the S&P500 index for thesis writting
+
 import pandas as pd
 import datetime as dt
 import numpy as np

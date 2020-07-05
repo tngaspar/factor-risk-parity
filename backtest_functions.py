@@ -1,8 +1,15 @@
+# functions to use after obtaining portfolio weights over the back-test period
+
 import stock_data
 import pandas as pd
 
 
 def daily_returns_of_portfolio(weights_portfolio):
+    """ Calculates the daily returns of a portfolio
+
+    :param weights_portfolio: The weights of the portfolio's equities over the back-test period
+    :return: daily returns of the portfolio
+    """
     tickers = weights_portfolio.columns
     start_date = weights_portfolio.index[0]
     end_date = weights_portfolio.index[-1]
@@ -16,6 +23,11 @@ def daily_returns_of_portfolio(weights_portfolio):
 
 
 def cumulative_returns(returns):
+    """ Calculates cumulative returns
+
+    :param returns: returns during a period
+    :return: cummulative returns
+    """
     cum_ret = (returns + 1).cumprod()
 
     return cum_ret

@@ -1,4 +1,5 @@
-import pandas as pd
+# Obtaining SP500 index returns
+
 from stock_data import get_prices_yf
 import datetime as dt
 

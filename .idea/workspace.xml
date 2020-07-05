@@ -20,13 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72ca0e08-10fa-444d-8092-0d20e699432c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/Factors/factor_raw_to_set.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Factors/factor_raw_to_set.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/test_frp_daily_returns.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Output/test_frp_daily_returns.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/SP500_index_returns.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data/SP500_index_returns.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/test_frp_daily_returns1.2long.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/test_frp_daily_returns_0.2long.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ploting/SP500plots.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ploting/SP500plots.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backtest_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/backtest_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/factor_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/factor_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/factor_risk_parity.py" beforeDir="false" afterPath="$PROJECT_DIR$/factor_risk_parity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/factor_selection.py" beforeDir="false" afterPath="$PROJECT_DIR$/factor_selection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/factorplots.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_Jupynotebook.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test_Jupynotebook.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +64,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Data" />
+    <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="PyScientificConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -292,6 +299,7 @@
       <workItem from="1593520503817" duration="3158000" />
       <workItem from="1593633884986" duration="12294000" />
       <workItem from="1593896050100" duration="7624000" />
+      <workItem from="1593948224664" duration="5077000" />
     </task>
     <task id="LOCAL-00001" summary="testing commit on pycharm">
       <created>1586107211472</created>
@@ -517,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593641734507</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="made msci work. &#10;b4 cleaning code">
+      <created>1593948281213</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1593948281213</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -547,7 +562,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="daily update (reevaluate)" />
     <MESSAGE value="portfolio rp applied in main" />
     <MESSAGE value="portfolio rp moved to risk_parity.py" />
     <MESSAGE value="pyfolio now working,&#10;problem with getting too many stock prices at once" />
@@ -572,7 +586,8 @@
     <MESSAGE value="Plotted sp500 index data" />
     <MESSAGE value="factor returns plotted" />
     <MESSAGE value="before changes to factor optimization function" />
-    <option name="LAST_COMMIT_MESSAGE" value="before changes to factor optimization function" />
+    <MESSAGE value="made msci work. &#10;b4 cleaning code" />
+    <option name="LAST_COMMIT_MESSAGE" value="made msci work. &#10;b4 cleaning code" />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="47" key="#Inspections" timestamp="1587650734857">
@@ -588,10 +603,10 @@
     </state>
     <state x="-1490" y="-110" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738/-1888.-304.1888.1080@-1888.-304.1888.1080" timestamp="1587462607988" />
     <state x="170" y="9" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587642965444" />
-    <state x="358" y="170" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593896791894">
+    <state x="358" y="170" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593952873677">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="358" y="170" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1593896791894" />
+    <state x="358" y="170" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1593952873677" />
     <state x="358" y="170" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587644506360" />
     <state x="2278" y="473" key="#com.intellij.fileTypes.FileTypeChooser/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588600020999" />
     <state x="363" y="104" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1589891149987">
@@ -607,10 +622,14 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="0" y="121" key="#xdebugger.XInspectDialog/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1591608928407" />
-    <state x="283" y="0" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1593641729464">
+    <state x="430" y="223" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1593948584741">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1593641729464" />
+    <state x="430" y="223" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1593948584741" />
+    <state x="283" y="0" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1593948275017">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1593948275017" />
     <state x="-1497" y="-189" width="1157" height="825" key="CommitChangelistDialog2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186627527" />
     <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1588618676938" />
     <state x="2129" y="303" width="1157" height="738" key="CommitChangelistDialog2/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588605363218" />
@@ -682,10 +701,10 @@
     <state x="165" y="27" key="SettingsEditor/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1591099381988" />
     <state x="-1609" y="-211" key="SettingsEditor/0.0.1366.738/-1888.-304.1888.1080@-1888.-304.1888.1080" timestamp="1587462975503" />
     <state x="-1660" y="-161" key="SettingsEditor/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587651595940" />
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1591698132525">
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1593948298044">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1591698132525" />
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1593948298044" />
     <state x="2195" y="404" key="Vcs.Push.Dialog.v2/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588605393061" />
     <state x="92" y="92" width="1182" height="554" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1591608561709">
       <screen x="0" y="0" width="1366" height="738" />

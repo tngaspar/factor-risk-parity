@@ -1,6 +1,6 @@
-import pandas as pd
+# Getting factor data from raw source to a single file
 
-# current factors: BaB, SMB. HML, MHL_Devil, UMD, QMJ, CMA, RMW, MOM
+import pandas as pd
 
 # USA only
 BaB = pd.read_csv(r'Raw_data\BaB_all_countries.csv', index_col=0, usecols=['DATE', 'USA'])\

@@ -1,3 +1,5 @@
+# Factor Risk Parity portfolio construction approach
+
 import pandas as pd
 import stock_data
 import factor_data
@@ -12,61 +14,88 @@ config_handler.set_global(force_tty=True)
 
 
 def get_loading_matrix(stocks, factors):
+    """ Obtains factor to stocks loading matrix
+
+    :param stocks: DataFrame of all stocks considered
+    :param factors: DataFrame of all factors considered
+    :return: Matrix with factor to stocks loadings
+    """
     # add case where dates dont match
     model = sm.OLS(stocks, factors).fit()
     parameters = model.params
     loading_matrix = pd.DataFrame(data=parameters.values, index=parameters.index, columns=stocks.columns).T
     return loading_matrix
 
-def get_loading_matrix_stat(stocks):
-    # add case where dates dont match
-    fa = FactorAnalyzer(n_factors=5, rotation='varimax')
-    fa.fit(stocks)
-    loading_mat = pd.DataFrame(fa.loadings_)
-
-    return loading_mat
-
 
 def get_risk_contributions(asset_weights, loadings_matrix, Sigma):
+    """ Gets the risk contributions of risk factor to the portfolio
+
+    :param asset_weights: weight vector for all assets
+    :param loadings_matrix: loading matrix of factors to stocks
+    :param Sigma: covariance matrix of stocks
+    :return: Risk contributions of factors to portfolio
+    """
     # add size debug
     x = asset_weights
-    #loadings_matrix = get_loading_matrix(stocks, factors)
-    #loadings_matrix = get_loading_matrix_stat(stocks)
 
-    #Sigma = stocks.cov().values
     # change Sigma based of results from OLS
-
     vol_x = np.sqrt(np.matmul(np.matmul(x, Sigma), x))
 
     Aplus = np.linalg.pinv(loadings_matrix)
-
     AT_x = np.matmul(loadings_matrix.values.T, x)
     Aplus_Sigma_x = np.matmul(np.matmul(Aplus, Sigma), x)
 
     risk_contributions = (AT_x * Aplus_Sigma_x) / vol_x
-    #print(risk_contributions/vol_x)
-    #print(sum(x))
+
     return risk_contributions
 
+
 def big_sigma(stock_returns):
+    """Get Covariance matrix of stock returns
+
+    :param stock_returns: DataFrame of stock returns
+    :return: Covariance matrix
+    """
     sigma = stock_returns.cov().values
 
     return sigma
 
 
 def sigma_x(x, Sigma):
+    """ volatility of portfolio
+
+    :param x: weight vector of assets
+    :param Sigma: Covariance matrix of assets
+    :return: portfolio volatility (or standard deviation)
+    """
     vol_x = np.sqrt(np.matmul(np.matmul(x, Sigma), x))
 
     return vol_x
 
 
 def sigma_x_rc(x, loadings_matrix, sigma):
+    """ volatility of portfolio as sum of factor risk contributions
+
+    :param x: asset weight vector
+    :param loadings_matrix: factor to sotcks loading matrix
+    :param sigma: assets covariance matrix
+    :return: portfolio volatility
+    """
     vol_x = get_risk_contributions(x, loadings_matrix, sigma).sum()
 
     return vol_x
 
 
 def weights_factor_risk_parity(stocks, factor_structure, loadings_matrix, Sigma, x0):
+    """ Calculates assets weights according to the factor risk parity approach
+
+    :param stocks: DataFrame of stock returns
+    :param factor_structure: Structure of factor clusters (factors that share risk budgets)
+    :param loadings_matrix: Factor to stocks loading matrix
+    :param Sigma: stock returns covariance matrix
+    :param x0: asset weighs vector for initialization
+    :return: asset weights vector using factor risk parity method
+    """
 
     n_stocks = stocks.shape[1]
     if x0 is None:
@@ -79,7 +108,8 @@ def weights_factor_risk_parity(stocks, factor_structure, loadings_matrix, Sigma,
         f = sum((clusters_rcs / sigma_x(x, sigma) - 1 / len(factor_structure)) ** 2)
         return f
 
-    #fun = lambda x: sum((get_risk_contributions(x, loadings_matrix, Sigma) / sigma_x(x, sigma) - 1 /
+    # old function without factor clustering:
+    # fun = lambda x: sum((get_risk_contributions(x, loadings_matrix, Sigma) / sigma_x(x, sigma) - 1 /
     #                                          loadings_matrix.shape[1]) ** 2)
 
     # constrains
@@ -94,11 +124,20 @@ def weights_factor_risk_parity(stocks, factor_structure, loadings_matrix, Sigma,
     bounds = [(-1 / n_stocks, 100) for n in range(n_stocks)]
 
     res = minimize(fun, x0, method='SLSQP', bounds=bounds, constraints=cons, tol=1e-5, options={'disp': False})
-    print(res.fun)
+    #print(res.fun)
     return res.x
 
 
 def portfolio_weights_factor_risk_parity(tickers, factor_tickers, start_date, end_date, portfolio_rebalance_period):
+    """ Applies factor risk parity over a period of time. Can be used for back testing
+
+    :param tickers: List of tickers of all candidate stocks to the portfolio
+    :param factor_tickers: List of tickers of factor used and respective cluster format
+    :param start_date: first date of the investment period
+    :param end_date: last date of the investment period
+    :param portfolio_rebalance_period: portfolio re-balancing period (monthly, weekly, etc.)
+    :return: DataFrame of asset weight vectors for each portfolio reabalancing date
+    """
     factor_structure = []
     factor_tickers_flat = []
     for group in factor_tickers:
@@ -117,50 +156,16 @@ def portfolio_weights_factor_risk_parity(tickers, factor_tickers, start_date, en
         for t in business_days_end_months:
             stocks = stock_data.get_daily_returns(tickers, t + relativedelta(months=-12), t)[1:]
             factors = factor_data.get_factors(factor_tickers_flat, stocks.index[0], stocks.index[-1])
-            factors.iloc[:, -7:].subtract(factors['Mkt-RF'], axis=0)
-            # t_factors2 = factors
-            # f1 = t_factors2['CMA'] * 0.25 + t_factors2['BaB'] * 0.25 + t_factors2['HML_Devil'] * 0.5
-            # f2 = t_factors2['RMW'] * 0.5 + t_factors2['QMJ'] * 0.5
-            # f3 = t_factors2['UMD'] * 0.5 + t_factors2['MOM'] * 0.5
-            # f4 = t_factors2['SMB']
-            # f5 = t_factors2['Mkt-RF']
-            # f1 = t_factors2['CMA'] * 0.5 + t_factors2['HML_Devil'] * 0.5
-            # f2 = t_factors2['RMW'] * 0.25 + t_factors2['QMJ'] * 0.25 + t_factors2['BaB']*0.5
-            # f3 = t_factors2['MOM']
-            # f4 = t_factors2['SMB']
-            # f5 = t_factors2['BaB']
-            #factors = pd.DataFrame([f1, f2, f3, f4]).T
+            # factors.iloc[:, -7:].subtract(factors['Mkt-RF'], axis=0)
+            # if factor intersection is desired insert here
             loadings_matrix = get_loading_matrix(stocks, factors)
-            #loadings_matrix = get_loading_matrix_stat(stocks)
             sigma = big_sigma(stocks)
             portfolio_weights.loc[t] = weights_factor_risk_parity(stocks, factor_structure, loadings_matrix, sigma, x0)
             x0 = portfolio_weights.loc[t]
-            print(get_risk_contributions(x0, loadings_matrix, sigma)/sigma_x(x0, sigma))
-            #print(sigma_x_rc(x0, loadings_matrix, sigma))
+            #print(get_risk_contributions(x0, loadings_matrix, sigma)/sigma_x(x0, sigma))
             print(np.matmul(loadings_matrix.T, x0))
-            print(sigma_x(x0, sigma))
-            #print(x0.sum())
-            #print(loadings_matrix.values)
+            #(sigma_x(x0, sigma))
             bar()
 
     return portfolio_weights
 
-# @jit(parallel=True)
-# def portfolio_weights_factor_risk_parity(tickers, factor_tickers, start_date, end_date, portfolio_rebalance_period):
-#     business_days_end_months = pd.date_range(start_date, end_date, freq=portfolio_rebalance_period)
-#     portfolio_weights = pd.DataFrame(index=business_days_end_months, columns=tickers)
-#     x0 = None
-#     #with alive_bar(len(business_days_end_months)) as bar:
-#     for i in prange(len(business_days_end_months)):
-#         t = business_days_end_months[i]
-#         stocks = stock_data.get_daily_returns(tickers, t + relativedelta(months=-48), t)[1:]
-#         factors = factor_data.get_factors(factor_tickers, stocks.index[0], stocks.index[-1])
-#         #print(stocks)
-#         #print(factors)
-#         print()
-#         portfolio_weights.loc[t] = weights_factor_risk_parity(stocks, factors, x0)
-#         #x0 = portfolio_weights.loc[t]
-#         print(i)
-#             #bar()
-#
-#     return portfolio_weights
