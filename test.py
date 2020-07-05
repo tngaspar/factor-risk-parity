@@ -91,7 +91,8 @@ factor_tickers2 = ['BaB', 'SMB', 'HML_Devil', 'UMD', 'MOM', 'QMJ', 'CMA', 'RMW',
 # f5 = t_factors2['Mkt-RF']
 # t_factors = pd.DataFrame([f1, f2, f3, f4, f5]).T
 factor_tickers = ['SMB', 'MOM', ['CMA', 'HML_Devil'], ['BaB', 'RMW', 'QMJ']]
-
+factor_tickers = [['SMB', 'M2NAUSQL', 'M05JUS0', 'M2USVOE', 'M5USIDY'], 'CMA', ['QMJ', 'RMW', 'BaB', 'Mkt-RF'],
+                  ['M2USEV', 'M2USEW'], ['HML', 'HML_Devil', 'M2US000', 'UMD', 'MOM']]
 pt_w = frp.portfolio_weights_factor_risk_parity(tickers, factor_tickers, start_date, end_date, 'BM')
 
 #importlib.reload(backtest_functions)

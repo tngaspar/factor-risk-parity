@@ -117,6 +117,7 @@ def portfolio_weights_factor_risk_parity(tickers, factor_tickers, start_date, en
         for t in business_days_end_months:
             stocks = stock_data.get_daily_returns(tickers, t + relativedelta(months=-12), t)[1:]
             factors = factor_data.get_factors(factor_tickers_flat, stocks.index[0], stocks.index[-1])
+            factors.iloc[:, -7:].subtract(factors['Mkt-RF'], axis=0)
             # t_factors2 = factors
             # f1 = t_factors2['CMA'] * 0.25 + t_factors2['BaB'] * 0.25 + t_factors2['HML_Devil'] * 0.5
             # f2 = t_factors2['RMW'] * 0.5 + t_factors2['QMJ'] * 0.5

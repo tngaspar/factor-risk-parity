@@ -20,7 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72ca0e08-10fa-444d-8092-0d20e699432c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/test2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Factors/factor_raw_to_set.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Factors/factor_raw_to_set.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Output/test_frp_daily_returns.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Output/test_frp_daily_returns.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/factor_risk_parity.py" beforeDir="false" afterPath="$PROJECT_DIR$/factor_risk_parity.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
@@ -100,28 +102,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="SP500plots" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Portfolio_Construction" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\Tiago\Desktop\Portfolio_Construction\Ploting\SP500plots.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -170,6 +150,9 @@
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -185,32 +168,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="factorplots" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ploting" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\Tiago\Desktop\Portfolio_Construction\factorplots.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Portfolio_Construction" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -226,13 +190,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Portfolio_Construction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.factor_raw_to_set" />
+        <item itemvalue="Python.test2" />
         <item itemvalue="Python.factor_selection" />
         <item itemvalue="Python.SP500plots (1)" />
-        <item itemvalue="Python.factorplots" />
-        <item itemvalue="Python.factor_raw_to_set" />
       </list>
     </recent_temporary>
   </component>
@@ -305,6 +291,7 @@
       <workItem from="1593354933795" duration="1008000" />
       <workItem from="1593520503817" duration="3158000" />
       <workItem from="1593633884986" duration="12294000" />
+      <workItem from="1593896050100" duration="7624000" />
     </task>
     <task id="LOCAL-00001" summary="testing commit on pycharm">
       <created>1586107211472</created>
@@ -601,10 +588,10 @@
     </state>
     <state x="-1490" y="-110" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738/-1888.-304.1888.1080@-1888.-304.1888.1080" timestamp="1587462607988" />
     <state x="170" y="9" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587642965444" />
-    <state x="358" y="170" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592064901099">
+    <state x="358" y="170" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593896791894">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="358" y="170" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1592064901099" />
+    <state x="358" y="170" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1593896791894" />
     <state x="358" y="170" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587644506360" />
     <state x="2278" y="473" key="#com.intellij.fileTypes.FileTypeChooser/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588600020999" />
     <state x="363" y="104" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1589891149987">
@@ -722,6 +709,17 @@
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588359654448" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588076302709" />
     <state x="2266" y="362" width="672" height="678" key="search.everywhere.popup/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588614058837" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Data/Factors/factor_raw_to_set.py</url>
+          <line>56</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Portfolio_Construction$test.coverage" NAME="test Coverage Results" MODIFIED="1588009262398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

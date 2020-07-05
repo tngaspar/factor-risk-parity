@@ -64,3 +64,4 @@ M05JUS0.index = pd.to_datetime(M05JUS0.index, format='%d/%m/%Y')
 all_factors = pd.concat([BaB, SMB, HML, HML_Devil, UMD, QMJ, CMA, RMW, MOM, Mkt_RF, M2USEV, M2USEW, M2US000, M2USVOE,
                          M5USIDY, M2NAUSQL, M05JUS0], axis=1)
 all_factors.to_csv('all_factors.csv')
+
