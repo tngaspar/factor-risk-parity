@@ -78,7 +78,7 @@ plt.grid(True)
 plt.ylim(0, 7)
 plt.xlim(dt.datetime(1990,1 , 1), dt.datetime(2005,1,1))
 plt.axhline(y=1, color='gray', linestyle='--', alpha=0.7, lw=2)
-plt.savefig('Ploting/Kfrench_factors_cum_ret.pdf')
+plt.savefig('Plots/Kfrench_factors_cum_ret.pdf')
 plt.show()
 plt.close('all')
 
@@ -92,7 +92,7 @@ plt.grid(True)
 plt.ylim(0, 7)
 plt.xlim(dt.datetime(1990,1 , 1), dt.datetime(2005,1,1))
 plt.axhline(y=1, color='gray', linestyle='--', alpha=0.7, lw=2)
-plt.savefig('Ploting/AQR_factors_cum_ret.pdf')
+plt.savefig('Plots/AQR_factors_cum_ret.pdf')
 plt.show()
 plt.close('all')
 
@@ -115,7 +115,7 @@ sns.heatmap(all_factors_ret.corr().round(2),
             cmap='coolwarm',
             annot=True, linewidths=1);
 plt.title('Correlation heatmap of all factors')
-plt.savefig('Ploting/corr_all_factors.pdf')
+plt.savefig('Plots/corr_all_factors.pdf')
 plt.show()
 plt.close('all')
 
@@ -132,12 +132,11 @@ p_values.round(2).to_csv('Output/all_factors_p_val.csv')
 cluster_factors_ret = fdata.get_factors(['SMB', 'RMW', 'CMA', 'MOM', 'BaB', 'QMJ', 'HML_Devil', 'UMD'],
                                     start_date, end_date)
 pdist = spc.distance.pdist(cluster_factors_ret.T, metric='correlation')
-pdist2  = 1 - abs(-pdist + 1)
-linkage = spc.linkage(pdist2, method='complete')
-idx = spc.fcluster(linkage, 0.5 * pdist2.max(), 'distance')
+linkage = spc.linkage(pdist, method='complete')
+idx = spc.fcluster(linkage, 0.5 * pdist.max(), 'distance')
 spc.dendrogram(linkage, labels=cluster_factors_ret.columns)
 plt.title('Dendrogram of factor clusters (correlation as distance metric)')
-plt.savefig('Ploting/cluster_corr.pdf')
+plt.savefig('Plots/cluster_corr.pdf')
 plt.show()
 plt.close('all')
 
@@ -148,5 +147,15 @@ cluster_factors_ret.round(4).to_csv('Output/cluster_fact_returns.csv')
 D_mat = pd.DataFrame(spc.distance.squareform(pdist), index=cluster_factors_ret.columns,
                      columns=cluster_factors_ret.columns)
 D_mat = D_mat.where(np.triu(np.ones(D_mat.shape)).astype(np.bool).T).round(2)
+D_mat.to_csv('Output/Distance_matrix.csv')
 
 
+# ## absolute correlation clustering insensitive
+pdist_abs = 1 - abs(-pdist + 1)
+linkage_abs = spc.linkage(pdist_abs, method='complete')
+idx_abs = spc.fcluster(linkage_abs, 0.5 * pdist_abs.max(), 'distance')
+spc.dendrogram(linkage_abs, labels=cluster_factors_ret.columns)
+plt.title('Dendrograml of factor clusters (absolute correlation as distance metric)')
+plt.savefig('Plots/cluster_abs_corr.pdf')
+plt.show()
+plt.close('all')

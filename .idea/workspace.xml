@@ -20,19 +20,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72ca0e08-10fa-444d-8092-0d20e699432c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Output/Distance_matrix.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plots/AQR_factors_cum_ret.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plots/Kfrench_factors_cum_ret.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plots/SP500_annual_ret.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plots/SP500_cum_ret.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plots/SP500_underwater.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plots/SP500_vol.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plots/SP500plots.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plots/cluster_abs_corr.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plots/cluster_corr.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plots/corr_all_factors.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Factors/factor_raw_to_set.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Factors/factor_raw_to_set.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/SP500_index_returns.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data/SP500_index_returns.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/test_frp_daily_returns1.2long.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/test_frp_daily_returns_0.2long.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ploting/SP500plots.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ploting/SP500plots.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backtest_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/backtest_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/factor_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/factor_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/factor_risk_parity.py" beforeDir="false" afterPath="$PROJECT_DIR$/factor_risk_parity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ploting/AQR_factors_cum_ret.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ploting/Kfrench_factors_cum_ret.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ploting/SP500_annual_ret.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ploting/SP500_cum_ret.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ploting/SP500_underwater.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ploting/SP500_vol.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ploting/SP500plots.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ploting/cluster_corr.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ploting/corr_all_factors.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/factor_selection.py" beforeDir="false" afterPath="$PROJECT_DIR$/factor_selection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/factorplots.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test2.py" beforeDir="false" afterPath="$PROJECT_DIR$/test2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +96,7 @@
       <recent name="C:\Users\Tiago\Desktop\Portfolio_Construction" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.factor_selection">
     <configuration name="SP500plots (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -221,10 +231,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.factor_selection" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.factor_raw_to_set" />
         <item itemvalue="Python.test2" />
-        <item itemvalue="Python.factor_selection" />
         <item itemvalue="Python.SP500plots (1)" />
       </list>
     </recent_temporary>
@@ -299,7 +309,9 @@
       <workItem from="1593520503817" duration="3158000" />
       <workItem from="1593633884986" duration="12294000" />
       <workItem from="1593896050100" duration="7624000" />
-      <workItem from="1593948224664" duration="5077000" />
+      <workItem from="1593948224664" duration="6336000" />
+      <workItem from="1594032431155" duration="3855000" />
+      <workItem from="1594197768520" duration="429000" />
     </task>
     <task id="LOCAL-00001" summary="testing commit on pycharm">
       <created>1586107211472</created>
@@ -532,7 +544,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593948281213</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="cleaned:&#10;folders&#10;backtest_functions.py&#10;factor_data.py&#10;factor_risk_parity.py&#10;factor_selection.py">
+      <created>1593953372205</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1593953372205</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -562,7 +581,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="portfolio rp applied in main" />
     <MESSAGE value="portfolio rp moved to risk_parity.py" />
     <MESSAGE value="pyfolio now working,&#10;problem with getting too many stock prices at once" />
     <MESSAGE value="working 100% for rp" />
@@ -587,7 +605,8 @@
     <MESSAGE value="factor returns plotted" />
     <MESSAGE value="before changes to factor optimization function" />
     <MESSAGE value="made msci work. &#10;b4 cleaning code" />
-    <option name="LAST_COMMIT_MESSAGE" value="made msci work. &#10;b4 cleaning code" />
+    <MESSAGE value="cleaned:&#10;folders&#10;backtest_functions.py&#10;factor_data.py&#10;factor_risk_parity.py&#10;factor_selection.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaned:&#10;folders&#10;backtest_functions.py&#10;factor_data.py&#10;factor_risk_parity.py&#10;factor_selection.py" />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="47" key="#Inspections" timestamp="1587650734857">
@@ -626,10 +645,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="430" y="223" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1593948584741" />
-    <state x="283" y="0" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1593948275017">
+    <state x="527" y="0" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1593953370978">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1593948275017" />
+    <state x="527" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1593953370978" />
     <state x="-1497" y="-189" width="1157" height="825" key="CommitChangelistDialog2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186627527" />
     <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1588618676938" />
     <state x="2129" y="303" width="1157" height="738" key="CommitChangelistDialog2/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588605363218" />
@@ -722,6 +741,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="263" y="23" key="editAsTableFormatDialogDimension/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1593110567523" />
+    <state x="0" y="0" width="585" height="738" key="find.popup" timestamp="1594042277322">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="0" y="0" width="585" height="738" key="find.popup/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594042277322" />
     <state x="2266" y="362" width="672" height="678" key="search.everywhere.popup" timestamp="1588614058837">
       <screen x="1920" y="303" width="1366" height="738" />
     </state>
