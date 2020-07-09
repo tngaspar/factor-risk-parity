@@ -1,19 +1,17 @@
+import stock_data
 import numpy as np
 import pandas as pd
-import riskparityportfolio as rp
-from dateutil.relativedelta import relativedelta
-import stock_data
 from alive_progress import alive_bar
 from alive_progress import config_handler
 config_handler.set_global(force_tty=True)
 
-def weights_risk_parity(tickers, start_date, end_date):
-    prices = stock_data.get_prices(tickers, start_date, end_date)
-    cov_matrix = stock_data.get_covariance_matrix(prices)
-    budget = np.full(len(tickers), 1 / len(tickers))  # parity of risk budget
-    w = rp.vanilla.design(cov_matrix, budget)
 
-    return w
+def ew_weights(stock_tickers, date):
+    stock_returns = stock_data.get_daily_returns(stock_tickers, date, date)
+    n_stocks = stock_returns.shape[1]
+    x = np.ones(n_stocks) / n_stocks
+
+    return x
 
 
 def portfolio_weights_risk_parity(tickers, start_date, end_date, portfolio_rebalance_period):
@@ -22,7 +20,8 @@ def portfolio_weights_risk_parity(tickers, start_date, end_date, portfolio_rebal
 
     with alive_bar(len(business_days_end_months)) as bar:
         for t in business_days_end_months:
-            portfolio_weights.loc[t] = weights_risk_parity(tickers, t + relativedelta(months=-12), t)
+            portfolio_weights.loc[t] = ew_weights(tickers, t)
             bar()
 
     return portfolio_weights
+

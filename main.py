@@ -1,24 +1,29 @@
-# ############### Import packages ###############
-import pandas as pd
 import datetime as dt
 import importlib
-import numpy as np
-import matplotlib.pyplot as plt
-
 
 # ############### Import my scripts ###############
 import stock_data
-import factor_data
 import risk_parity as rp
+import factor_data
 import factor_risk_parity as frp
+import backtest_functions as bfunc
+import equal_weight as ew
+import factor_weight_parity as fwp
 
 # Reload frequently changed scripts
 importlib.reload(rp)
+importlib.reload(factor_data)
 importlib.reload(frp)
-
+importlib.reload(bfunc)
+importlib.reload(ew)
+importlib.reload(fwp)
 
 # ############### Data gathering ###############
-test_tickers = ['GOOGL', 'AAPL', 'AMZN']
+test_tickers = ['MMM', 'ABT', 'ABBV', 'ABMD', 'ACN', 'ATVI', 'ADBE', 'AMD', 'AAP', 'AES', 'AFL', 'A', 'APD', 'AKAM', 'ALK',
+         'ALB', 'ARE', 'ALXN', 'ALGN', 'ALLE', 'AGN', 'ADS', 'LNT', 'ALL', 'GOOGL', 'GOOG', 'MO', 'AMZN', 'AMCR',
+         'AEE', 'AAL', 'AEP', 'AXP', 'AIG', 'AMT', 'AWK', 'AMP', 'ABC', 'AME', 'AMGN', 'APH', 'ADI', 'ANSS', 'ANTM',
+         'AON', 'AOS', 'APA', 'AIV', 'AAPL', 'AMAT', 'APTV', 'ADM', 'ARNC', 'ANET', 'AJG', 'AIZ', 'ATO', 'T', 'ADSK',
+         'ADP', 'AZO', 'AVB', 'AVY', 'BKR', 'BLL', 'BAC', 'BK', 'BAX', 'BDX', 'BRK-B', 'BBY', 'BIIB', 'BLK', 'BA']
 sp500 = ['MMM', 'ABT', 'ABBV', 'ABMD', 'ACN', 'ATVI', 'ADBE', 'AMD', 'AAP', 'AES', 'AFL', 'A', 'APD', 'AKAM', 'ALK',
          'ALB', 'ARE', 'ALXN', 'ALGN', 'ALLE', 'AGN', 'ADS', 'LNT', 'ALL', 'GOOGL', 'GOOG', 'MO', 'AMZN', 'AMCR',
          'AEE', 'AAL', 'AEP', 'AXP', 'AIG', 'AMT', 'AWK', 'AMP', 'ABC', 'AME', 'AMGN', 'APH', 'ADI', 'ANSS', 'ANTM',
@@ -55,37 +60,51 @@ sp500 = ['MMM', 'ABT', 'ABBV', 'ABMD', 'ACN', 'ATVI', 'ADBE', 'AMD', 'AAP', 'AES
          'XLNX', 'XYL', 'YUM', 'ZBRA', 'ZBH', 'ZION', 'ZTS']
 tickers = sp500
 
-# portfolio investment period
-start_date = dt.date(2006, 12, 25)
+# portfolio investment period:
+start_date = dt.date(2004, 12, 31)
 end_date = dt.date(2019, 12, 31)
 
-# remove NaN columns from investment universe (prevents errors)
-p_tickers = stock_data.get_prices(tickers, start_date, start_date + dt.timedelta(days=+5))
+# remove NaN columns from investment universe to prevent errors:
+p_tickers = stock_data.get_prices(tickers, start_date - dt.timedelta(days=365*4),
+                                  start_date - dt.timedelta(days=365*4) + dt.timedelta(days=+5))
 nan_cols = [i for i in p_tickers.columns if p_tickers[i].isnull().any()]
 tickers = [eq for eq in tickers if eq not in nan_cols]
 
-# factors
-factor_names = ['BaB', 'SMB', 'HML_Devil', 'UMD', 'QMJ', 'RMW']
-factors = factor_data.get_factors(factor_names, start_date, end_date)[1:]*0.01
+# factor tickers:
+factor_tickers = ['SMB', 'MOM', ['CMA', 'HML_Devil'], ['BaB', 'RMW', 'QMJ']]
+
 # ############### Running methods ###############
 
-# single period weights:
-# w_risk_parity = rp.weights_risk_parity(tickers, start_date, end_date)
+# Factor Risk Parity:
+importlib.reload(frp)
+frp_portfolio_weights = frp.portfolio_weights_factor_risk_parity(tickers, factor_tickers, start_date, end_date, 'BM')
+frp_daily_returns = bfunc.daily_returns_of_portfolio(frp_portfolio_weights)
+frp_daily_returns.to_csv(r'Output\frp_daily_returns.csv')
 
-# portfolio weights:
-w_portfolio_risk_parity = rp.portfolio_weights_risk_parity(tickers, start_date, end_date,
-                                                           portfolio_rebalance_period='BM')
+# Risk Parity:
+rp_portfolio_weights = rp.portfolio_weights_risk_parity(tickers, start_date,
+                                                        end_date, portfolio_rebalance_period= 'BM')
+rp_daily_returns = bfunc.daily_returns_of_portfolio(rp_portfolio_weights)
+rp_daily_returns.to_csv(r'Output\rp_daily_returns.csv')
 
-# get daily returns of portfolio:
-stock_returns = stock_data.get_daily_returns(tickers, w_portfolio_risk_parity.index[0], end_date)[1:]
-daily_returns_risk_parity = pd.Series((stock_returns * (w_portfolio_risk_parity.asfreq('B').ffill().shift(1))).sum(1),
-                                      index=pd.to_datetime(stock_returns.index), name='Returns_RP')
+# Equal weights (long only):
+ew_portfolio_weights = ew.portfolio_weights_risk_parity(tickers, start_date, end_date, 'BM')
+ew_daily_returns = bfunc.daily_returns_of_portfolio(ew_portfolio_weights)
+ew_daily_returns.to_csv(r'Output\ew_daily_returns.csv')
 
-# save output
-daily_returns_risk_parity.to_csv(r'Output\risk_parity_daily_returns.csv')
+# Factor Weight Parity:
+factor_tickers = ['SMB', 'MOM', 'CMA', 'BaB']
+fwp_portfolio_weights = fwp.portfolio_weights_factor_weight_parity(tickers, factor_tickers, start_date, end_date, 'BM')
+fwp_daily_returns = bfunc.daily_returns_of_portfolio(fwp_portfolio_weights)
+fwp_daily_returns.to_csv(r'Output\fwp_daily_returns.csv')
+
+importlib.reload(fwp)
 
 
-# ############### testing area ###############
-stocks_ret = stock_data.get_daily_returns(tickers, start_date, end_date)[1:]
-loading_matrix = frp.get_loading_matrix(stocks_ret, factors)
+#test
+
+neg = frp_portfolio_weights.clip(upper=0).sum(1)
+pos = frp_portfolio_weights.clip(lower=0).sum(1)
+pos + neg
+
 

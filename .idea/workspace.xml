@@ -20,29 +20,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72ca0e08-10fa-444d-8092-0d20e699432c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Output/Distance_matrix.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plots/AQR_factors_cum_ret.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plots/Kfrench_factors_cum_ret.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plots/SP500_annual_ret.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plots/SP500_cum_ret.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plots/SP500_underwater.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plots/SP500_vol.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plots/SP500plots.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plots/cluster_abs_corr.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plots/cluster_corr.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plots/corr_all_factors.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Output/ew_daily_returns.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Output/frp_daily_returns.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Output/frp_daily_returns2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Output/fwp_daily_returns.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Output/rp_daily_returns.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/equal_weight.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/factor_weight_parity.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ploting/AQR_factors_cum_ret.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ploting/Kfrench_factors_cum_ret.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ploting/SP500_annual_ret.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ploting/SP500_cum_ret.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ploting/SP500_underwater.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ploting/SP500_vol.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ploting/SP500plots.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ploting/cluster_corr.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ploting/corr_all_factors.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/factor_selection.py" beforeDir="false" afterPath="$PROJECT_DIR$/factor_selection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test2.py" beforeDir="false" afterPath="$PROJECT_DIR$/test2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jupynotebook.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SP500_cum_ret.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/factor_risk_parity.py" beforeDir="false" afterPath="$PROJECT_DIR$/factor_risk_parity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/risk_parity.py" beforeDir="false" afterPath="$PROJECT_DIR$/risk_parity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Arquive/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Arquive/test2_MSCI_factors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_Jupynotebook.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test_Jupynotebook.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_reference.py" beforeDir="false" afterPath="$PROJECT_DIR$/Arquive/test_reference.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +71,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Data" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
-    <property name="settings.editor.selected.configurable" value="PyScientificConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -87,38 +83,17 @@
     <option name="myUseExistingConsole" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Tiago\Desktop\Portfolio_Construction" />
-      <recent name="C:\Users\Tiago\Desktop\Portfolio_Construction\Ploting" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Tiago\Desktop\Portfolio_Construction\Data" />
       <recent name="C:\Users\Tiago\Desktop\Portfolio_Construction" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Tiago\Desktop\Portfolio_Construction\Arquive" />
+      <recent name="C:\Users\Tiago\Desktop\Portfolio_Construction" />
+      <recent name="C:\Users\Tiago\Desktop\Portfolio_Construction\Ploting" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.factor_selection">
-    <configuration name="SP500plots (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Portfolio_Construction" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ploting" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ploting/SP500plots.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.factor_weight_parity">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -185,6 +160,50 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="factor_weight_parity" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Portfolio_Construction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/factor_weight_parity.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Portfolio_Construction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -198,29 +217,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Portfolio_Construction" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test2.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Tiago\Desktop\Portfolio_Construction\Arquive\test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -231,11 +228,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.factor_weight_parity" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.factor_selection" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.factor_raw_to_set" />
-        <item itemvalue="Python.test2" />
-        <item itemvalue="Python.SP500plots (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -311,7 +308,8 @@
       <workItem from="1593896050100" duration="7624000" />
       <workItem from="1593948224664" duration="6336000" />
       <workItem from="1594032431155" duration="3855000" />
-      <workItem from="1594197768520" duration="429000" />
+      <workItem from="1594197768520" duration="29445000" />
+      <workItem from="1594295340955" duration="13615000" />
     </task>
     <task id="LOCAL-00001" summary="testing commit on pycharm">
       <created>1586107211472</created>
@@ -551,7 +549,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593953372205</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="b4 rebuilding main">
+      <created>1594198230198</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1594198230198</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,7 +586,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="portfolio rp moved to risk_parity.py" />
     <MESSAGE value="pyfolio now working,&#10;problem with getting too many stock prices at once" />
     <MESSAGE value="working 100% for rp" />
     <MESSAGE value="returns working and input to pyfolio. &#10;Clean-up needed" />
@@ -606,26 +610,27 @@
     <MESSAGE value="before changes to factor optimization function" />
     <MESSAGE value="made msci work. &#10;b4 cleaning code" />
     <MESSAGE value="cleaned:&#10;folders&#10;backtest_functions.py&#10;factor_data.py&#10;factor_risk_parity.py&#10;factor_selection.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleaned:&#10;folders&#10;backtest_functions.py&#10;factor_data.py&#10;factor_risk_parity.py&#10;factor_selection.py" />
+    <MESSAGE value="b4 rebuilding main" />
+    <option name="LAST_COMMIT_MESSAGE" value="b4 rebuilding main" />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="47" key="#Inspections" timestamp="1587650734857">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="309" y="47" key="#Inspections/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587650734857" />
-    <state x="568" y="231" key="#Notifications" timestamp="1589891116143">
+    <state x="568" y="231" key="#Notifications" timestamp="1594198543850">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="568" y="231" key="#Notifications/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1589891116143" />
+    <state x="568" y="231" key="#Notifications/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594198543850" />
     <state x="170" y="9" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587642965444">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="-1490" y="-110" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738/-1888.-304.1888.1080@-1888.-304.1888.1080" timestamp="1587462607988" />
     <state x="170" y="9" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587642965444" />
-    <state x="358" y="170" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593952873677">
+    <state x="358" y="170" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594199884163">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="358" y="170" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1593952873677" />
+    <state x="358" y="170" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594199884163" />
     <state x="358" y="170" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587644506360" />
     <state x="2278" y="473" key="#com.intellij.fileTypes.FileTypeChooser/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588600020999" />
     <state x="363" y="104" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1589891149987">
@@ -645,10 +650,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="430" y="223" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1593948584741" />
-    <state x="527" y="0" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1593953370978">
+    <state x="527" y="0" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1594198227954">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="527" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1593953370978" />
+    <state x="527" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594198227954" />
     <state x="-1497" y="-189" width="1157" height="825" key="CommitChangelistDialog2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186627527" />
     <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1588618676938" />
     <state x="2129" y="303" width="1157" height="738" key="CommitChangelistDialog2/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588605363218" />
@@ -714,9 +719,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="466" y="90" key="RollbackChangesDialog/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1586107388427" />
-    <state x="165" y="27" key="SettingsEditor" timestamp="1591099381988">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="-1720" y="-254" key="SettingsEditor" timestamp="1594296831953">
+      <screen x="-1888" y="-303" width="1888" height="1080" />
     </state>
+    <state x="-1720" y="-254" key="SettingsEditor/0.0.1366.738/-1888.-303.1888.1080@-1888.-303.1888.1080" timestamp="1594296831953" />
     <state x="165" y="27" key="SettingsEditor/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1591099381988" />
     <state x="-1609" y="-211" key="SettingsEditor/0.0.1366.738/-1888.-304.1888.1080@-1888.-304.1888.1080" timestamp="1587462975503" />
     <state x="-1660" y="-161" key="SettingsEditor/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587651595940" />
@@ -733,10 +739,16 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587500903282" />
-    <state x="2012" y="395" width="1182" height="554" key="dock-window-1" timestamp="1588522183357">
-      <screen x="1920" y="303" width="1366" height="738" />
+    <state x="-951" y="-303" width="958" height="1087" key="dock-window-1" timestamp="1594198549249">
+      <screen x="-1888" y="-303" width="1888" height="1080" />
     </state>
+    <state x="-951" y="-303" width="958" height="1087" key="dock-window-1/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594198549249" />
     <state x="2012" y="395" width="1182" height="554" key="dock-window-1/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588522183357" />
+    <state x="-1184" y="-102" width="1093" height="466" key="dock-window-2" timestamp="1594296833390">
+      <screen x="-1888" y="-303" width="1888" height="1080" />
+    </state>
+    <state x="-1184" y="-102" width="1093" height="466" key="dock-window-2/0.0.1366.738/-1888.-303.1888.1080@-1888.-303.1888.1080" timestamp="1594296833390" />
+    <state x="-951" y="-303" width="958" height="1087" key="dock-window-2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594227256834" />
     <state x="263" y="23" key="editAsTableFormatDialogDimension" timestamp="1593110567523">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

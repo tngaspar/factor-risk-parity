@@ -21,9 +21,12 @@ def get_loading_matrix(stocks, factors):
     :return: Matrix with factor to stocks loadings
     """
     # add case where dates dont match
+    # factors['const'] = 1
     model = sm.OLS(stocks, factors).fit()
     parameters = model.params
-    loading_matrix = pd.DataFrame(data=parameters.values, index=parameters.index, columns=stocks.columns).T
+    loading_matrix = pd.DataFrame(data=parameters.values, index=parameters.index,
+                                  columns=stocks.columns).T
+    # .drop('const', axis=1)
     return loading_matrix
 
 
@@ -102,12 +105,20 @@ def weights_factor_risk_parity(stocks, factor_structure, loadings_matrix, Sigma,
         x0 = np.ones(n_stocks) * 1 / n_stocks
     sigma = big_sigma(stocks)
 
+    def square(listt):
+        return [i ** 2 for i in listt]
+
     def fun(x):
         risk_contributions = get_risk_contributions(x, loadings_matrix, Sigma)
+        #print(risk_contributions)
+        total_risk_contributions = sum(risk_contributions)
+        #print(sum(risk_contributions))
         clusters_rcs = [part.sum() for part in np.split(risk_contributions, np.cumsum(factor_structure))[:-1]]
-        f = sum((clusters_rcs / sigma_x(x, sigma) - 1 / len(factor_structure)) ** 2)
+        # f = sum(square(clusters_rcs / sigma_x(x, sigma) - 1 / len(factor_structure)))
+        f = sum(square(clusters_rcs / total_risk_contributions - 1 / len(factor_structure)))
+        #print(clusters_rcs / total_risk_contributions)
         return f
-
+    print(5.13)
     # old function without factor clustering:
     # fun = lambda x: sum((get_risk_contributions(x, loadings_matrix, Sigma) / sigma_x(x, sigma) - 1 /
     #                                          loadings_matrix.shape[1]) ** 2)
@@ -115,16 +126,20 @@ def weights_factor_risk_parity(stocks, factor_structure, loadings_matrix, Sigma,
     # constrains
     cons = [{'type': 'ineq', 'fun': lambda x: -sum(x) + 1},
             {'type': 'ineq', 'fun': lambda x: sum(x) - 1},
-            {'type': 'ineq', 'fun': lambda x: np.matmul(loadings_matrix.values.T, x) - 0},
-            {'type': 'ineq', 'fun': lambda x: -np.matmul(loadings_matrix.values.T, x) + 1}
+            {'type': 'ineq', 'fun': lambda x: sum(np.clip(x, -99, 0)) - (-0.5)},
+            {'type': 'ineq', 'fun': lambda x: np.matmul(loadings_matrix.values.T, x) - (-.01)},
+            {'type': 'ineq', 'fun': lambda x: -np.matmul(loadings_matrix.values.T, x) + 1},
+            {'type': 'ineq', 'fun': lambda x: get_risk_contributions(x, loadings_matrix, Sigma) - 0}
             ]
 
-    
     # bounds
-    bounds = [(-1 / n_stocks, 100) for n in range(n_stocks)]
+    bounds_short_lev = [(-0.025, 0.025) for n in range(n_stocks)]
+    bounds_long = [(0, 1) for n in range(n_stocks)]
+    bounds = bounds_short_lev
 
     res = minimize(fun, x0, method='SLSQP', bounds=bounds, constraints=cons, tol=1e-5, options={'disp': False})
-    #print(res.fun)
+    print(bounds)
+    print(res.fun)
     return res.x
 
 
@@ -136,7 +151,7 @@ def portfolio_weights_factor_risk_parity(tickers, factor_tickers, start_date, en
     :param start_date: first date of the investment period
     :param end_date: last date of the investment period
     :param portfolio_rebalance_period: portfolio re-balancing period (monthly, weekly, etc.)
-    :return: DataFrame of asset weight vectors for each portfolio reabalancing date
+    :return: DataFrame of asset weight vectors for each portfolio rebalancing date
     """
     factor_structure = []
     factor_tickers_flat = []
@@ -154,7 +169,9 @@ def portfolio_weights_factor_risk_parity(tickers, factor_tickers, start_date, en
     x0 = None
     with alive_bar(len(business_days_end_months)) as bar:
         for t in business_days_end_months:
-            stocks = stock_data.get_daily_returns(tickers, t + relativedelta(months=-12), t)[1:]
+            stocks = stock_data.get_daily_returns(tickers, t + relativedelta(months=-4), t)[1:]
+            # sp500 = stock_data.get_sp500_index_returns(stocks.index[0], stocks.index[-1])
+            # stocks = stocks - sp500.values
             factors = factor_data.get_factors(factor_tickers_flat, stocks.index[0], stocks.index[-1])
             # factors.iloc[:, -7:].subtract(factors['Mkt-RF'], axis=0)
             # if factor intersection is desired insert here
@@ -162,7 +179,9 @@ def portfolio_weights_factor_risk_parity(tickers, factor_tickers, start_date, en
             sigma = big_sigma(stocks)
             portfolio_weights.loc[t] = weights_factor_risk_parity(stocks, factor_structure, loadings_matrix, sigma, x0)
             x0 = portfolio_weights.loc[t]
-            #print(get_risk_contributions(x0, loadings_matrix, sigma)/sigma_x(x0, sigma))
+            print((get_risk_contributions(x0, loadings_matrix, sigma)/sigma_x_rc(x0, loadings_matrix, sigma)))
+            #print((get_risk_contributions(x0, loadings_matrix, sigma)/sigma_x_rc(x0, loadings_matrix, sigma)).sum())
+            #print((get_risk_contributions(x0, loadings_matrix, sigma)))
             print(np.matmul(loadings_matrix.T, x0))
             #(sigma_x(x0, sigma))
             bar()
