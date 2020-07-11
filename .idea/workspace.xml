@@ -20,13 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72ca0e08-10fa-444d-8092-0d20e699432c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Output/ew_performance measures" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plots/EW_log_linear_fit.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/rp_daily_returns.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Output/rp_daily_returns.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backtest_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/backtest_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/ew_daily_returns.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Output/ew_daily_returns.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/ew_performance measures" beforeDir="false" afterPath="$PROJECT_DIR$/Output/ew_performance measures" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/performance_measures.py" beforeDir="false" afterPath="$PROJECT_DIR$/performance_measures.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_Jupynotebook.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test_Jupynotebook.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -300,7 +299,8 @@
       <workItem from="1594295340955" duration="13615000" />
       <workItem from="1594333017651" duration="2339000" />
       <workItem from="1594401317218" duration="12764000" />
-      <workItem from="1594459401633" duration="2829000" />
+      <workItem from="1594459401633" duration="13023000" />
+      <workItem from="1594489707674" duration="668000" />
     </task>
     <task id="LOCAL-00001" summary="testing commit on pycharm">
       <created>1586107211472</created>
@@ -554,7 +554,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594333201873</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="fixed number of number of days per year from 261 business days to 252 trading days.&#10;performance_measures.py complete">
+      <created>1594463908503</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1594463908503</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,7 +591,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="working 100% for rp" />
     <MESSAGE value="returns working and input to pyfolio. &#10;Clean-up needed" />
     <MESSAGE value="Clean code&#10;Risk Parity Implemented" />
     <MESSAGE value="added factor_data.py that gets factor data" />
@@ -609,7 +615,8 @@
     <MESSAGE value="cleaned:&#10;folders&#10;backtest_functions.py&#10;factor_data.py&#10;factor_risk_parity.py&#10;factor_selection.py" />
     <MESSAGE value="b4 rebuilding main" />
     <MESSAGE value="problems with new version of frp&#10;starting performance measures file" />
-    <option name="LAST_COMMIT_MESSAGE" value="problems with new version of frp&#10;starting performance measures file" />
+    <MESSAGE value="fixed number of number of days per year from 261 business days to 252 trading days.&#10;performance_measures.py complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed number of number of days per year from 261 business days to 252 trading days.&#10;performance_measures.py complete" />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="47" key="#Inspections" timestamp="1587650734857">
@@ -648,10 +655,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="430" y="223" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1593948584741" />
-    <state x="617" y="0" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1594333199741">
+    <state x="527" y="0" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1594463905181">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="527" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594198227954" />
+    <state x="527" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594463905181" />
     <state x="-1497" y="-189" width="1157" height="825" key="CommitChangelistDialog2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186627527" />
     <state x="617" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1594333199741" />
     <state x="2129" y="303" width="1157" height="738" key="CommitChangelistDialog2/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588605363218" />
@@ -724,33 +731,34 @@
     <state x="165" y="27" key="SettingsEditor/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1591099381988" />
     <state x="-1609" y="-211" key="SettingsEditor/0.0.1366.738/-1888.-304.1888.1080@-1888.-304.1888.1080" timestamp="1587462975503" />
     <state x="-1660" y="-161" key="SettingsEditor/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587651595940" />
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1593948298044">
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1594463921081">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1593948298044" />
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594463921081" />
     <state x="2195" y="404" key="Vcs.Push.Dialog.v2/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588605393061" />
     <state x="92" y="92" width="1182" height="554" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1591608561709">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="92" y="92" width="1182" height="554" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1591608561709" />
-    <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587500903282">
+    <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594486680390">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
+    <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594486680390" />
     <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587500903282" />
-    <state x="-951" y="-303" width="958" height="1087" key="dock-window-1" timestamp="1594198549249">
+    <state x="-1895" y="-303" width="958" height="1087" key="dock-window-1" timestamp="1594489681991">
       <screen x="-1888" y="-303" width="1888" height="1080" />
     </state>
-    <state x="-951" y="-303" width="958" height="1087" key="dock-window-1/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594198549249" />
+    <state x="-1895" y="-303" width="958" height="1087" key="dock-window-1/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594489681991" />
     <state x="2012" y="395" width="1182" height="554" key="dock-window-1/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588522183357" />
     <state x="-1184" y="-102" width="1093" height="466" key="dock-window-2" timestamp="1594296833390">
       <screen x="-1888" y="-303" width="1888" height="1080" />
     </state>
     <state x="-1184" y="-102" width="1093" height="466" key="dock-window-2/0.0.1366.738/-1888.-303.1888.1080@-1888.-303.1888.1080" timestamp="1594296833390" />
     <state x="-951" y="-303" width="958" height="1087" key="dock-window-2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594227256834" />
-    <state x="263" y="23" key="editAsTableFormatDialogDimension" timestamp="1593110567523">
+    <state x="263" y="23" key="editAsTableFormatDialogDimension" timestamp="1594463985258">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="263" y="23" key="editAsTableFormatDialogDimension/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1593110567523" />
+    <state x="263" y="23" key="editAsTableFormatDialogDimension/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594463985258" />
     <state x="0" y="0" width="585" height="738" key="find.popup" timestamp="1594042277322">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

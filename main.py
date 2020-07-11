@@ -1,5 +1,9 @@
 import datetime as dt
 import importlib
+import numpy as np
+import scipy.stats as stats
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 # ############### Import my scripts ###############
 import stock_data
@@ -10,6 +14,7 @@ import backtest_functions as bfunc
 import equal_weight as ew
 import factor_weight_parity as fwp
 import performance_measures as perf
+
 
 # Reload frequently changed scripts
 importlib.reload(rp)
@@ -102,15 +107,34 @@ fwp_daily_returns.to_csv(r'Output\fwp_daily_returns.csv')
 
 importlib.reload(fwp)
 
-#performance
+#performance chapter
 ew_performance = perf.performance_measures(ew_daily_returns, var_probability=0.05)
-ew_performance.to_csv('Output\ew_performance measures')
+ew_performance.round(2).to_csv('Output\ew_performance measures')
 
+ew_cum_log_returns = np.log1p(ew_daily_returns).cumsum()
+r_squared = stats.linregress(np.arange(len(ew_cum_log_returns)),
+                        ew_cum_log_returns)[2] ** 2
 
-
+fig, ax = plt.subplots()
+sns.lineplot(x=np.arange(len(ew_cum_log_returns)), y=ew_cum_log_returns.values, ci=None, ax=ax,
+             label='EW cumulative log returns')
+sns.regplot(x=np.arange(len(ew_cum_log_returns)), y=ew_cum_log_returns.values, ci=None, scatter=False, color='black',
+            label='OLS linear fit')
+xticks = ax.get_xticks()
+xticks_dates = ew_cum_log_returns.index.year.unique(0)[ew_cum_log_returns.index.year.unique(0) % 2 == 1]
+ax.set_xticklabels(xticks_dates)
+ax.set_ylabel('Cumulative Log  Returns')
+ax.set_title("Linear fit for Cumulative Log returns of an EW strategy")
+ax.legend( frameon=True, framealpha=1)
+ax.grid(b=True)
+plt.savefig(r'Plots/EW_log_linear_fit.pdf')
+plt.close('all')
 
 
 #test
+
+
+
 
 neg = frp_portfolio_weights.clip(upper=0).sum(1)
 pos = frp_portfolio_weights.clip(lower=0).sum(1)

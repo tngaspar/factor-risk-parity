@@ -7,17 +7,17 @@ import pandas as pd
 
 def performance_measures(portfolio_daily_returns, benchmark_returns=None, var_probability=0.05):
     # return pandas of all measures
-    measures = {'Annualized Returns (CAGR)': annual_returns_cagr(portfolio_daily_returns),
-                'Cumulative Returns': cumulative_returns(portfolio_daily_returns),
-                'Annualized Volatility': annual_volatility(portfolio_daily_returns),
+    measures = {'Annualized Returns (CAGR) (%)': annual_returns_cagr(portfolio_daily_returns)*100,
+                'Cumulative Returns (%)': cumulative_returns(portfolio_daily_returns)*100,
+                'Annualized Volatility (%)': annual_volatility(portfolio_daily_returns)*100,
                 'Sharpe Ratio': sharpe_ratio(portfolio_daily_returns),
-                'Max Drawdown': max_drawdown(portfolio_daily_returns),
+                'Max Drawdown (%)': max_drawdown(portfolio_daily_returns)*100,
                 'Calmar Ratio': calmar_ratio(portfolio_daily_returns),
                 'Stability': stability(portfolio_daily_returns),
                 'Skewness': skewness(portfolio_daily_returns),
                 'Kurtosis': kurtosis(portfolio_daily_returns),
-                'Daily Value at Risk (VaR)': value_at_risk(portfolio_daily_returns, var_probability),
-                'Expected Shortfall': expected_shortfall(portfolio_daily_returns, var_probability),
+                'Daily Value at Risk (VaR) (%)': value_at_risk(portfolio_daily_returns, var_probability)*100,
+                'Expected Shortfall (%)': expected_shortfall(portfolio_daily_returns, var_probability)*100,
                 'Tail Ratio': tail_ratio(portfolio_daily_returns),
                 'Alpha': alpha(portfolio_daily_returns, benchmark_returns),
                 'Beta': beta(portfolio_daily_returns, benchmark_returns)
