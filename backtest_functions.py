@@ -18,8 +18,8 @@ def daily_returns_of_portfolio(weights_portfolio):
     daily_returns = pd.Series(
         (stock_returns * (weights_portfolio.asfreq('B').ffill().shift(1))).sum(1),
         index=pd.to_datetime(stock_returns.index), name='Returns')
-
-    return daily_returns
+    # only open market days are passed
+    return daily_returns[daily_returns != 0]
 
 
 def cumulative_returns(returns):

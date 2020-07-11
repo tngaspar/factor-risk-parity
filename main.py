@@ -9,6 +9,7 @@ import factor_risk_parity as frp
 import backtest_functions as bfunc
 import equal_weight as ew
 import factor_weight_parity as fwp
+import performance_measures as perf
 
 # Reload frequently changed scripts
 importlib.reload(rp)
@@ -17,6 +18,7 @@ importlib.reload(frp)
 importlib.reload(bfunc)
 importlib.reload(ew)
 importlib.reload(fwp)
+importlib.reload(perf)
 
 # ############### Data gathering ###############
 test_tickers = ['MMM', 'ABT', 'ABBV', 'ABMD', 'ACN', 'ATVI', 'ADBE', 'AMD', 'AAP', 'AES', 'AFL', 'A', 'APD', 'AKAM', 'ALK',
@@ -100,6 +102,13 @@ fwp_daily_returns.to_csv(r'Output\fwp_daily_returns.csv')
 
 importlib.reload(fwp)
 
+#performance
+ew_performance = perf.performance_measures(ew_daily_returns, var_probability=0.05)
+ew_performance.to_csv('Output\ew_performance measures')
+
+
+
+
 
 #test
 
@@ -107,4 +116,5 @@ neg = frp_portfolio_weights.clip(upper=0).sum(1)
 pos = frp_portfolio_weights.clip(lower=0).sum(1)
 pos + neg
 
-
+import pandas as pd
+importlib.reload(bfunc)
