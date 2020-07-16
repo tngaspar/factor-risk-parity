@@ -20,10 +20,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72ca0e08-10fa-444d-8092-0d20e699432c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Plots/EW_log_linear_fit.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Implementation/ew_and_fwp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Implementation/ew_and_fwp_performance measures.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Implementation/factor_cluster_measures.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Implementation/frp_daily_returns_4f.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Implementation/frp_daily_returns_4fv2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Implementation/frp_x_4f.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Implementation/frp_x_4fv2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Implementation/fwp_x_weights_4f.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Implementation/plots.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Implementation/rp_and_frp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Implementation/rp_and_frp_performance measures.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Implementation/rp_daily_returns.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Implementation/rp_x_weights.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Implementation/sp500_returns.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plots/EW_histogram.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plots/all_port_4f_cum_ret.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/ew_daily_returns.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Output/ew_daily_returns.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/ew_performance measures" beforeDir="false" afterPath="$PROJECT_DIR$/Output/ew_performance measures" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/fwp_daily_returns.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Output/fwp_daily_returns.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/rp_daily_returns.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Output/rp_daily_returns.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plots/EW_log_linear_fit.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Plots/EW_log_linear_fit.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/factor_risk_parity.py" beforeDir="false" afterPath="$PROJECT_DIR$/factor_risk_parity.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/performance_measures.py" beforeDir="false" afterPath="$PROJECT_DIR$/performance_measures.py" afterDir="false" />
     </list>
@@ -80,7 +97,7 @@
       <recent name="C:\Users\Tiago\Desktop\Portfolio_Construction" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.performance_measures">
+  <component name="RunManager" selected="Python.plots">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -103,7 +120,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="factor_selection" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="ew_and_fwp" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -111,12 +128,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Implementation" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/factor_selection.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Implementation/ew_and_fwp.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -147,28 +164,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Portfolio_Construction" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="performance_measures" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -191,20 +186,36 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="plots" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Implementation" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\Tiago\Desktop\Portfolio_Construction\Arquive\test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Implementation/plots.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="rp_and_frp" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Portfolio_Construction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Implementation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Implementation/rp_and_frp.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -215,11 +226,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.plots" />
+        <item itemvalue="Python.rp_and_frp" />
+        <item itemvalue="Python.ew_and_fwp" />
         <item itemvalue="Python.performance_measures" />
         <item itemvalue="Python.factor_weight_parity" />
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python.factor_selection" />
-        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -300,7 +311,12 @@
       <workItem from="1594333017651" duration="2339000" />
       <workItem from="1594401317218" duration="12764000" />
       <workItem from="1594459401633" duration="13023000" />
-      <workItem from="1594489707674" duration="668000" />
+      <workItem from="1594489707674" duration="5176000" />
+      <workItem from="1594560804450" duration="6968000" />
+      <workItem from="1594720162984" duration="12521000" />
+      <workItem from="1594830620887" duration="1957000" />
+      <workItem from="1594841991609" duration="217000" />
+      <workItem from="1594886515967" duration="12257000" />
     </task>
     <task id="LOCAL-00001" summary="testing commit on pycharm">
       <created>1586107211472</created>
@@ -561,7 +577,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594463908503</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="added plot for the performance chapter">
+      <created>1594490397978</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1594490397978</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -591,7 +614,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="returns working and input to pyfolio. &#10;Clean-up needed" />
     <MESSAGE value="Clean code&#10;Risk Parity Implemented" />
     <MESSAGE value="added factor_data.py that gets factor data" />
     <MESSAGE value="last commit of the day" />
@@ -616,7 +638,8 @@
     <MESSAGE value="b4 rebuilding main" />
     <MESSAGE value="problems with new version of frp&#10;starting performance measures file" />
     <MESSAGE value="fixed number of number of days per year from 261 business days to 252 trading days.&#10;performance_measures.py complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed number of number of days per year from 261 business days to 252 trading days.&#10;performance_measures.py complete" />
+    <MESSAGE value="added plot for the performance chapter" />
+    <option name="LAST_COMMIT_MESSAGE" value="added plot for the performance chapter" />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="47" key="#Inspections" timestamp="1587650734857">
@@ -655,10 +678,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="430" y="223" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1593948584741" />
-    <state x="527" y="0" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1594463905181">
+    <state x="411" y="0" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1594490396789">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="527" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594463905181" />
+    <state x="411" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594490396789" />
     <state x="-1497" y="-189" width="1157" height="825" key="CommitChangelistDialog2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186627527" />
     <state x="617" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1594333199741" />
     <state x="2129" y="303" width="1157" height="738" key="CommitChangelistDialog2/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588605363218" />
@@ -720,10 +743,6 @@
     </state>
     <state width="1323" height="227" key="GridCell.Tab.1.right/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588009275276" />
     <state width="1323" height="227" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1588023297501" />
-    <state x="466" y="90" key="RollbackChangesDialog" timestamp="1586107388427">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="466" y="90" key="RollbackChangesDialog/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1586107388427" />
     <state x="-1720" y="-254" key="SettingsEditor" timestamp="1594296831953">
       <screen x="-1888" y="-303" width="1888" height="1080" />
     </state>
@@ -745,16 +764,16 @@
     </state>
     <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594486680390" />
     <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587500903282" />
-    <state x="-1895" y="-303" width="958" height="1087" key="dock-window-1" timestamp="1594489681991">
+    <state x="-991" y="-89" width="988" height="587" key="dock-window-1" timestamp="1594897158558">
       <screen x="-1888" y="-303" width="1888" height="1080" />
     </state>
-    <state x="-1895" y="-303" width="958" height="1087" key="dock-window-1/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594489681991" />
+    <state x="-991" y="-89" width="988" height="587" key="dock-window-1/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594897158558" />
     <state x="2012" y="395" width="1182" height="554" key="dock-window-1/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588522183357" />
-    <state x="-1184" y="-102" width="1093" height="466" key="dock-window-2" timestamp="1594296833390">
+    <state x="-987" y="-247" width="947" height="934" key="dock-window-2" timestamp="1594898069925">
       <screen x="-1888" y="-303" width="1888" height="1080" />
     </state>
     <state x="-1184" y="-102" width="1093" height="466" key="dock-window-2/0.0.1366.738/-1888.-303.1888.1080@-1888.-303.1888.1080" timestamp="1594296833390" />
-    <state x="-951" y="-303" width="958" height="1087" key="dock-window-2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594227256834" />
+    <state x="-987" y="-247" width="947" height="934" key="dock-window-2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594898069925" />
     <state x="263" y="23" key="editAsTableFormatDialogDimension" timestamp="1594463985258">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

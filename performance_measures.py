@@ -3,7 +3,7 @@ import empyrical as ep
 import stock_data as sdata
 from scipy import stats
 import pandas as pd
-
+import numpy as np
 
 def performance_measures(portfolio_daily_returns, benchmark_returns=None, var_probability=0.05):
     # return pandas of all measures
@@ -75,13 +75,67 @@ def kurtosis(portfolio_daily_retuns):
     return stats.kurtosis(portfolio_daily_retuns)
 
 
-def tail_ratio(portfolio_daily_returns):
-    return ep.tail_ratio(portfolio_daily_returns)
+def tail_ratio(portfolio_daily_returns, probability=0.05, risk_free=0):
+    #return ep.tail_ratio(portfolio_daily_returns)
+    value_ar = value_at_risk(portfolio_daily_returns)
+    cvar = expected_shortfall(portfolio_daily_returns)
+    sum_r = 0
+    count = 0
+    for r in portfolio_daily_returns:
+        if r <= value_ar:
+            sum_r += (r - cvar) ** 2
+            count += 1
+    tail_risk = np.sqrt(sum_r / count)
+
+    cagr = annual_returns_cagr(portfolio_daily_returns)
+    tail_ratio = (cagr - risk_free) / (tail_risk*np.sqrt(252))
+    return tail_ratio
 
 
 def value_at_risk(portfolio_daily_returns, probability=0.05):
     return ep.value_at_risk(portfolio_daily_returns, probability)
 
 
-def expected_shortfall(portfolio_daily_returns, probability):
+def expected_shortfall(portfolio_daily_returns, probability=0.05):
     return ep.conditional_value_at_risk(portfolio_daily_returns, probability)
+
+# factor contribution measures
+import factor_data
+import stock_data
+from dateutil.relativedelta import relativedelta
+from factor_risk_parity import get_loading_matrix, get_risk_contributions, big_sigma
+from alive_progress import alive_bar
+from alive_progress import config_handler
+config_handler.set_global(force_tty=True)
+
+
+def factor_exposures_and_risk_contributions(x, factor_tickers):
+    stock_tickers = x.columns
+    f_exposures = pd.DataFrame([])
+    exposures = []
+    rc = []
+    with alive_bar(len(x.index)) as bar:
+        for t in x.index:
+            stock_returns = stock_data.get_daily_returns(stock_tickers, t + relativedelta(months=-12), t)[1:]
+            factor_returns = factor_data.get_factors(factor_tickers, stock_returns.index[0], stock_returns.index[-1])
+            l_mat = get_loading_matrix(stock_returns, factor_returns)
+            exposures.append(np.matmul(l_mat.T, x.loc[t]))
+            sigma = big_sigma(stock_returns)
+            rc.append(get_risk_contributions(x.loc[t], l_mat, sigma))
+            bar()
+    return pd.DataFrame(exposures), pd.DataFrame(rc)
+
+
+
+# def factor_risk_contributions(x, factor_tickers):
+#     stock_tickers = x.columns
+#     f_rc = pd.DataFrame([])
+#     rc = []
+#     with alive_bar(len(x.index)) as bar:
+#         for t in x.index:
+#             stock_returns = stock_data.get_daily_returns(stock_tickers, t + relativedelta(months=-12), t)[1:]
+#             factor_returns = factor_data.get_factors(factor_tickers, stock_returns.index[0], stock_returns.index[-1])
+#             l_mat = get_loading_matrix(stock_returns, factor_returns)
+# )
+#             bar()
+#     return pd.DataFrame(rc)

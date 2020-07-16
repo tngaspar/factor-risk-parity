@@ -1,9 +1,13 @@
+import os
+os.chdir('../')
+
 import datetime as dt
 import importlib
 import numpy as np
 import scipy.stats as stats
 import seaborn as sns
 import matplotlib.pyplot as plt
+import pandas as pd
 
 # ############### Import my scripts ###############
 import stock_data
@@ -16,6 +20,7 @@ import factor_weight_parity as fwp
 import performance_measures as perf
 
 
+
 # Reload frequently changed scripts
 importlib.reload(rp)
 importlib.reload(factor_data)
@@ -25,12 +30,27 @@ importlib.reload(ew)
 importlib.reload(fwp)
 importlib.reload(perf)
 
+
+# ############# chosing 4 factors to use
+f_start_date = dt.date(1990, 12, 31)
+f_end_date = dt.date(2004, 12, 31)
+
+factors_cluster_1 = factor_data.get_factors(['CMA', 'HML_Devil'], f_start_date, f_end_date)
+factors_cluster_2 = factor_data.get_factors(['BaB', 'RMW', 'QMJ'], f_start_date, f_end_date)
+
+perf_measures = pd.concat([
+    perf.performance_measures(factors_cluster_1['CMA']).rename('CMA'),
+    perf.performance_measures(factors_cluster_1['HML_Devil']).rename('HML_Devil'),
+    perf.performance_measures(factors_cluster_2['BaB']).rename('BaB'),
+    perf.performance_measures(factors_cluster_2['RMW']).rename('RMW'),
+    perf.performance_measures(factors_cluster_2['QMJ']).rename('QMJ')
+    ], axis=1
+)
+
+perf_measures.round(2).to_csv(r'Implementation/factor_cluster_measures.csv')
+
+
 # ############### Data gathering ###############
-test_tickers = ['MMM', 'ABT', 'ABBV', 'ABMD', 'ACN', 'ATVI', 'ADBE', 'AMD', 'AAP', 'AES', 'AFL', 'A', 'APD', 'AKAM', 'ALK',
-         'ALB', 'ARE', 'ALXN', 'ALGN', 'ALLE', 'AGN', 'ADS', 'LNT', 'ALL', 'GOOGL', 'GOOG', 'MO', 'AMZN', 'AMCR',
-         'AEE', 'AAL', 'AEP', 'AXP', 'AIG', 'AMT', 'AWK', 'AMP', 'ABC', 'AME', 'AMGN', 'APH', 'ADI', 'ANSS', 'ANTM',
-         'AON', 'AOS', 'APA', 'AIV', 'AAPL', 'AMAT', 'APTV', 'ADM', 'ARNC', 'ANET', 'AJG', 'AIZ', 'ATO', 'T', 'ADSK',
-         'ADP', 'AZO', 'AVB', 'AVY', 'BKR', 'BLL', 'BAC', 'BK', 'BAX', 'BDX', 'BRK-B', 'BBY', 'BIIB', 'BLK', 'BA']
 sp500 = ['MMM', 'ABT', 'ABBV', 'ABMD', 'ACN', 'ATVI', 'ADBE', 'AMD', 'AAP', 'AES', 'AFL', 'A', 'APD', 'AKAM', 'ALK',
          'ALB', 'ARE', 'ALXN', 'ALGN', 'ALLE', 'AGN', 'ADS', 'LNT', 'ALL', 'GOOGL', 'GOOG', 'MO', 'AMZN', 'AMCR',
          'AEE', 'AAL', 'AEP', 'AXP', 'AIG', 'AMT', 'AWK', 'AMP', 'ABC', 'AME', 'AMGN', 'APH', 'ADI', 'ANSS', 'ANTM',
@@ -77,22 +97,6 @@ p_tickers = stock_data.get_prices(tickers, start_date - dt.timedelta(days=365*4)
 nan_cols = [i for i in p_tickers.columns if p_tickers[i].isnull().any()]
 tickers = [eq for eq in tickers if eq not in nan_cols]
 
-# factor tickers:
-factor_tickers = ['SMB', 'MOM', ['CMA', 'HML_Devil'], ['BaB', 'RMW', 'QMJ']]
-
-# ############### Running methods ###############
-
-# Factor Risk Parity:
-importlib.reload(frp)
-frp_portfolio_weights = frp.portfolio_weights_factor_risk_parity(tickers, factor_tickers, start_date, end_date, 'BM')
-frp_daily_returns = bfunc.daily_returns_of_portfolio(frp_portfolio_weights)
-frp_daily_returns.to_csv(r'Output\frp_daily_returns.csv')
-
-# Risk Parity:
-rp_portfolio_weights = rp.portfolio_weights_risk_parity(tickers, start_date,
-                                                        end_date, portfolio_rebalance_period= 'BM')
-rp_daily_returns = bfunc.daily_returns_of_portfolio(rp_portfolio_weights)
-rp_daily_returns.to_csv(r'Output\rp_daily_returns.csv')
 
 # Equal weights (long only):
 ew_portfolio_weights = ew.portfolio_weights_risk_parity(tickers, start_date, end_date, 'BM')
@@ -103,57 +107,26 @@ ew_daily_returns.to_csv(r'Output\ew_daily_returns.csv')
 factor_tickers = ['SMB', 'MOM', 'CMA', 'BaB']
 fwp_portfolio_weights = fwp.portfolio_weights_factor_weight_parity(tickers, factor_tickers, start_date, end_date, 'BM')
 fwp_daily_returns = bfunc.daily_returns_of_portfolio(fwp_portfolio_weights)
+fwp_portfolio_weights.to_csv(r'Implementation\fwp_x_weights_4f.csv')
 fwp_daily_returns.to_csv(r'Output\fwp_daily_returns.csv')
 
-importlib.reload(fwp)
-importlib.reload(perf)
-#performance chapter
-ew_performance = perf.performance_measures(ew_daily_returns, var_probability=0.05)
-ew_performance.round(2).to_csv('Output\ew_performance measures')
+portfolios_perf_measures = pd.concat([
+    perf.performance_measures(ew_daily_returns).rename('EW'),
+    perf.performance_measures(fwp_daily_returns).rename('FWP')
+    ], axis=1
+)
+portfolios_perf_measures.round(2).to_csv(r'Implementation\ew_and_fwp_performance measures.csv')
 
-ew_cum_log_returns = np.log1p(ew_daily_returns).cumsum()
-r_squared = stats.linregress(np.arange(len(ew_cum_log_returns)),
-                        ew_cum_log_returns)[2] ** 2
-
-fig, ax = plt.subplots()
-sns.lineplot(x=np.arange(len(ew_cum_log_returns)), y=ew_cum_log_returns.values, ci=None, ax=ax,
-             label='EW cumulative log returns')
-sns.regplot(x=np.arange(len(ew_cum_log_returns)), y=ew_cum_log_returns.values, ci=None, scatter=False, color='black',
-            label='OLS linear fit')
-xticks = ax.get_xticks()
-xticks_dates = ew_cum_log_returns.index.year.unique(0)[ew_cum_log_returns.index.year.unique(0) % 2 == 1]
-ax.set_xticklabels(xticks_dates)
-ax.set_ylabel('Cumulative Log  Returns')
-ax.set_title("Linear fit for Cumulative Log returns of an EW strategy")
-ax.legend(frameon=True, framealpha=1)
-ax.grid(b=True)
-plt.savefig(r'Plots/EW_log_linear_fit.pdf')
-plt.show()
-plt.close('all')
-
-# histogram
-ew_daily_returns.hist(bins=100)
-
-plt.show()
-plt.close('all')
-ew_daily_returns.mean()
+#plot here
 
 
 
-sns.set(style="white")
-ax = sns.distplot(ew_daily_returns, norm_hist=False, kde=False, color="navy")
-plt.axvline(x=ew_daily_returns.mean(), color='black', linestyle='--', alpha=0.7, lw=1.5, label='mean')
-plt.grid(b=True, axis='y')
-plt.xlabel('Daily returns')
-plt.title('Histogram of daily returns for an EW strategy')
-ax.legend(frameon=True, framealpha=1)
-plt.savefig(r'Plots/EW_histogram.pdf')
-plt.show()
-plt.close('all')
 
-neg = frp_portfolio_weights.clip(upper=0).sum(1)
-pos = frp_portfolio_weights.clip(lower=0).sum(1)
-pos + neg
 
-import pandas as pd
-importlib.reload(bfunc)
+
+# delete
+
+factor_tickers2 = ['SMB', 'MOM', 'CMA', 'QMJ']
+fwp_portfolio_weights2 = fwp.portfolio_weights_factor_weight_parity(tickers, factor_tickers2, start_date, end_date, 'BM')
+fwp_daily_returns2 = bfunc.daily_returns_of_portfolio(fwp_portfolio_weights2)
+fwp_daily_returns2.to_csv(r'Output\fwp_daily_returns.csv')
