@@ -5,6 +5,16 @@ from scipy import stats
 import pandas as pd
 import numpy as np
 
+# for the factor exposures:
+import factor_data
+import stock_data
+from dateutil.relativedelta import relativedelta
+from factor_risk_parity import get_loading_matrix, get_risk_contributions, big_sigma
+from alive_progress import alive_bar
+from alive_progress import config_handler
+config_handler.set_global(force_tty=True)
+
+
 def performance_measures(portfolio_daily_returns, benchmark_returns=None, var_probability=0.05):
     # return pandas of all measures
     measures = {'Annualized Returns (CAGR) (%)': annual_returns_cagr(portfolio_daily_returns)*100,
@@ -100,15 +110,6 @@ def expected_shortfall(portfolio_daily_returns, probability=0.05):
     return ep.conditional_value_at_risk(portfolio_daily_returns, probability)
 
 # factor contribution measures
-import factor_data
-import stock_data
-from dateutil.relativedelta import relativedelta
-from factor_risk_parity import get_loading_matrix, get_risk_contributions, big_sigma
-from alive_progress import alive_bar
-from alive_progress import config_handler
-config_handler.set_global(force_tty=True)
-
-
 def factor_exposures_and_risk_contributions(x, factor_tickers):
     stock_tickers = x.columns
     f_exposures = pd.DataFrame([])
@@ -123,19 +124,7 @@ def factor_exposures_and_risk_contributions(x, factor_tickers):
             sigma = big_sigma(stock_returns)
             rc.append(get_risk_contributions(x.loc[t], l_mat, sigma))
             bar()
-    return pd.DataFrame(exposures), pd.DataFrame(rc)
+    return pd.DataFrame(exposures), pd.DataFrame(rc, index=x.index, columns=factor_tickers)
 
 
 
-# def factor_risk_contributions(x, factor_tickers):
-#     stock_tickers = x.columns
-#     f_rc = pd.DataFrame([])
-#     rc = []
-#     with alive_bar(len(x.index)) as bar:
-#         for t in x.index:
-#             stock_returns = stock_data.get_daily_returns(stock_tickers, t + relativedelta(months=-12), t)[1:]
-#             factor_returns = factor_data.get_factors(factor_tickers, stock_returns.index[0], stock_returns.index[-1])
-#             l_mat = get_loading_matrix(stock_returns, factor_returns)
-# )
-#             bar()
-#     return pd.DataFrame(rc)

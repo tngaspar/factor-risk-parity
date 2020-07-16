@@ -88,11 +88,16 @@ rp_portfolio_weights.to_csv(r'Implementation\rp_x_weights.csv')
 
 # Factor Risk Parity 4 factors:
 importlib.reload(frp)
-factor_tickers = ['SMB', 'MOM', 'CMA', 'QMJ']
+factor_tickers = ['SMB', 'MOM', 'CMA', 'BaB']
+
 frp_portfolio_weights = frp.portfolio_weights_factor_risk_parity(tickers, factor_tickers, start_date, end_date, 'BM')
+frp_portfolio_weights.to_csv(r'Implementation\frp_x_4f_025.csv')
+
+
+frp_portfolio_weights = pd.read_csv(r'Implementation\frp_x_4f.csv', index_col=0)
+frp_portfolio_weights.index = pd.to_datetime(frp_portfolio_weights.index)
 frp_daily_returns = bfunc.daily_returns_of_portfolio(frp_portfolio_weights)
-frp_portfolio_weights.to_csv(r'Implementation\frp_x_4fv2.csv')
-frp_daily_returns.to_csv(r'Implementation\frp_daily_returns_4fv2.csv')
+
 
 
 portfolios_perf_measures = pd.concat([
@@ -105,3 +110,53 @@ portfolios_perf_measures.round(2).to_csv(r'Implementation\rp_and_frp_performance
 
 importlib.reload(perf)
 exposures, risk_contributions = perf.factor_exposures_and_risk_contributions(frp_portfolio_weights, factor_tickers)
+#
+# norm_exposures = exposures.divide(exposures.sum(axis=1), axis=0).clip(lower=0)
+# ax = norm_exposures.plot(kind='area', stacked=True, title='exposures')
+# ax.set_ylabel('Percent (%)')
+# ax.margins(0, 0)
+# plt.show()
+# plt.close()
+
+plt.style.use('seaborn-dark-palette')
+norm_rc = risk_contributions.divide(risk_contributions.sum(axis=1), axis=0).clip(lower=0)
+ax = norm_rc.plot(kind='area', stacked=True, title='Factors Risk Contribution for FRP')
+ax.legend(frameon=True, framealpha=1)
+ax.set_ylabel('Percent (%)')
+ax.set_ylim(0, 1)
+ax.margins(0, 0)
+plt.savefig(r'Plots\frp_rc_area_1st.pdf')
+plt.show()
+plt.close()
+
+###-1/m factor exposure allowance
+
+frp_portfolio_weights1m = pd.read_csv(r'Implementation\frp_x_4f_025.csv', index_col=0)
+frp_portfolio_weights1m.index = pd.to_datetime(frp_portfolio_weights1m.index)
+frp_daily_returns1m = bfunc.daily_returns_of_portfolio(frp_portfolio_weights1m)
+frp_daily_returns1m.to_csv(r'Implementation\frp_daily_4f_025.csv')
+
+frp_1m_performance = perf.performance_measures(frp_daily_returns1m).rename('FRP w/ relaxation')
+frp_1m_performance.round(2).to_csv(r'Implementation\frp_1m_perf.csv')
+
+portfolios_perf_measures = pd.concat([
+    perf.performance_measures(frp_daily_returns1m).rename('FRP w/ relaxation'),
+    perf.performance_measures(frp_daily_returns).rename('FRP')
+    ], axis=1
+)
+portfolios_perf_measures.round(2).to_csv(r'Implementation\frp1m_and_normal_performance measures.csv')
+
+
+
+exposures2, risk_contributions2 = perf.factor_exposures_and_risk_contributions(frp_portfolio_weights1m, factor_tickers)
+
+plt.style.use('seaborn-dark-palette')
+norm_rc2 = risk_contributions2.divide(risk_contributions2.sum(axis=1), axis=0).clip(lower=0)
+ax = norm_rc2.plot(kind='area', stacked=True, title='Factors Risk Contribution for FRP w/ relaxation')
+ax.legend(frameon=True, framealpha=1)
+ax.set_ylabel('Percent (%)')
+ax.set_ylim(0, 1)
+ax.margins(0, 0)
+plt.savefig(r'Plots\frp_rc_area_2nd.pdf')
+plt.show()
+plt.close()

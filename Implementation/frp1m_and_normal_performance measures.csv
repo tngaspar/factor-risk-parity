@@ -1,0 +1,15 @@
+,FRP w/ relaxation,FRP
+Annualized Returns (CAGR) (%),14.99,11.89
+Cumulative Returns (%),710.6,438.05
+Annualized Volatility (%),13.46,15.22
+Sharpe Ratio,1.11,0.81
+Max Drawdown (%),-26.96,-33.3
+Calmar Ratio,0.56,0.36
+Stability,0.98,0.96
+Skewness,-0.3,-0.52
+Kurtosis,8.8,5.12
+Daily Value at Risk (VaR) (%),-1.22,-1.45
+Expected Shortfall (%),-1.96,-2.32
+Tail Ratio,1.02,0.78
+Alpha,0.12,0.11
+Beta,0.46,0.21

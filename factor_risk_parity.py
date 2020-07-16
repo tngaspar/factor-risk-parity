@@ -118,16 +118,18 @@ def weights_factor_risk_parity(stocks, factor_structure, loadings_matrix, Sigma,
     #    f = sum(square(clusters_rcs / total_risk_contributions - 1 / len(factor_structure)))
         #print(clusters_rcs / total_risk_contributions)
      #   return f
-    print(5.4)
+    print(5.11)
     # old function without factor clustering:
-    fun = lambda x: sum((get_risk_contributions(x, loadings_matrix, Sigma) / sigma_x(x, sigma) - 1 /
-                         loadings_matrix.shape[1]) ** 2)
-
+    #fun = lambda x: sum((get_risk_contributions(x, loadings_matrix, Sigma) / sigma_x(x, sigma) - 1 /
+    #                     loadings_matrix.shape[1]) ** 2)
+    fun = lambda x: sum(square(get_risk_contributions(x, loadings_matrix, Sigma) /
+                         sigma_x(x, sigma) - 1 /
+                         loadings_matrix.shape[1]))
     # constrains
     cons = [{'type': 'ineq', 'fun': lambda x: -sum(x) + 1},
             {'type': 'ineq', 'fun': lambda x: sum(x) - 1},
             #{'type': 'ineq', 'fun': lambda x: sum(np.clip(x, -99, 0)) - (-1)},
-            {'type': 'ineq', 'fun': lambda x: np.matmul(loadings_matrix.values.T, x) - (-.00)},
+            {'type': 'ineq', 'fun': lambda x: np.matmul(loadings_matrix.values.T, x) - (-0.25)},
             {'type': 'ineq', 'fun': lambda x: -np.matmul(loadings_matrix.values.T, x) + 1}#,
             #{'type': 'ineq', 'fun': lambda x: get_risk_contributions(x, loadings_matrix, Sigma) - 0}
             ]

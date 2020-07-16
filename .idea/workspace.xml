@@ -20,28 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72ca0e08-10fa-444d-8092-0d20e699432c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Implementation/ew_and_fwp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Implementation/ew_and_fwp_performance measures.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Implementation/factor_cluster_measures.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Implementation/frp_daily_returns_4f.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Implementation/frp_daily_returns_4fv2.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Implementation/frp_x_4f.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Implementation/frp_x_4fv2.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Implementation/fwp_x_weights_4f.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Implementation/plots.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Implementation/rp_and_frp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Implementation/rp_and_frp_performance measures.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Implementation/rp_daily_returns.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Implementation/rp_x_weights.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Implementation/sp500_returns.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plots/EW_histogram.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plots/all_port_4f_cum_ret.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Implementation/frp1m_and_normal_performance measures.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Implementation/frp_1m_perf.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Implementation/frp_daily_4f_025.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plots/frp_rc_area_1st.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plots/frp_rc_area_2nd.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/fwp_daily_returns.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Output/fwp_daily_returns.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/rp_daily_returns.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Output/rp_daily_returns.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plots/EW_log_linear_fit.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Plots/EW_log_linear_fit.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Implementation/plots.py" beforeDir="false" afterPath="$PROJECT_DIR$/Implementation/plots.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Implementation/rp_and_frp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Implementation/rp_and_frp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Implementation/rp_and_frp_performance measures.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Implementation/rp_and_frp_performance measures.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Implementation/sp500_returns.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Implementation/sp500_returns.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/factor_risk_parity.py" beforeDir="false" afterPath="$PROJECT_DIR$/factor_risk_parity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/performance_measures.py" beforeDir="false" afterPath="$PROJECT_DIR$/performance_measures.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -316,7 +305,7 @@
       <workItem from="1594720162984" duration="12521000" />
       <workItem from="1594830620887" duration="1957000" />
       <workItem from="1594841991609" duration="217000" />
-      <workItem from="1594886515967" duration="12257000" />
+      <workItem from="1594886515967" duration="23831000" />
     </task>
     <task id="LOCAL-00001" summary="testing commit on pycharm">
       <created>1586107211472</created>
@@ -584,7 +573,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594490397978</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="factor exposures and rc added">
+      <created>1594898838076</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1594898838076</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -614,7 +610,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Clean code&#10;Risk Parity Implemented" />
     <MESSAGE value="added factor_data.py that gets factor data" />
     <MESSAGE value="last commit of the day" />
     <MESSAGE value="added SP500 index returns to Data" />
@@ -639,7 +634,8 @@
     <MESSAGE value="problems with new version of frp&#10;starting performance measures file" />
     <MESSAGE value="fixed number of number of days per year from 261 business days to 252 trading days.&#10;performance_measures.py complete" />
     <MESSAGE value="added plot for the performance chapter" />
-    <option name="LAST_COMMIT_MESSAGE" value="added plot for the performance chapter" />
+    <MESSAGE value="factor exposures and rc added" />
+    <option name="LAST_COMMIT_MESSAGE" value="factor exposures and rc added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="47" key="#Inspections" timestamp="1587650734857">
@@ -678,10 +674,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="430" y="223" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1593948584741" />
-    <state x="411" y="0" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1594490396789">
+    <state x="411" y="0" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1594898836405">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="411" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594490396789" />
+    <state x="411" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594898836405" />
     <state x="-1497" y="-189" width="1157" height="825" key="CommitChangelistDialog2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186627527" />
     <state x="617" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1594333199741" />
     <state x="2129" y="303" width="1157" height="738" key="CommitChangelistDialog2/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588605363218" />
@@ -764,16 +760,20 @@
     </state>
     <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594486680390" />
     <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1587500903282" />
-    <state x="-991" y="-89" width="988" height="587" key="dock-window-1" timestamp="1594897158558">
+    <state x="-991" y="-89" width="988" height="587" key="dock-window-1" timestamp="1594900272624">
       <screen x="-1888" y="-303" width="1888" height="1080" />
     </state>
-    <state x="-991" y="-89" width="988" height="587" key="dock-window-1/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594897158558" />
+    <state x="-991" y="-89" width="988" height="587" key="dock-window-1/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594900272624" />
     <state x="2012" y="395" width="1182" height="554" key="dock-window-1/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588522183357" />
-    <state x="-987" y="-247" width="947" height="934" key="dock-window-2" timestamp="1594898069925">
+    <state x="-1108" y="-313" width="947" height="934" maximized="true" key="dock-window-2" timestamp="1594910692618">
       <screen x="-1888" y="-303" width="1888" height="1080" />
     </state>
     <state x="-1184" y="-102" width="1093" height="466" key="dock-window-2/0.0.1366.738/-1888.-303.1888.1080@-1888.-303.1888.1080" timestamp="1594296833390" />
-    <state x="-987" y="-247" width="947" height="934" key="dock-window-2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594898069925" />
+    <state x="-1108" y="-313" width="947" height="934" maximized="true" key="dock-window-2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594910692618" />
+    <state x="-951" y="-303" width="958" height="1087" key="dock-window-3" timestamp="1594913261896">
+      <screen x="-1888" y="-303" width="1888" height="1080" />
+    </state>
+    <state x="-951" y="-303" width="958" height="1087" key="dock-window-3/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594913261896" />
     <state x="263" y="23" key="editAsTableFormatDialogDimension" timestamp="1594463985258">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -782,10 +782,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="0" y="0" width="585" height="738" key="find.popup/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594042277322" />
-    <state x="2266" y="362" width="672" height="678" key="search.everywhere.popup" timestamp="1588614058837">
-      <screen x="1920" y="303" width="1366" height="738" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1594910945153">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1588359654448" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594910945153" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588076302709" />
     <state x="2266" y="362" width="672" height="678" key="search.everywhere.popup/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588614058837" />
   </component>
