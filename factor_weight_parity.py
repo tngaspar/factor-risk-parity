@@ -3,11 +3,9 @@
 import pandas as pd
 import stock_data
 import factor_data
-import statsmodels.api as sm
 import numpy as np
 from scipy.optimize import minimize
 from dateutil.relativedelta import relativedelta
-from factor_analyzer.factor_analyzer import FactorAnalyzer
 from alive_progress import alive_bar
 from alive_progress import config_handler
 import factor_risk_parity as frp
@@ -29,19 +27,10 @@ def weights_factor_weight_parity(stocks, factor_structure, loadings_matrix, x0):
     if x0 is None:
         x0 = np.ones(n_stocks) * 1 / n_stocks
 
-    # def fun(x):
-    #     risk_contributions = get_risk_contributions(x, loadings_matrix, Sigma)
-    #     clusters_rcs = [part.sum() for part in np.split(risk_contributions, np.cumsum(factor_structure))[:-1]]
-    #     f = sum((clusters_rcs / sigma_x(x, sigma) - 1 / len(factor_structure)) ** 2)
-    #     return f
     def square(listt):
         return [i ** 2 for i in listt]
 
     fun = lambda  x: sum(square(np.matmul(loadings_matrix.values.T, x) - 1 / loadings_matrix.shape[1]))
-
-    # old function without factor clustering:
-    # fun = lambda x: sum((get_risk_contributions(x, loadings_matrix, Sigma) / sigma_x(x, sigma) - 1 /
-    #                                          loadings_matrix.shape[1]) ** 2)
 
     # constrains
     cons = [{'type': 'ineq', 'fun': lambda x: -sum(x) + 1},
@@ -87,12 +76,10 @@ def portfolio_weights_factor_weight_parity(tickers, factor_tickers, start_date, 
         for t in business_days_end_months:
             stocks = stock_data.get_daily_returns(tickers, t + relativedelta(months=-12), t)[1:]
             factors = factor_data.get_factors(factor_tickers_flat, stocks.index[0], stocks.index[-1])
-            # if factor intersection is desired insert here
             loadings_matrix = frp.get_loading_matrix(stocks, factors)
             sigma = frp.big_sigma(stocks)
             portfolio_weights.loc[t] = weights_factor_weight_parity(stocks, factor_structure, loadings_matrix, x0)
             x0 = portfolio_weights.loc[t]
-            # print(frp.get_risk_contributions(x0, loadings_matrix, sigma)/frp.sigma_x(x0, sigma))
             print(np.matmul(loadings_matrix.T, x0))
             bar()
 

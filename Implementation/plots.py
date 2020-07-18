@@ -8,7 +8,7 @@ import backtest_functions as bfunc
 
 
 sns.set(style="white")
-#os.chdir('../')
+os.chdir('../')
 
 # first plot data
 ew_daily = pd.read_csv('Output/ew_daily_returns.csv', index_col='Date')
@@ -94,3 +94,61 @@ plt.axhline(y=1, color='gray', linestyle='--', alpha=0.7, lw=2)
 plt.savefig('Plots/frp_inter_shared_rc.pdf')
 plt.show()
 plt.close('all')
+
+
+frp_daily = pd.read_csv('Implementation/frp_daily_4f_025.csv', index_col='Date')
+
+import numpy as np
+sp500['Volatility'] = sp500['Returns'].rolling(window=151).std() * np.sqrt(252)
+vol_frp = frp_daily.rolling(window=151).std() * np.sqrt(252)
+
+sns.lineplot(y=vol_frp.values, x=vol_frp.index, data=vol_frp.values, ci=None, estimator=None, label='6-months volatility',
+             color='red')
+plt.axhline(y=np.mean(sp500['Volatility']), color='gray', linestyle='--', label = 'Average Volatility', lw=2, alpha=0.7)
+plt.xlim(dt.datetime(1990,1 , 1), dt.datetime(2021,1,1))
+plt.title('S&P500 6-months rolling volatility ')
+plt.ylabel('Volatility')
+plt.xlabel('')
+plt.legend()
+plt.savefig('SP500_vol.pdf')
+plt.show()
+plt.close()
+
+
+frp_daily.index = pd.to_datetime(frp_daily.index)
+frp_cum_prod = (frp_daily + 1).cumprod()
+current_max = np.maximum.accumulate(frp_cum_prod)
+underwater = -100 * ((current_max - frp_cum_prod) / current_max)
+g = underwater.plot(kind='area', color='tomato', alpha=0.7)
+plt.gca().set_yticklabels(['{:.0f}%'.format(x) for x in plt.gca().get_yticks()])
+plt.grid(True)
+plt.ylabel('Drawdown')
+plt.legend('')
+plt.xlim(dt.datetime(2005,1,1), dt.datetime(2020,1,1))
+plt.title('Underwater Plot of FRP portfolio w/relaxation')
+plt.xlabel('')
+plt.savefig('Implementation/FRP_underwater.pdf')
+plt.show()
+
+import empyrical as ep
+annual_returns = pd.DataFrame(ep.aggregate_returns(frp_daily, 'yearly'))
+ax = plt.gca()
+plt.gca().set_yticklabels(['{:.0f}%'.format(x) for x in plt.gca().get_yticks()])
+ax.axhline(
+        100 *
+        annual_returns.values.mean(),
+        color='gray',
+        linestyle='--',
+        lw=2,
+        alpha=0.7)
+(100 * annual_returns.sort_index(ascending=True)
+).plot(ax=ax, kind='bar', alpha=1)
+ax.axhline(0.0, color='black', linestyle='-', lw=3)
+plt.gca().set_yticklabels(['{:.0f}%'.format(x) for x in plt.gca().get_yticks()])
+ax.set_xlabel('')
+ax.set_ylabel('Returns')
+ax.set_title("Annual returns of the FRP portfolio w/relaxation")
+ax.legend(['Mean'], frameon=True, framealpha=1)
+ax.grid(b=True, axis='y')
+plt.savefig('Implementation/FRP_annual_ret.pdf')
+plt.show()

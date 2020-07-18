@@ -7,6 +7,7 @@ from alive_progress import alive_bar
 from alive_progress import config_handler
 config_handler.set_global(force_tty=True)
 
+
 def weights_risk_parity(tickers, start_date, end_date):
     prices = stock_data.get_prices(tickers, start_date, end_date)
     cov_matrix = stock_data.get_covariance_matrix(prices)
