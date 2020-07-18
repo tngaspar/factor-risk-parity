@@ -1,5 +1,5 @@
 import os
-os.chdir('../')
+#os.chdir('../')
 
 import datetime as dt
 import importlib
@@ -29,25 +29,6 @@ importlib.reload(bfunc)
 importlib.reload(ew)
 importlib.reload(fwp)
 importlib.reload(perf)
-
-
-# ############# chosing 4 factors to use
-f_start_date = dt.date(1990, 12, 31)
-f_end_date = dt.date(2004, 12, 31)
-
-factors_cluster_1 = factor_data.get_factors(['CMA', 'HML_Devil'], f_start_date, f_end_date)
-factors_cluster_2 = factor_data.get_factors(['BaB', 'RMW', 'QMJ'], f_start_date, f_end_date)
-
-perf_measures = pd.concat([
-    perf.performance_measures(factors_cluster_1['CMA']).rename('CMA'),
-    perf.performance_measures(factors_cluster_1['HML_Devil']).rename('HML_Devil'),
-    perf.performance_measures(factors_cluster_2['BaB']).rename('BaB'),
-    perf.performance_measures(factors_cluster_2['RMW']).rename('RMW'),
-    perf.performance_measures(factors_cluster_2['QMJ']).rename('QMJ')
-    ], axis=1
-)
-
-perf_measures.round(2).to_csv(r'Implementation/factor_cluster_measures.csv')
 
 
 # ############### Data gathering ###############
@@ -97,36 +78,36 @@ p_tickers = stock_data.get_prices(tickers, start_date - dt.timedelta(days=365*4)
 nan_cols = [i for i in p_tickers.columns if p_tickers[i].isnull().any()]
 tickers = [eq for eq in tickers if eq not in nan_cols]
 
+# Factor Risk Parity 4 intersections:
+factor_tickers = ['SMB', 'MOM', 'CMA', 'HML_Devil', 'BaB', 'RMW', 'QMJ']
 
-# Equal weights (long only):
-ew_portfolio_weights = ew.portfolio_weights_ew(tickers, start_date, end_date, 'BM')
-ew_daily_returns = bfunc.daily_returns_of_portfolio(ew_portfolio_weights)
-ew_daily_returns.to_csv(r'Output\ew_daily_returns.csv')
+frp_portfolio_weights = frp.portfolio_weights_factor_risk_parity_intersection(tickers, factor_tickers, start_date, end_date, 'BM')
+frp_portfolio_weights.to_csv(r'Implementation\frp_x_intersection.csv')
+frp_portfolio_weights_intersect = pd.read_csv(r'Implementation\frp_x_intersection.csv', index_col=0)
+frp_portfolio_weights_intersect.index = pd.to_datetime(frp_portfolio_weights_intersect.index)
+frp_intersect_daily_returns = bfunc.daily_returns_of_portfolio(frp_portfolio_weights_intersect)
 
-# Factor Weight Parity:
-factor_tickers = ['SMB', 'MOM', 'CMA', 'BaB']
-fwp_portfolio_weights = fwp.portfolio_weights_factor_weight_parity(tickers, factor_tickers, start_date, end_date, 'BM')
-fwp_daily_returns = bfunc.daily_returns_of_portfolio(fwp_portfolio_weights)
-fwp_portfolio_weights.to_csv(r'Implementation\fwp_x_weights_4f.csv')
-fwp_daily_returns.to_csv(r'Output\fwp_daily_returns.csv')
+perf.performance_measures(frp_intersect_daily_returns)
+
+##shared rc
+importlib.reload(frp)
+factor_tickers = ['SMB', 'MOM', ['CMA', 'HML_Devil'], ['BaB', 'RMW', 'QMJ']]
+frp_portfolio_weights_shared_rc = frp.portfolio_weights_factor_risk_parity(tickers, factor_tickers, start_date, end_date, 'BM')
+frp_shared_rc_daily_returns = bfunc.daily_returns_of_portfolio(frp_portfolio_weights_shared_rc)
+frp_shared_rc_daily_returns.to_csv(r'Implementation\frp_shared_RC.csv')
+perf.performance_measures(frp_shared_rc_daily_returns)
+
+# frp 4f
+frp_portfolio_weights = pd.read_csv(r'Implementation\frp_x_4f_025.csv', index_col=0)
+frp_portfolio_weights.index = pd.to_datetime(frp_portfolio_weights.index)
+frp_daily_returns = bfunc.daily_returns_of_portfolio(frp_portfolio_weights)
+
+
 
 portfolios_perf_measures = pd.concat([
-    perf.performance_measures(ew_daily_returns).rename('EW'),
-    perf.performance_measures(fwp_daily_returns).rename('FWP')
+    perf.performance_measures(frp_daily_returns).rename('FRP 4 Factors'),
+    perf.performance_measures(frp_intersect_daily_returns).rename('FRP Cluster Intersection'),
+    perf.performance_measures(frp_shared_rc_daily_returns).rename('FRP Cluster Shared RC')
     ], axis=1
 )
-portfolios_perf_measures.round(2).to_csv(r'Implementation\ew_and_fwp_performance measures.csv')
-
-#plot here
-
-
-
-
-
-
-# delete
-
-factor_tickers2 = ['SMB', 'MOM', 'CMA', 'QMJ']
-fwp_portfolio_weights2 = fwp.portfolio_weights_factor_weight_parity(tickers, factor_tickers2, start_date, end_date, 'BM')
-fwp_daily_returns2 = bfunc.daily_returns_of_portfolio(fwp_portfolio_weights2)
-fwp_daily_returns2.to_csv(r'Output\fwp_daily_returns.csv')
+portfolios_perf_measures.round(2).to_csv(r'Implementation\frp_intersect_shared_rc.csv')

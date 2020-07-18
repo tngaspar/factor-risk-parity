@@ -14,7 +14,7 @@ def ew_weights(stock_tickers, date):
     return x
 
 
-def portfolio_weights_risk_parity(tickers, start_date, end_date, portfolio_rebalance_period):
+def portfolio_weights_ew(tickers, start_date, end_date, portfolio_rebalance_period):
     business_days_end_months = pd.date_range(start_date, end_date, freq=portfolio_rebalance_period)
     portfolio_weights = pd.DataFrame(index=business_days_end_months, columns=tickers)
 

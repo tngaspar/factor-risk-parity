@@ -20,18 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72ca0e08-10fa-444d-8092-0d20e699432c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Implementation/frp1m_and_normal_performance measures.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Implementation/frp_1m_perf.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Implementation/frp_daily_4f_025.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plots/frp_rc_area_1st.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plots/frp_rc_area_2nd.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Implementation/frp_intersect_shared_rc.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Implementation/frp_shared_RC.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Implementation/frp_x_intersection.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Implementation/intersection_risk_factors_fwp_frp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plots/frp_inter_shared_rc.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Implementation/ew_and_fwp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Implementation/ew_and_fwp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Implementation/plots.py" beforeDir="false" afterPath="$PROJECT_DIR$/Implementation/plots.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Implementation/rp_and_frp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Implementation/rp_and_frp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Implementation/rp_and_frp_performance measures.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Implementation/rp_and_frp_performance measures.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Implementation/sp500_returns.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Implementation/sp500_returns.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equal_weight.py" beforeDir="false" afterPath="$PROJECT_DIR$/equal_weight.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/factor_risk_parity.py" beforeDir="false" afterPath="$PROJECT_DIR$/factor_risk_parity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/performance_measures.py" beforeDir="false" afterPath="$PROJECT_DIR$/performance_measures.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,6 +177,9 @@
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Implementation" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -198,6 +199,9 @@
       <module name="Portfolio_Construction" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Implementation" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -305,7 +309,9 @@
       <workItem from="1594720162984" duration="12521000" />
       <workItem from="1594830620887" duration="1957000" />
       <workItem from="1594841991609" duration="217000" />
-      <workItem from="1594886515967" duration="23831000" />
+      <workItem from="1594886515967" duration="32829000" />
+      <workItem from="1594987256122" duration="2548000" />
+      <workItem from="1595096882197" duration="351000" />
     </task>
     <task id="LOCAL-00001" summary="testing commit on pycharm">
       <created>1586107211472</created>
@@ -580,7 +586,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594898838076</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="after initial plots for the 1st part of the implementation&#10;before intersection of risk factors">
+      <created>1594914934897</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1594914934897</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -610,7 +623,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added factor_data.py that gets factor data" />
     <MESSAGE value="last commit of the day" />
     <MESSAGE value="added SP500 index returns to Data" />
     <MESSAGE value="benchmark working on pyfolio&#10;need to fix sp500 index (currently hard coded)" />
@@ -635,7 +647,8 @@
     <MESSAGE value="fixed number of number of days per year from 261 business days to 252 trading days.&#10;performance_measures.py complete" />
     <MESSAGE value="added plot for the performance chapter" />
     <MESSAGE value="factor exposures and rc added" />
-    <option name="LAST_COMMIT_MESSAGE" value="factor exposures and rc added" />
+    <MESSAGE value="after initial plots for the 1st part of the implementation&#10;before intersection of risk factors" />
+    <option name="LAST_COMMIT_MESSAGE" value="after initial plots for the 1st part of the implementation&#10;before intersection of risk factors" />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="47" key="#Inspections" timestamp="1587650734857">
@@ -674,10 +687,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="430" y="223" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1593948584741" />
-    <state x="411" y="0" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1594898836405">
+    <state x="411" y="0" width="1157" height="738" key="CommitChangelistDialog2" timestamp="1594914933852">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="411" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594898836405" />
+    <state x="411" y="0" key="CommitChangelistDialog2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594914933852" />
     <state x="-1497" y="-189" width="1157" height="825" key="CommitChangelistDialog2/0.0.1366.738/-1888.-304.1888.1080@0.0.1366.738" timestamp="1588186627527" />
     <state x="617" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1594333199741" />
     <state x="2129" y="303" width="1157" height="738" key="CommitChangelistDialog2/1920.303.1366.738/0.0.1920.1050@1920.303.1366.738" timestamp="1588605363218" />
@@ -770,10 +783,10 @@
     </state>
     <state x="-1184" y="-102" width="1093" height="466" key="dock-window-2/0.0.1366.738/-1888.-303.1888.1080@-1888.-303.1888.1080" timestamp="1594296833390" />
     <state x="-1108" y="-313" width="947" height="934" maximized="true" key="dock-window-2/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594910692618" />
-    <state x="-951" y="-303" width="958" height="1087" key="dock-window-3" timestamp="1594913261896">
+    <state x="-952" y="-311" width="960" height="1096" key="dock-window-3" timestamp="1594988817277">
       <screen x="-1888" y="-303" width="1888" height="1080" />
     </state>
-    <state x="-951" y="-303" width="958" height="1087" key="dock-window-3/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594913261896" />
+    <state x="-952" y="-311" width="960" height="1096" key="dock-window-3/0.0.1366.738/-1888.-303.1888.1080@0.0.1366.738" timestamp="1594988817276" />
     <state x="263" y="23" key="editAsTableFormatDialogDimension" timestamp="1594463985258">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

@@ -1,0 +1,15 @@
+,FRP 4 Factors,FRP Cluster Intersection,FRP Cluster Shared RC
+Annualized Returns (CAGR) (%),14.99,11.35,10.37
+Cumulative Returns (%),710.6,400.73,338.57
+Annualized Volatility (%),13.46,12.71,16.42
+Sharpe Ratio,1.11,0.91,0.68
+Max Drawdown (%),-26.96,-27.75,-52.66
+Calmar Ratio,0.56,0.41,0.2
+Stability,0.98,0.97,0.91
+Skewness,-0.3,-0.33,0.01
+Kurtosis,8.8,6.48,7.28
+Daily Value at Risk (VaR) (%),-1.22,-1.22,-1.56
+Expected Shortfall (%),-1.96,-1.9,-2.46
+Tail Ratio,1.02,0.9,0.66
+Alpha,0.12,0.09,0.07
+Beta,0.46,0.32,0.54

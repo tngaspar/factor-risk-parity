@@ -4,6 +4,8 @@ import os
 import seaborn as sns
 import matplotlib.pyplot as plt
 import datetime as dt
+import backtest_functions as bfunc
+
 
 sns.set(style="white")
 #os.chdir('../')
@@ -56,5 +58,39 @@ plt.grid(True)
 plt.xlim(dt.datetime(2005,1,1), dt.datetime(2020,1,1))
 plt.axhline(y=1, color='gray', linestyle='--', alpha=0.7, lw=2)
 plt.savefig('Plots/frp_relax_4f_cum_ret.pdf')
+plt.show()
+plt.close('all')
+
+
+# intersection:
+frp_portfolio_weights_intersect = pd.read_csv(r'Implementation\frp_x_intersection.csv', index_col=0)
+frp_portfolio_weights_intersect.index = pd.to_datetime(frp_portfolio_weights_intersect.index)
+frp_intersect_daily_returns = bfunc.daily_returns_of_portfolio(frp_portfolio_weights_intersect)
+
+
+# shared rc:
+frp_shared_rc_daily_returns = pd.read_csv(r'Implementation\frp_shared_RC.csv', index_col=0)
+frp_shared_rc_daily_returns.index = pd.to_datetime(frp_shared_rc_daily_returns.index)
+
+
+# plot 1/m, intersection, shared rc and sp500
+frp_returns_inter_shared_rc = pd.concat([frp_daily_1m,
+                                         frp_intersect_daily_returns,
+                                         frp_shared_rc_daily_returns,
+                                         sp500_returns], axis=1, join='inner').fillna(0)
+frp_returns_inter_shared_rc.index = pd.to_datetime(frp_returns_inter_shared_rc.index)
+frp_returns_inter_shared_rc.columns = ['FRP w/ relax.', 'FRP w/ cluster Intersection',
+                                       'FRP w/ cluster shared risk contributions', 'S&P500']
+frp_cum_returns_inter_shared_rc = (frp_returns_inter_shared_rc + 1).cumprod()
+
+sns.lineplot(data=frp_cum_returns_inter_shared_rc, ci=None, estimator=None)
+#plt.title('')
+plt.ylabel('Cumulative Returns')
+plt.xlabel('')
+plt.grid(True)
+#plt.ylim(0, 7)
+plt.xlim(dt.datetime(2005,1,1), dt.datetime(2020,1,1))
+plt.axhline(y=1, color='gray', linestyle='--', alpha=0.7, lw=2)
+plt.savefig('Plots/frp_inter_shared_rc.pdf')
 plt.show()
 plt.close('all')
