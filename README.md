@@ -4,7 +4,7 @@
 
   <h1 align="center">Multi-Factor Portfolio Construction</h1>
   <p align="center">
-    <h2 align="center">A Risk-Based Approach</h2>
+    <h3 align="center">A Risk-Based Approach</h3>
     <br />
   </p>
 </div>
@@ -20,7 +20,15 @@ The main objective was to build and backtest a Factor Risk parity Investement st
 ## Strategy applied to SP500 equites (2005-2020)
 <br />
 
-Annual Returns            |  Underwater Plot (Drawdown)
-:-------------------------:|:-------------------------:
-![](Plots\FRP_annual_ret.png)  |  ![](Plots/FRP_underwater.png)
+### Annual Returns: 
+<p align="center">
+<img src="Plots/FRP_annual_ret.png" alt="underwater plot" width="640" class="center"/>
+</p>
+
+<br />
+
+### Underwater Plot (Drawdown):
+<p align="center">
+<img src="Plots/FRP_underwater.png" alt="underwater plot" width="640" class="center"/>
+</p>
 
